@@ -7,12 +7,30 @@ module.exports = class ProductCurrentImages {
 
     async handle() {
       
-      return await this.page.$$eval('.ui-pdp-gallery__figure img', imgs => {
-        return Array.from(imgs).map(img => ({
-          thumbnail: img.src,
-          full_size: img.src.replace(/s_MLB\w+/g, 'o_MLB')
-        }));
-      });
+      const imageList = [];
+
+      const thumbnailsButton = await this.page.$$('.ui-pdp-gallery__wrapper');
+      
+      for (const thumb of thumbnailsButton) {
+
+        const thumbBtn = await thumb.$('button.ui-pdp-thumbnail__picture');
+        const thumbImg = await thumbBtn.$('img');
+        const thumbSrc = await thumbImg.getAttribute('src');
+
+        await thumb.click();
+        await this.page.waitForTimeout(20);
+        
+        const fullImage = await this.page.$('figure.ui-pdp-gallery__figure img');
+        const fullSrc = await fullImage?.getAttribute('data-zoom');
+
+        imageList.push({
+          thumbnail: thumbSrc,
+          full_size: fullSrc,
+        });
+      
+      }
+
+      return imageList;
 
     }
     
