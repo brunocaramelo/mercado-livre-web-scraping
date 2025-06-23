@@ -22,9 +22,11 @@ module.exports = class ProductCurrentImages {
         
         const fullImage = await this.page.$('figure.ui-pdp-gallery__figure img');
         const fullSrc = await fullImage?.getAttribute('data-zoom');
+        const midSrc = await fullImage?.getAttribute('src');
 
         imageList.push({
           thumbnail: thumbSrc,
+          mid_size: midSrc,
           full_size: fullSrc,
         });
       
