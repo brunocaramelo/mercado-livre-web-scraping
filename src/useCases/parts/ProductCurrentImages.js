@@ -1,8 +1,10 @@
+const WaitingFor = require('../../tools/WaitingFor');
 
 module.exports = class ProductCurrentImages {
 
     constructor(page) {        
         this.page = page;
+        this.doDelay = new WaitingFor();
     }
 
     async handle() {
@@ -17,9 +19,12 @@ module.exports = class ProductCurrentImages {
         const thumbImg = await thumbBtn.$('img');
         const thumbSrc = await thumbImg.getAttribute('src');
 
+        this.doDelay.rangeMicroseconds(100, 202);
+
         await thumb.click();
-        await this.page.waitForTimeout(20);
         
+        await this.page.waitForTimeout(20);
+
         const fullImage = await this.page.$('figure.ui-pdp-gallery__figure img');
         const fullSrc = await fullImage?.getAttribute('data-zoom');
         const midSrc = await fullImage?.getAttribute('src');
