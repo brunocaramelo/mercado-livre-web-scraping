@@ -19,7 +19,7 @@ module.exports = class ProductCurrentImages {
         const thumbImg = await thumbBtn.$('img');
         const thumbSrc = await thumbImg.getAttribute('src');
 
-        this.doDelay.rangeMicroseconds(70, 202);
+        this.doDelay.rangeMicroseconds(110, 202);
 
         await thumb.click();
         
