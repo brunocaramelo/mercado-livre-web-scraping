@@ -14,9 +14,11 @@ module.exports = class ProductAsyncExtractAllVariations {
 
     async handle() {
 
+      console.log('('+this.constructor.name+') starting process');
+
       const variationGroups = await new ProductGetVariationOptions(this.page).handle();
      
-      if (variationGroups.length < 2) return [];
+      if (variationGroups.length == 0) return [];
 
       const [firstGroup, secondGroup] = variationGroups;
       const variations = [];
@@ -66,23 +68,7 @@ module.exports = class ProductAsyncExtractAllVariations {
         }
       }
 
-      // if (variations.length > 0) {
-      //   // firstGroup.options[0].element.click();
-      //   // await waitForChanges();
-      //   await this.page.goto(firstGroup.options[0].href, {
-      //     waitUntil: 'domcontentloaded',
-      //     timeout: 600000
-      //   });
-
-      //   // secondGroup.options[0].element.click();
-      //   // await waitForChanges();
-
-      //   await this.page.goto(secondGroup.options[0].href, {
-      //     waitUntil: 'domcontentloaded',
-      //     timeout: 600000
-      //   });
-
-      // }
+      console.log('('+this.constructor.name+') ending process');
 
       return variations;
     }

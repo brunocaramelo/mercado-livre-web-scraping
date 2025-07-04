@@ -9,7 +9,9 @@ module.exports = class ProductCurrentImages {
 
     async handle() {
       
-      const imageList = [];
+      console.log('('+this.constructor.name+') starting process');
+
+      let imageList = [];
 
       const thumbnailsButton = await this.page.$$('.ui-pdp-gallery__wrapper');
       
@@ -20,8 +22,9 @@ module.exports = class ProductCurrentImages {
         const thumbSrc = await thumbImg.getAttribute('src');
 
         this.doDelay.rangeMicroseconds(110, 202);
-
-        await thumb.click();
+        
+        // console.log([thumbSrc])
+        await thumb.click(); 
         
         await this.page.waitForTimeout(20);
 
@@ -36,6 +39,8 @@ module.exports = class ProductCurrentImages {
         });
       
       }
+
+      console.log('('+this.constructor.name+') ending process');
 
       return imageList;
 

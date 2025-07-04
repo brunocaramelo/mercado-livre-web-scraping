@@ -19,8 +19,12 @@ module.exports = class ScrapperProduct {
     }
     
     async handle() {
-        
-        this.browserInstance = await chromium.launch({ headless: false });
+      
+        console.log('('+this.constructor.name+') starting process');
+
+        this.browserInstance = await chromium.launch({
+           headless: false 
+        });
 
         const context = await this.browserInstance.newContext({
           userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
@@ -32,10 +36,11 @@ module.exports = class ScrapperProduct {
 
         const returnProduct =  await this.processProductPage(page);
        
+        console.log('('+this.constructor.name+') ending process');
+
         await this.browserInstance.close();
 
         return returnProduct;
-
     }
 
     async processProductPage(page) {
@@ -47,7 +52,9 @@ module.exports = class ScrapperProduct {
           
           await page.waitForSelector('.ui-pdp-title');
 
-          this.mouseRandomMove(page);
+          await this.closeCepPopUp(page);
+
+          await this.mouseRandomMove(page);
 
           this.doDelay.rangeMicroseconds(510, 1502);
 
@@ -83,33 +90,54 @@ module.exports = class ScrapperProduct {
 
       }
 
+      async closeCepPopUp(page) {        
+        try {
+          console.log('(closeCepPopUp) started');
+          const selector = 'button.onboarding-cp-button.andes-button.andes-button--transparent.andes-button--small[data-js="onboarding-cp-close"][data-origin="header"]';
+          
+          await page.waitForSelector(selector, { timeout: 5000 });
+          
+          const closeButton = page.locator(selector);
+        
+          if (await closeButton.isVisible()) {
+            await closeButton.click();
+            console.log('(closeCepPopUp) ended');
+          }
+        } catch (e) {
+          console.log('(closeCepPopUp) not found');
+        } 
+      }
+
       async getBaseInfo(page) {
-        this.mouseRandomMove(page);
+        await this.mouseRandomMove(page);
         return new ProductBaseInfo(page).handle();
       };
 
       async getFullDescription(page) {
-        this.mouseRandomMove(page);
+        await this.mouseRandomMove(page);
         return new ProductFullDescription(page).handle();
       };
 
       async getSpecifications(page) {
-        this.mouseRandomMove(page);
+        await this.mouseRandomMove(page);
         return new ProductSpecifications(page).handle();
       };
 
       async getCurrentImages(page) {
-        this.mouseRandomMove(page);
+        await this.mouseRandomMove(page);
         return new ProductCurrentImages(page).handle();
       };
 
       async getVariationOptions(page) {       
-        this.mouseRandomMove(page);     
+        await this.mouseRandomMove(page);     
         return new ProductGetVariationOptions(page).handle();
       };
 
       async extractAllVariations(page) {
-        this.mouseRandomMove(page);
+        
+        await this.mouseRandomMove(page);
+        if((await this.getVariationOptions(page)).length == 0) return [];
+
         return new ProductAsyncExtractAllVariations(
           page,
            {
@@ -118,6 +146,7 @@ module.exports = class ScrapperProduct {
             baseDescription: await this.getFullDescription(page),
             baseSpecs: await this.getSpecifications(page),
         }).handle();
+
       };
   
       async mouseRandomMove(page){

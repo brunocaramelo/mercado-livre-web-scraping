@@ -6,6 +6,8 @@ module.exports = class ProductSpecifications {
     }
 
     async handle() {
+      
+      console.log('('+this.constructor.name+') starting process');
 
       const specSections = await this.page.$$eval(
         'div.ui-vpp-highlighted-specs__striped-specs div.ui-vpp-striped-specs__table',
@@ -28,6 +30,8 @@ module.exports = class ProductSpecifications {
         })
       );
       
+      console.log('('+this.constructor.name+') ending process');
+
       return specSections;
     }
     

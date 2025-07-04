@@ -6,12 +6,17 @@ module.exports = class ProductFullDescription {
     }
 
     async handle() {
+
+        console.log('('+this.constructor.name+') starting process');
+
         const descriptionElement = this.page.locator('.ui-pdp-description__content');
         if (!descriptionElement) return null;
         
+        console.log('('+this.constructor.name+') ending process');
+
         return {
-        text: await descriptionElement.innerText(),
-        html: await descriptionElement.innerHTML()
+            text: await descriptionElement.innerText(),
+            html: await descriptionElement.innerHTML()
         };
     }
     
