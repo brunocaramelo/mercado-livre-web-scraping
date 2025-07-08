@@ -13,48 +13,37 @@ module.exports = class ProductAsyncExtractAllVariations {
     }
 
     async handle() {
-
-      console.log('('+this.constructor.name+') starting process');
-
+      console.log(`(${this.constructor.name}) starting process`);
+    
       const variationGroups = await new ProductGetVariationOptions(this.page).handle();
-     
-      if (variationGroups.length == 0) return [];
-
-      const [firstGroup, secondGroup] = variationGroups;
-      const variations = [];
-
+      if (variationGroups.length === 0) return [];
+    
       const baseImages = this.pageDataInitial.baseImages;
       const baseInfo = this.pageDataInitial.baseInfo;
       const baseDescription = this.pageDataInitial.baseDescription;
       const baseSpecs = this.pageDataInitial.baseSpecs;
-
+    
+      const variations = [];
+    
+      const [firstGroup, secondGroup, thirdGroup] = variationGroups;
+    
       for (const firstOption of firstGroup.options.filter(opt => opt.available)) {
         await this.page.goto(firstOption.href, {
           waitUntil: 'domcontentloaded',
           timeout: 600000
         });
-        
         this.doDelay.rangeMicroseconds(91, 102);
-
-        for (const secondOption of secondGroup.options.filter(opt => opt.available)) {
-          await this.page.goto(secondOption.href, {
-            waitUntil: 'domcontentloaded',
-            timeout: 600000
-          });
-
-          this.doDelay.rangeMicroseconds(99, 114);
-
+    
+        if (!secondGroup) {
+          // Só 1 variação
           const currentInfo = await new ProductBaseInfo(this.page).handle();
           const currentImages = await new ProductCurrentImages(this.page).handle();
-
+    
           variations.push({
             attributes: [
               [
                 { label: firstGroup.label, value: firstOption.label },
                 { text: firstGroup.text, value: firstOption.text }
-              ], [
-                { label: secondGroup.label, value: secondOption.label },
-                { text: secondGroup.text, value: secondOption.text }
               ]
             ],
             title: currentInfo.title,
@@ -65,11 +54,83 @@ module.exports = class ProductAsyncExtractAllVariations {
             images: currentImages,
             available: true
           });
+          continue;
+        }
+    
+        for (const secondOption of secondGroup.options.filter(opt => opt.available)) {
+          await this.page.goto(secondOption.href, {
+            waitUntil: 'domcontentloaded',
+            timeout: 600000
+          });
+          this.doDelay.rangeMicroseconds(99, 114);
+    
+          if (!thirdGroup) {
+            // 2 variações
+            const currentInfo = await new ProductBaseInfo(this.page).handle();
+            const currentImages = await new ProductCurrentImages(this.page).handle();
+    
+            variations.push({
+              attributes: [
+                [
+                  { label: firstGroup.label, value: firstOption.label },
+                  { text: firstGroup.text, value: firstOption.text }
+                ],
+                [
+                  { label: secondGroup.label, value: secondOption.label },
+                  { text: secondGroup.text, value: secondOption.text }
+                ]
+              ],
+              title: currentInfo.title,
+              price: {
+                current: currentInfo.price,
+                currency: currentInfo.currency,
+              },
+              images: currentImages,
+              available: true
+            });
+            continue;
+          }
+    
+          // 3 variações
+          for (const thirdOption of thirdGroup.options.filter(opt => opt.available)) {
+            await this.page.goto(thirdOption.href, {
+              waitUntil: 'domcontentloaded',
+              timeout: 600000
+            });
+    
+            this.doDelay.rangeMicroseconds(105, 125);
+    
+            const currentInfo = await new ProductBaseInfo(this.page).handle();
+            const currentImages = await new ProductCurrentImages(this.page).handle();
+    
+            variations.push({
+              attributes: [
+                [
+                  { label: firstGroup.label, value: firstOption.label },
+                  { text: firstGroup.text, value: firstOption.text }
+                ],
+                [
+                  { label: secondGroup.label, value: secondOption.label },
+                  { text: secondGroup.text, value: secondOption.text }
+                ],
+                [
+                  { label: thirdGroup.label, value: thirdOption.label },
+                  { text: thirdGroup.text, value: thirdOption.text }
+                ]
+              ],
+              title: currentInfo.title,
+              price: {
+                current: currentInfo.price,
+                currency: currentInfo.currency,
+              },
+              images: currentImages,
+              available: true
+            });
+          }
         }
       }
-
-      console.log('('+this.constructor.name+') ending process');
-
+    
+      console.log(`(${this.constructor.name}) ending process`);
       return variations;
     }
 
