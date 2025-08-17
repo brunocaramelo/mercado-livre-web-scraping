@@ -23,7 +23,6 @@ module.exports = class ScrapperProduct {
         console.log('('+this.constructor.name+') starting process');
 
         this.browserInstance = await chromium.launch({
-          //  headless: false 
            headless: true 
         });
 
