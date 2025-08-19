@@ -42,7 +42,7 @@ module.exports = class ProductCurrentImages {
           full_size: fullSrc,
         });
       
-        console.log(imageList[i]);
+        // console.log(imageList[i]);
 
       }
 
