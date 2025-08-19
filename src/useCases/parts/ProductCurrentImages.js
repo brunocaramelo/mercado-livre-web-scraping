@@ -41,9 +41,6 @@ module.exports = class ProductCurrentImages {
           mid_size: midSrc,
           full_size: fullSrc,
         });
-      
-        // console.log(imageList[i]);
-
       }
 
       console.log('('+this.constructor.name+') ending process');

@@ -1,5 +1,8 @@
 const { chromium , firefox, webkit } = require('playwright-extra');
+const path = require('path');
+require('dotenv').config();
 const stealth = require('puppeteer-extra-plugin-stealth')();
+
 
 const ProductBaseInfo = require('./parts/ProductBaseInfo');
 const ProductFullDescription = require('./parts/ProductFullDescription');
@@ -23,13 +26,9 @@ module.exports = class ScrapperProduct {
       
         console.log('('+this.constructor.name+') starting process');
 
-        firefox.use(stealth);
+        chromium.use(stealth);
 
-        this.browserInstance = await firefox.launch({
-           headless: false 
-        });
-
-        const context = await this.browserInstance.newContext();
+        const context = await this.launchAndContexthStrategy(chromium);
         
         const page = await context.newPage();
         
@@ -169,7 +168,29 @@ module.exports = class ScrapperProduct {
             get: () => false
           });
         });
+      }
 
+      async launchAndContexthStrategy(navigatorInst){
+        const launched = await this.launchStrategy(navigatorInst);
+        
+        if (process.env.USE_SPECIFIC_PROFILE == 'true') {
+          console.log('launchAndContexthStrategy true')
+          return launched;
+        }
+        return launched.newContext();
+      }
+
+      async launchStrategy(navigator){
+        if (process.env.USE_SPECIFIC_PROFILE == 'true') {
+          return await navigator.launchPersistentContext(process.env.PATH_SPECIFIC_PROFILE , { 
+            headless: false,
+            slowMo: 50
+          });
+        }
+        
+        return await navigator.launch({
+          headless: false 
+        });
       }
 
 }
