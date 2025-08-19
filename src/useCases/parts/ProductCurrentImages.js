@@ -13,31 +13,37 @@ module.exports = class ProductCurrentImages {
 
       let imageList = [];
 
-      const thumbnailsButton = await this.page.$$('.ui-pdp-gallery__wrapper');
-      
-      for (const thumb of thumbnailsButton) {
+      const wrappers = await this.page.$$('.ui-pdp-gallery__wrapper');
 
-        const thumbBtn = await thumb.$('button.ui-pdp-thumbnail__picture');
+      for (let i = 0; i < wrappers.length; i++) {
+
+        const wrapper = wrappers[i];
+
+        const thumbBtn = await wrapper.$('button.ui-pdp-thumbnail__picture');
         const thumbImg = await thumbBtn.$('img');
         const thumbSrc = await thumbImg.getAttribute('src');
-
-        this.doDelay.rangeMicroseconds(110, 202);
-        
-        // console.log([thumbSrc])
-        await thumb.click(); 
+               
+        // await thumbBtn.click(); 
         
         await this.page.waitForTimeout(20);
 
-        const fullImage = await this.page.$('figure.ui-pdp-gallery__figure img');
+        const fullImage = await wrapper.$('figure.ui-pdp-gallery__figure img.ui-pdp-gallery__figure__image');
+
         const fullSrc = await fullImage?.getAttribute('data-zoom');
         const midSrc = await fullImage?.getAttribute('src');
-
+        
+        if (typeof fullSrc === 'undefined') {
+          continue;
+        }
+       
         imageList.push({
           thumbnail: thumbSrc,
           mid_size: midSrc,
           full_size: fullSrc,
         });
       
+        console.log(imageList[i]);
+
       }
 
       console.log('('+this.constructor.name+') ending process');
