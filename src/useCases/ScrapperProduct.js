@@ -1,4 +1,5 @@
-const { chromium } = require('playwright');
+const { chromium , firefox, webkit } = require('playwright-extra');
+const stealth = require('puppeteer-extra-plugin-stealth')();
 
 const ProductBaseInfo = require('./parts/ProductBaseInfo');
 const ProductFullDescription = require('./parts/ProductFullDescription');
@@ -22,13 +23,13 @@ module.exports = class ScrapperProduct {
       
         console.log('('+this.constructor.name+') starting process');
 
-        this.browserInstance = await chromium.launch({
-           headless: true 
+        firefox.use(stealth);
+
+        this.browserInstance = await firefox.launch({
+           headless: false 
         });
 
-        const context = await this.browserInstance.newContext({
-          userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/547.36'
-        });
+        const context = await this.browserInstance.newContext();
         
         const page = await context.newPage();
         
