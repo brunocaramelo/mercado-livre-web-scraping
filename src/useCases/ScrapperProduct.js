@@ -13,6 +13,8 @@ const ProductAsyncExtractAllVariations = require('./parts/ProductAsyncExtractAll
 const WaitingFor = require('../tools/WaitingFor');
 const NumbersTools = require('../tools/Numbers');
 const HumanNavigates = require('../tools/HumanNavigates');
+const HideBotTool = require('../tools/HideBotTool');
+const NavigatorFactory = require('../tools/NavigatorFactory');
 
 module.exports = class ScrapperProduct {
 
@@ -20,7 +22,9 @@ module.exports = class ScrapperProduct {
         this.productUri = productUri;
         this.doDelay = new WaitingFor();
         this.numbersTools = new NumbersTools();
-        this.HumanNavigates = new HumanNavigates();
+        this.humanNavigates = new HumanNavigates();
+        this.hideBotTool = new HideBotTool();
+        this.navigatorFactory = new NavigatorFactory();
     }
     
     async handle() {
@@ -29,11 +33,13 @@ module.exports = class ScrapperProduct {
 
         chromium.use(stealth);
 
-        const context = await this.launchAndContexthStrategy(chromium);
+        const context = await this.navigatorFactory.launchAndContexthStrategy(chromium);
         
-        const page = await context.newPage();
+        this.browserInstance = context.browser ? context.browser() : context; 
+
+        let page = await context.newPage();
         
-        await this.ofuscateBotBrowser(page);
+        page = await this.ofuscateBotBrowser(page);
 
         const returnProduct =  await this.processProductPage(page);
        
@@ -156,21 +162,11 @@ module.exports = class ScrapperProduct {
       };
   
       async mouseRandomMove(page){
-        await this.mouseRandomMoveAllScreen(page, [1, 6], [2, 5]);
+        await this.humanNavigates.mouseRandomMoveAllScreen(page, [1, 6], [2, 5]);
       }
 
       async ofuscateBotBrowser(page){
-        await page.addInitScript(() => {
-          Object.defineProperty(navigator, 'plugins', {
-            get: () => [1, 2, 3],
-          });
-          Object.defineProperty(navigator, 'languages', {
-            get: () => ['pt-BR', 'pt', 'en-US', 'en'],
-          });
-          Object.defineProperty(navigator, 'webdriver', {
-            get: () => false
-          });
-        });
+        return this.hideBotTool.customAddInitScript(page);
       }
 
       async launchAndContexthStrategy(navigatorInst){
@@ -179,6 +175,7 @@ module.exports = class ScrapperProduct {
         if (process.env.USE_SPECIFIC_PROFILE == 'true') {
           return launched;
         }
+
         return launched.newContext();
       }
 

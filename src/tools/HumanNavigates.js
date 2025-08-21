@@ -1,4 +1,4 @@
-const NumbersTools = require('../tools/Numbers');
+const NumbersTools = require('./Numbers');
 
 module.exports = class HumanNavigates {
   
