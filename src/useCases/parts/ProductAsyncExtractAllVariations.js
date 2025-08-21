@@ -68,7 +68,8 @@ module.exports = class ProductAsyncExtractAllVariations {
             timeout: 600000
         });
 
-        this.doDelay.rangeMicroseconds(900 + level * 6, 1431 + level * 7);
+        
+        await page.waitForTimeout(this.numbersTools.randomIntFromInterval((900 + level * 6), (1431 + level * 7)))
 
         await processLevel(level + 1, [...selectedOptions, option]);
       }

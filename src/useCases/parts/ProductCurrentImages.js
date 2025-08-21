@@ -23,6 +23,8 @@ module.exports = class ProductCurrentImages {
       for (let i = 0; i < wrappers.length; i++) {
 
         await this.mouseRandomMoveAllScreen(page, [1, 4], [2, 7]);
+        
+        await page.waitForTimeout(this.numbersTools.randomIntFromInterval(500, 1300))
 
 
         const wrapper = wrappers[i];
