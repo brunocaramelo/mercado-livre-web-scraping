@@ -7,6 +7,8 @@ module.exports = class NavigatorFactory {
     const launched = await this.launchStrategy(navigatorInst);
     const statePath = path.resolve('ml_state.json');
 
+    console.log('(launchAndContexthStrategy) armazenamento de estado em disco : '+statePath)
+
     if (process.env.USE_SPECIFIC_PROFILE === 'true') {
       const originalClose = launched.close.bind(launched);
       launched.close = async () => {
