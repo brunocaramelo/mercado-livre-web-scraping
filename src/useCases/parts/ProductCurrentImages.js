@@ -1,10 +1,13 @@
 const WaitingFor = require('../../tools/WaitingFor');
+const NumbersTools = require('../tools/Numbers');
 
 module.exports = class ProductCurrentImages {
 
     constructor(page) {        
         this.page = page;
         this.doDelay = new WaitingFor();
+        this.numbersTools = new NumbersTools();
+
     }
 
     async handle() {
@@ -16,6 +19,11 @@ module.exports = class ProductCurrentImages {
       const wrappers = await this.page.$$('.ui-pdp-gallery__wrapper');
 
       for (let i = 0; i < wrappers.length; i++) {
+
+        await this.page.mouse.move(this.numbersTools.randomIntFromInterval(11,730), 
+              this.numbersTools.randomIntFromInterval(8,731), 
+              {steps: this.numbersTools.randomIntFromInterval(18,43)}
+        );
 
         const wrapper = wrappers[i];
 

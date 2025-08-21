@@ -9,6 +9,8 @@ module.exports = class ProductAsyncExtractAllVariations {
     this.page = page;
     this.pageDataInitial = pageDataInitial;
     this.doDelay = new WaitingFor();
+    this.numbersTools = new NumbersTools();
+
   }
 
   async handle() {
