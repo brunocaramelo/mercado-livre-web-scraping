@@ -35,8 +35,6 @@ module.exports = class ScrapperProduct {
 
         const context = await this.navigatorFactory.launchAndContexthStrategy(chromium);
         
-        this.browserInstance = context.browser ? context.browser() : context; 
-
         let page = await context.newPage();
         
         page = await this.ofuscateBotBrowser(page);
@@ -45,7 +43,7 @@ module.exports = class ScrapperProduct {
        
         console.log('('+this.constructor.name+') ending process');
 
-        await this.browserInstance.close();
+        await this.navigatorFactory.close();
 
         return returnProduct;
     }
