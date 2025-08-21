@@ -174,7 +174,6 @@ module.exports = class ScrapperProduct {
         const launched = await this.launchStrategy(navigatorInst);
         
         if (process.env.USE_SPECIFIC_PROFILE == 'true') {
-          console.log('launchAndContexthStrategy true')
           return launched;
         }
         return launched.newContext();
