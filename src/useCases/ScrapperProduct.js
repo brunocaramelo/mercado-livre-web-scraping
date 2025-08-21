@@ -11,8 +11,8 @@ const ProductCurrentImages = require('./parts/ProductCurrentImages');
 const ProductGetVariationOptions = require('./parts/ProductGetVariationOptions');
 const ProductAsyncExtractAllVariations = require('./parts/ProductAsyncExtractAllVariations');
 const WaitingFor = require('../tools/WaitingFor');
-
 const NumbersTools = require('../tools/Numbers');
+const HumanNavigates = require('../tools/HumanNavigates');
 
 module.exports = class ScrapperProduct {
 
@@ -20,6 +20,7 @@ module.exports = class ScrapperProduct {
         this.productUri = productUri;
         this.doDelay = new WaitingFor();
         this.numbersTools = new NumbersTools();
+        this.HumanNavigates = new HumanNavigates();
     }
     
     async handle() {
@@ -150,10 +151,7 @@ module.exports = class ScrapperProduct {
       };
   
       async mouseRandomMove(page){
-        await page.mouse.move(this.numbersTools.randomIntFromInterval(1,500), 
-                                this.numbersTools.randomIntFromInterval(11,790), 
-                                {steps: this.numbersTools.randomIntFromInterval(10,23)}
-                              );
+        await this.mouseRandomMoveAllScreen(page, [1, 6], [2, 5]);
       }
 
       async ofuscateBotBrowser(page){

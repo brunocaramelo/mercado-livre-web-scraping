@@ -1,5 +1,6 @@
 const WaitingFor = require('../../tools/WaitingFor');
 const NumbersTools = require('../../tools/Numbers');
+const HumanNavigates = require('../tools/HumanNavigates');
 
 module.exports = class ProductCurrentImages {
 
@@ -7,6 +8,7 @@ module.exports = class ProductCurrentImages {
         this.page = page;
         this.doDelay = new WaitingFor();
         this.numbersTools = new NumbersTools();
+        this.HumanNavigates = new HumanNavigates();
 
     }
 
@@ -20,10 +22,8 @@ module.exports = class ProductCurrentImages {
 
       for (let i = 0; i < wrappers.length; i++) {
 
-        await this.page.mouse.move(this.numbersTools.randomIntFromInterval(11,730), 
-              this.numbersTools.randomIntFromInterval(8,731), 
-              {steps: this.numbersTools.randomIntFromInterval(18,43)}
-        );
+        await this.mouseRandomMoveAllScreen(page, [1, 4], [2, 7]);
+
 
         const wrapper = wrappers[i];
 

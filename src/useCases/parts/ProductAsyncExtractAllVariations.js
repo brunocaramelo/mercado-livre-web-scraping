@@ -3,6 +3,7 @@ const ProductCurrentImages = require('./ProductCurrentImages');
 const ProductGetVariationOptions = require('./ProductGetVariationOptions');
 const WaitingFor = require('../../tools/WaitingFor');
 const NumbersTools = require('../../tools/Numbers');
+const HumanNavigates = require('../tools/HumanNavigates');
 
 module.exports = class ProductAsyncExtractAllVariations {
   constructor(page, pageDataInitial) {
@@ -10,7 +11,7 @@ module.exports = class ProductAsyncExtractAllVariations {
     this.pageDataInitial = pageDataInitial;
     this.doDelay = new WaitingFor();
     this.numbersTools = new NumbersTools();
-
+    this.HumanNavigates = new HumanNavigates();
   }
 
   async handle() {
@@ -46,10 +47,7 @@ module.exports = class ProductAsyncExtractAllVariations {
 
       for (const option of group.options.filter(opt => opt.available)) {
 
-        await this.page.mouse.move(this.numbersTools.randomIntFromInterval(10,690), 
-              this.numbersTools.randomIntFromInterval(15,830), 
-              {steps: this.numbersTools.randomIntFromInterval(11,53)}
-        );
+        await this.mouseRandomMoveAllScreen(page, [1, 4], [2, 8]);
 
         //await this.page.goto(option.href, {
         //  waitUntil: 'domcontentloaded',
