@@ -2,7 +2,7 @@ const ProductBaseInfo = require('./ProductBaseInfo');
 const ProductCurrentImages = require('./ProductCurrentImages');
 const ProductGetVariationOptions = require('./ProductGetVariationOptions');
 const WaitingFor = require('../../tools/WaitingFor');
-const NumbersTools = require('../tools/Numbers');
+const NumbersTools = require('../../tools/Numbers');
 
 module.exports = class ProductAsyncExtractAllVariations {
   constructor(page, pageDataInitial) {

@@ -1,5 +1,5 @@
 const WaitingFor = require('../../tools/WaitingFor');
-const NumbersTools = require('../tools/Numbers');
+const NumbersTools = require('../../tools/Numbers');
 
 module.exports = class ProductCurrentImages {
 
