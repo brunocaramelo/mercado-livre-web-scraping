@@ -2,6 +2,7 @@ const ProductBaseInfo = require('./ProductBaseInfo');
 const ProductCurrentImages = require('./ProductCurrentImages');
 const ProductGetVariationOptions = require('./ProductGetVariationOptions');
 const WaitingFor = require('../../tools/WaitingFor');
+const NumbersTools = require('../tools/Numbers');
 
 module.exports = class ProductAsyncExtractAllVariations {
   constructor(page, pageDataInitial) {
@@ -39,16 +40,35 @@ module.exports = class ProductAsyncExtractAllVariations {
         });
         return;
       }
-
       const group = variationGroups[level];
 
       for (const option of group.options.filter(opt => opt.available)) {
-        await this.page.goto(option.href, {
-          waitUntil: 'domcontentloaded',
-          timeout: 600000
+
+        await this.page.mouse.move(this.numbersTools.randomIntFromInterval(10,690), 
+              this.numbersTools.randomIntFromInterval(15,830), 
+              {steps: this.numbersTools.randomIntFromInterval(11,53)}
+        );
+
+        //await this.page.goto(option.href, {
+        //  waitUntil: 'domcontentloaded',
+        //  timeout: 600000
+        //});
+        
+        const linkSelector = `a.ui-pdp-variations--thumbnail[href="${option.href}"]`;
+        
+        await this.page.waitForSelector(linkSelector, {
+            visible: true,
+            timeout: 600000 
+        });
+        
+        await this.page.click(linkSelector);
+
+        await this.page.waitForNavigation({ 
+            waitUntil: 'domcontentloaded',
+            timeout: 600000
         });
 
-        this.doDelay.rangeMicroseconds(90 + level * 5, 110 + level * 5);
+        this.doDelay.rangeMicroseconds(900 + level * 6, 1431 + level * 7);
 
         await processLevel(level + 1, [...selectedOptions, option]);
       }
@@ -59,4 +79,7 @@ module.exports = class ProductAsyncExtractAllVariations {
     console.log(`(${this.constructor.name}) ending process`);
     return variations;
   }
+
+  
+
 };
