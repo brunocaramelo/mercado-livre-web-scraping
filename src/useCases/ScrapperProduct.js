@@ -110,32 +110,37 @@ module.exports = class ScrapperProduct {
       }
 
       async getBaseInfo(page) {
+        await page.waitForTimeout(this.numbersTools.randomIntFromInterval(900, 3500))
         await this.mouseRandomMove(page);
         return new ProductBaseInfo(page).handle();
       };
 
       async getFullDescription(page) {
+        await page.waitForTimeout(this.numbersTools.randomIntFromInterval(100, 1000))
         await this.mouseRandomMove(page);
         return new ProductFullDescription(page).handle();
       };
 
       async getSpecifications(page) {
+        await page.waitForTimeout(this.numbersTools.randomIntFromInterval(200, 600))
         await this.mouseRandomMove(page);
         return new ProductSpecifications(page).handle();
       };
 
       async getCurrentImages(page) {
+        await page.waitForTimeout(this.numbersTools.randomIntFromInterval(930, 3900))
         await this.mouseRandomMove(page);
         return new ProductCurrentImages(page).handle();
       };
 
-      async getVariationOptions(page) {       
+      async getVariationOptions(page) {    
+        await page.waitForTimeout(this.numbersTools.randomIntFromInterval(10, 100))
         await this.mouseRandomMove(page);     
         return new ProductGetVariationOptions(page).handle();
       };
 
       async extractAllVariations(page) {
-        
+        await page.waitForTimeout(this.numbersTools.randomIntFromInterval(980, 4300))
         await this.mouseRandomMove(page);
         if((await this.getVariationOptions(page)).length == 0) return [];
 
