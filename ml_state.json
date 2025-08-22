@@ -1,4 +1,255 @@
 {
-  "cookies": [],
-  "origins": []
+  "cookies": [
+    {
+      "name": "_d2id",
+      "value": "f2fcc9ed-1b90-4ae2-a708-c4c33a44623a-n",
+      "domain": ".mercadolivre.com.br",
+      "path": "/",
+      "expires": 1787367436.799405,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_csrf",
+      "value": "HvlracTdc2Y0P7PEowICd5yu",
+      "domain": "www.mercadolivre.com.br",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_mldataSessionId",
+      "value": "d07cf17a-81df-4cdb-a807-8c9bf02bdc8c",
+      "domain": ".mercadolivre.com.br",
+      "path": "/",
+      "expires": 1755833501.528321,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "c_ui-navigation",
+      "value": "6.6.144",
+      "domain": ".www.mercadolivre.com.br",
+      "path": "/",
+      "expires": 1758423438.134593,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_gcl_au",
+      "value": "1.1.144266053.1755831620",
+      "domain": ".mercadolivre.com.br",
+      "path": "/",
+      "expires": 1763607619,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.1647720020.1755831631",
+      "domain": ".mercadolivre.com.br",
+      "path": "/",
+      "expires": 1790391630.671943,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ttp",
+      "value": "31cmFNr5gKmcTZ8CveQa2rua26k",
+      "domain": ".tiktok.com",
+      "path": "/",
+      "expires": 1789527721.685518,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "MUID",
+      "value": "290296DED3BE6F102E55808ED2C26EE1",
+      "domain": ".bing.com",
+      "path": "/",
+      "expires": 1789527680.428263,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "TapAd_TS",
+      "value": "1755831694853",
+      "domain": ".tapad.com",
+      "path": "/",
+      "expires": 1761015723.595552,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "TapAd_DID",
+      "value": "40f01e06-353c-4ba3-89fd-8cb4583e45f2",
+      "domain": ".tapad.com",
+      "path": "/",
+      "expires": 1761015723.595599,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "TapAd_3WAY_SYNCS",
+      "value": "",
+      "domain": ".tapad.com",
+      "path": "/",
+      "expires": 1761015723.595639,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "navigation_items",
+      "value": "MLB5290777766%7C22082025030140%7CMLB12017777%7CMLB10170063",
+      "domain": ".mercadolivre.com.br",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "tooltips-configuration",
+      "value": "{\"compats_highlight_tooltip\":{\"view_cnt\":3,\"close_cnt\":0,\"view_time\":1755831716,\"close_time\":0}}",
+      "domain": "www.mercadolivre.com.br",
+      "path": "/",
+      "expires": 1787367716,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_uetsid",
+      "value": "44b1df407f0411f09ae369064ec87656",
+      "domain": ".mercadolivre.com.br",
+      "path": "/",
+      "expires": 1755918118,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_uetvid",
+      "value": "44b201107f0411f0a176f941f3e60327",
+      "domain": ".mercadolivre.com.br",
+      "path": "/",
+      "expires": 1789527718,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__rtbh.uid",
+      "value": "%7B%22eventType%22%3A%22uid%22%2C%22id%22%3A%22undefined%22%2C%22expiryDate%22%3A%222026-08-22T03%3A02%3A05.687Z%22%7D",
+      "domain": "www.mercadolivre.com.br",
+      "path": "/",
+      "expires": 1787367725,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__rtbh.lid",
+      "value": "%7B%22eventType%22%3A%22lid%22%2C%22id%22%3A%22zS7DjKRNx830Ho9XEVdk%22%2C%22expiryDate%22%3A%222026-08-22T03%3A02%3A05.687Z%22%7D",
+      "domain": "www.mercadolivre.com.br",
+      "path": "/",
+      "expires": 1787367725,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_fbp",
+      "value": "fb.2.1755831725852.130049004616199277",
+      "domain": ".mercadolivre.com.br",
+      "path": "/",
+      "expires": 1763607725,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga_NDJFKMJ2PD",
+      "value": "GS2.1.s1755831630$o1$g1$t1755831732$j19$l0$h0",
+      "domain": ".mercadolivre.com.br",
+      "path": "/",
+      "expires": 1790391732.309027,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_pin_unauth",
+      "value": "dWlkPU9EWXpOR0ZpTURFdFlXRmxZaTAwWVRoaUxUazJabVV0TkRoallqRmhNRFUyTVdJeA",
+      "domain": ".mercadolivre.com.br",
+      "path": "/",
+      "expires": 1787367732,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://www.mercadolivre.com.br",
+      "localStorage": [
+        {
+          "name": "__rtbh.lid",
+          "value": "{\"eventType\":\"lid\",\"id\":\"zS7DjKRNx830Ho9XEVdk\",\"expiryDate\":\"2026-08-22T03:02:05.687Z\"}"
+        },
+        {
+          "name": "lastExternalReferrerTime",
+          "value": "1755831725846"
+        },
+        {
+          "name": "NRBA_SESSION",
+          "value": "{\"value\":\"7b7431005786c52e\",\"inactiveAt\":1755833532298,\"expiresAt\":1755845937444,\"updatedAt\":1755831732298,\"sessionReplayMode\":0,\"sessionReplaySentFirstChunk\":false,\"sessionTraceMode\":0,\"traceHarvestStarted\":false,\"loggingMode\":0,\"serverTimeDiff\":-871,\"custom\":{}}"
+        },
+        {
+          "name": "_uetvid_exp",
+          "value": "Wed, 16 Sep 2026 03:01:58 GMT"
+        },
+        {
+          "name": "_uetsid_exp",
+          "value": "Sat, 23 Aug 2025 03:01:58 GMT"
+        },
+        {
+          "name": "topicsLastReferenceTime",
+          "value": "1755831725859"
+        },
+        {
+          "name": "__rtbh.uid",
+          "value": "{\"eventType\":\"uid\",\"id\":\"undefined\",\"expiryDate\":\"2026-08-22T03:02:05.687Z\"}"
+        },
+        {
+          "name": "_uetvid",
+          "value": "44b201107f0411f0a176f941f3e60327"
+        },
+        {
+          "name": "lastExternalReferrer",
+          "value": "empty"
+        },
+        {
+          "name": "_gcl_ls",
+          "value": "{\"schema\":\"gcl\",\"version\":1,\"gcl_ctr\":{\"value\":{\"value\":0,\"creationTimeMs\":1755831619660},\"expires\":1763607619660}}"
+        },
+        {
+          "name": "_uetsid",
+          "value": "44b1df407f0411f09ae369064ec87656"
+        }
+      ]
+    }
+  ]
 }

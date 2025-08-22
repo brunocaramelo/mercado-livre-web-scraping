@@ -14,11 +14,6 @@ class NavigatorFactory {
   async launchAndContexthStrategy(navigatorInst) {
     const launched = await this.launchStrategy(navigatorInst);
 
-    if (process.env.USE_SPECIFIC_PROFILE === 'true') {
-      this.contextInstance = launched;
-      return this.contextInstance;
-    }
-
     this.browserInstance = launched;
 
     this.contextInstance = await launched.newContext({
@@ -34,23 +29,15 @@ class NavigatorFactory {
     const proxyIpPort = 'http://'+proxyIpPortGet;
 
     console.log('(launchStrategy) aplicando proxy: '+proxyIpPort);
-
-    if (process.env.USE_SPECIFIC_PROFILE === 'true') {
-      return await navigator.launchPersistentContext(process.env.PATH_SPECIFIC_PROFILE, {
-        headless: false,
-        slowMo: 50,
-         proxy: {
-        server: proxyIpPort,
-      }
-      });
-    }
-
-    return await navigator.launch({
+    
+    let optionsLaunch = {
       headless: false,
        proxy: {
         server: proxyIpPort,
       }
-    });
+    };
+
+    return await navigator.launch(optionsLaunch);
   }
 
   async close() {
