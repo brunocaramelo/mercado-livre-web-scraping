@@ -14,7 +14,7 @@ module.exports = class ProductCurrentImages {
 
     async handle() {
       
-      console.log((new Date()).toISOString()+'('+this.constructor.name+') starting process');
+      console.log((new Date()).toISOString()+' ('+this.constructor.name+') starting process');
 
       let imageList = [];
 
@@ -53,7 +53,7 @@ module.exports = class ProductCurrentImages {
         });
       }
 
-      console.log((new Date()).toISOString()+'('+this.constructor.name+') ending process');
+      console.log((new Date()).toISOString()+' ('+this.constructor.name+') ending process');
 
       return imageList;
 

@@ -33,7 +33,7 @@ module.exports = class ScrapperProduct {
     
     async handle() {
       
-        console.log((new Date()).toISOString()+'('+this.constructor.name+') starting process');
+        console.log((new Date()).toISOString()+' ('+this.constructor.name+') starting process');
 
         chromium.use(stealth);
 
@@ -45,7 +45,7 @@ module.exports = class ScrapperProduct {
 
         const returnProduct =  await this.processProductPage(page);
        
-        console.log((new Date()).toISOString()+'('+this.constructor.name+') ending process');
+        console.log((new Date()).toISOString()+' ('+this.constructor.name+') ending process');
 
         await this.navigatorFactory.close();
 
@@ -59,6 +59,8 @@ module.exports = class ScrapperProduct {
               timeout: 600000
           });
           
+          await this.checkBlockedLogin(page);
+
           await page.waitForSelector('.ui-pdp-title');
 
           await this.closeCepPopUp(page);
@@ -117,6 +119,17 @@ module.exports = class ScrapperProduct {
         } 
       }
 
+     async checkBlockedLogin(page) {
+      const selector = 'span.andes-button__content:has-text("Sou novo")';
+      const element = await page.$(selector);
+
+      console.log((new Date()).toISOString()+'(checkBlockedLogin) Verificando se fui bloqueado pela plataforma');
+
+     if (element) {
+        throw new Error("⚠️ Bloqueio de login detectado: botão 'Sou novo' apareceu.");
+      }
+     return true;
+    }
       async getBaseInfo(page) {
         await page.waitForTimeout(this.numbersTools.randomIntFromInterval(900, 3500))
         await this.mouseRandomMove(page);

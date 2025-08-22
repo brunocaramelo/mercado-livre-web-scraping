@@ -7,7 +7,7 @@ module.exports = class ProductBaseInfo {
 
     async handle() {
 
-        console.log((new Date()).toISOString()+'('+this.constructor.name+') starting process');
+        console.log((new Date()).toISOString()+' ('+this.constructor.name+') starting process');
 
         try {
 
@@ -16,7 +16,7 @@ module.exports = class ProductBaseInfo {
             const priceContent = await productPriceLocator.getAttribute('content');
             const producCurrencyLocator = this.page.locator('.andes-money-amount--cents-superscript').locator('.andes-money-amount__currency-symbol').first();
             
-            console.log((new Date()).toISOString()+'('+this.constructor.name+') ending process');
+            console.log((new Date()).toISOString()+' ('+this.constructor.name+') ending process');
 
             return {
                 title: await productTitleLocator.innerText(),
