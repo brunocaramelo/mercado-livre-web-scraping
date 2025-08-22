@@ -26,6 +26,7 @@ module.exports = class FactoryProxyBrowser {
                 const selectedProxy = proxies[randomIndex];
 
                 return {
+                    type: selectedProxy.type,
                     ip: selectedProxy.ip,
                     port: selectedProxy.port
                 };
