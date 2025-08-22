@@ -47,7 +47,7 @@ module.exports = class ProductAsyncExtractAllVariations {
 
       for (const option of group.options.filter(opt => opt.available)) {
 
-        await this.humanNavigates.mouseRandomMoveAllScreen(page, [1, 4], [2, 8]);
+        await this.humanNavigates.mouseRandomMoveAllScreen(this.page, [1, 4], [2, 8]);
 
         //await this.page.goto(option.href, {
         //  waitUntil: 'domcontentloaded',
