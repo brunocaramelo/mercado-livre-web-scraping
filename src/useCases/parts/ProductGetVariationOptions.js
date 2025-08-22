@@ -7,7 +7,7 @@ module.exports = class ProductGetVariationOptions {
 
     async handle() {
       
-      console.log('('+this.constructor.name+') starting process');
+      console.log((new Date()).toISOString()+'('+this.constructor.name+') starting process');
 
       const variationGroups = [];
       const groupHandles = await this.page.$$('.ui-pdp-variations__picker');
@@ -43,7 +43,7 @@ module.exports = class ProductGetVariationOptions {
 
       }
 
-      console.log('('+this.constructor.name+') ending process');
+      console.log((new Date()).toISOString()+'('+this.constructor.name+') ending process');
 
 
       return variationGroups;    

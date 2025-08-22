@@ -28,7 +28,7 @@ class NavigatorFactory {
     const proxyIpPortGet = await this.factoryProxyBrowser.getInstance();
     const proxyIpPort = proxyIpPortGet.type+'://'+proxyIpPortGet.ip+':'+proxyIpPortGet.port;
 
-    console.log('(launchStrategy) aplicando proxy: '+proxyIpPort);
+    console.log((new Date()).toISOString()+'(launchStrategy) aplicando proxy: '+proxyIpPort);
     
     let optionsLaunch = {
       headless: false,

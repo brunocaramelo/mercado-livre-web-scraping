@@ -129,6 +129,9 @@ async function mainProxiesHttp(){
 }
 
 async function mainProxiesSocks(){
+  
+  return [];
+
   const proxies = await fetchProxiesSocks();
 
     const workingProxies = [];

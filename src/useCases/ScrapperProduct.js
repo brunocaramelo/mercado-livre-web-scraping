@@ -33,7 +33,7 @@ module.exports = class ScrapperProduct {
     
     async handle() {
       
-        console.log('('+this.constructor.name+') starting process');
+        console.log((new Date()).toISOString()+'('+this.constructor.name+') starting process');
 
         chromium.use(stealth);
 
@@ -45,7 +45,7 @@ module.exports = class ScrapperProduct {
 
         const returnProduct =  await this.processProductPage(page);
        
-        console.log('('+this.constructor.name+') ending process');
+        console.log((new Date()).toISOString()+'('+this.constructor.name+') ending process');
 
         await this.navigatorFactory.close();
 
@@ -101,7 +101,7 @@ module.exports = class ScrapperProduct {
 
       async closeCepPopUp(page) {        
         try {
-          console.log('(closeCepPopUp) started');
+          console.log((new Date()).toISOString()+'(closeCepPopUp) started');
           const selector = 'button.onboarding-cp-button.andes-button.andes-button--transparent.andes-button--small[data-js="onboarding-cp-close"][data-origin="header"]';
           
           await page.waitForSelector(selector, { timeout: 5000 });
@@ -110,10 +110,10 @@ module.exports = class ScrapperProduct {
         
           if (await closeButton.isVisible()) {
             await closeButton.click();
-            console.log('(closeCepPopUp) ended');
+            console.log((new Date()).toISOString()+'(closeCepPopUp) ended');
           }
         } catch (e) {
-          console.log('(closeCepPopUp) not found');
+          console.log((new Date()).toISOString()+'(closeCepPopUp) not found');
         } 
       }
 
