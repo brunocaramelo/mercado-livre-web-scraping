@@ -72,7 +72,7 @@ module.exports = class ProductAsyncExtractAllVariations {
         // });
 
         
-        await this.page.waitForTimeout(this.numbersTools.randomIntFromInterval((900 + level * 6), (1431 + level * 7)))
+        await this.page.waitForTimeout(this.numbersTools.randomIntFromInterval((900 + level * 2), (1431 + level * 3)))
 
         await processLevel(level + 1, [...selectedOptions, option]);
       }
