@@ -181,16 +181,6 @@
       "sameSite": "None"
     },
     {
-      "name": "_mldataSessionId",
-      "value": "b8bf14d0-f316-47be-9fed-47ca9150f0c4",
-      "domain": ".mercadolivre.com.br",
-      "path": "/",
-      "expires": 1755837017.623647,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "Lax"
-    },
-    {
       "name": "_ga_NDJFKMJ2PD",
       "value": "GS2.1.s1755835260$o2$g0$t1755835260$j60$l0$h0",
       "domain": ".mercadolivre.com.br",
@@ -199,6 +189,16 @@
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
+    },
+    {
+      "name": "_mldataSessionId",
+      "value": "468c5d7a-c321-4540-875a-e0d37ea34f47",
+      "domain": ".mercadolivre.com.br",
+      "path": "/",
+      "expires": 1755905566.818328,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
     }
   ],
   "origins": [
