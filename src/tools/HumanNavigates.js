@@ -33,6 +33,8 @@ module.exports = class HumanNavigates {
 
         await page.mouse.up();
         
-        await page.waitForTimeout(this.numbersTools.randomIntFromInterval(999, 1790));
+        await page.waitForTimeout(this.numbersTools.randomIntFromInterval(200, 700));
+
+        await page.evaluate(() => window.scrollTo(0, 0));
     }
 }
