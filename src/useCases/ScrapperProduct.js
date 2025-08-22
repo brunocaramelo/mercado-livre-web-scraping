@@ -47,9 +47,13 @@ module.exports = class ScrapperProduct {
        
         console.log((new Date()).toISOString()+' ('+this.constructor.name+') ending process');
 
-        await this.navigatorFactory.close();
+        await this.closeSelf();
 
         return returnProduct;
+    }
+
+    async closeSelf() {
+      await this.navigatorFactory.close();
     }
 
     async processProductPage(page) {

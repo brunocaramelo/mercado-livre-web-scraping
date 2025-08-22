@@ -17,13 +17,15 @@ exports.productByUrlAsyncCallback = async (req, res) => {
       res.status(200).json({ status: 'success', message: 'Processamento iniciado' });
 
       setImmediate(async () => {
-          const maxRety = 4;
+          const maxRety = 400;
+
+          const getProductDataInstance = await new ScrapperProduct(targetUrl);
 
           for (let retryCount = 1; retryCount <= 4; retryCount++) {
             try {
               console.log(`[BG] Iniciando scraping para ${targetUrl}`);
 
-              const getProductData = await new ScrapperProduct(targetUrl).handle();
+              const getProductData = await getProductDataInstance.handle();
 
               console.log(`[BG] Scraping concluído para ${externalId}`);
 
@@ -51,7 +53,9 @@ exports.productByUrlAsyncCallback = async (req, res) => {
                       lastError: err.message || 'Unknown error'
                   }));
               }
-              doDelay.rangeMicroseconds(510, 1502);
+              getProductDataInstance.closeSelf();
+
+              doDelay.rangeMicroseconds(2010, 3102);
             }
           }
         });
