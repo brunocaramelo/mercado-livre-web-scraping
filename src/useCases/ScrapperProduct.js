@@ -171,28 +171,5 @@ module.exports = class ScrapperProduct {
         return this.hideBotTool.customAddInitScript(page);
       }
 
-      async launchAndContexthStrategy(navigatorInst){
-        const launched = await this.launchStrategy(navigatorInst);
-        
-        if (process.env.USE_SPECIFIC_PROFILE == 'true') {
-          return launched;
-        }
-
-        return launched.newContext();
-      }
-
-      async launchStrategy(navigator){
-        if (process.env.USE_SPECIFIC_PROFILE == 'true') {
-          return await navigator.launchPersistentContext(process.env.PATH_SPECIFIC_PROFILE , { 
-            headless: false,
-            slowMo: 50
-          });
-        }
-        
-        return await navigator.launch({
-          headless: false 
-        });
-      }
-
 }
 
