@@ -1,12 +1,12 @@
 const fs = require('fs');
 const path = require('path');
-const randbomProxy = require('./RandbomProxy');
-const RandbomProxy = require('./RandbomProxy');
+const randbomProxy = require('./FactoryProxyBrowser');
+const FactoryProxyBrowser = require('./FactoryProxyBrowser');
 class NavigatorFactory {
   constructor() {
     this.browserInstance = null;
     this.contextInstance = null;
-    this.randbomProxy = new RandbomProxy();
+    this.factoryProxyBrowser = new FactoryProxyBrowser();
 
     this.statePath = path.resolve(process.env.PLAYWRIGHT_STATE_PATH || 'ml_state.json');
   }
@@ -25,8 +25,8 @@ class NavigatorFactory {
 
   async launchStrategy(navigator) {
 
-    const proxyIpPortGet = await this.randbomProxy.randProxy();
-    const proxyIpPort = 'http://'+proxyIpPortGet;
+    const proxyIpPortGet = await this.factoryProxyBrowser.getInstance();
+    const proxyIpPort = 'http://'+proxyIpPortGet.ip+':'+proxyIpPortGet.port;
 
     console.log('(launchStrategy) aplicando proxy: '+proxyIpPort);
     

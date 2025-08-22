@@ -50,8 +50,8 @@ module.exports = class ProductAsyncExtractAllVariations {
         await this.humanNavigates.mouseRandomMoveAllScreen(this.page, [1, 4], [2, 8]);
 
         await this.page.goto(option.href, {
-         waitUntil: 'domcontentloaded',
-         timeout: 600000
+          waitUntil: 'domcontentloaded',
+          timeout: 600000
         });
         
         // const linkSelector = `a.ui-pdp-variations--thumbnail[href="${option.href}"]`;
