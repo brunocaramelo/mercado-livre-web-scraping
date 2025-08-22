@@ -1,11 +1,13 @@
 const ScrapperProduct = require('../useCases/ScrapperProduct');
+const WaitingFor = require('../tools/WaitingFor');
 
 exports.productByUrlAsyncCallback = async (req, res) => {
 
     const { urlEncoded } = req.params;
    
     try {
-  
+      const doDelay = new WaitingFor();
+
       const { targetUrl, callbackUrl, externalId } = req.body;
 
       if (!targetUrl || !callbackUrl || !externalId) {
@@ -35,6 +37,9 @@ exports.productByUrlAsyncCallback = async (req, res) => {
               });
 
               console.log(`[BG] Callback enviado para ${callbackUrl}`);
+
+              return; 
+
             } catch (err) {
               console.error(`[BG] Erro no processamento (${externalId}) e pagina ${targetUrl} :`, err);
               if (retryCount === maxRety) {
@@ -46,6 +51,7 @@ exports.productByUrlAsyncCallback = async (req, res) => {
                       lastError: err.message || 'Unknown error'
                   }));
               }
+              doDelay.rangeMicroseconds(510, 1502);
             }
           }
         });
