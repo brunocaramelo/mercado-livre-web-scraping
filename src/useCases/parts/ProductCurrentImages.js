@@ -8,7 +8,7 @@ module.exports = class ProductCurrentImages {
         this.page = page;
         this.doDelay = new WaitingFor();
         this.numbersTools = new NumbersTools();
-        this.HumanNavigates = new HumanNavigates();
+        this.humanNavigates = new HumanNavigates();
 
     }
 
@@ -22,9 +22,9 @@ module.exports = class ProductCurrentImages {
 
       for (let i = 0; i < wrappers.length; i++) {
 
-        await this.mouseRandomMoveAllScreen(page, [1, 4], [2, 7]);
+        await this.humanNavigates.mouseRandomMoveAllScreen(this.page, [1, 4], [2, 7]);
         
-        await page.waitForTimeout(this.numbersTools.randomIntFromInterval(500, 1300))
+        await this.page.waitForTimeout(this.numbersTools.randomIntFromInterval(500, 1300))
 
 
         const wrapper = wrappers[i];

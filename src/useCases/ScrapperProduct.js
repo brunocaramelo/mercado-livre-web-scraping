@@ -1,7 +1,11 @@
 const { chromium , firefox, webkit } = require('playwright-extra');
 const path = require('path');
 require('dotenv').config();
-const stealth = require('puppeteer-extra-plugin-stealth')();
+const stealth = require('puppeteer-extra-plugin-stealth')(
+    {
+      useragent: true
+    }
+  );
 
 
 const ProductBaseInfo = require('./parts/ProductBaseInfo');

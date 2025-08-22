@@ -1,10 +1,13 @@
 const fs = require('fs');
 const path = require('path');
-
+const randbomProxy = require('./RandbomProxy');
+const RandbomProxy = require('./RandbomProxy');
 class NavigatorFactory {
   constructor() {
     this.browserInstance = null;
     this.contextInstance = null;
+    this.randbomProxy = new RandbomProxy();
+
     this.statePath = path.resolve(process.env.PLAYWRIGHT_STATE_PATH || 'ml_state.json');
   }
 
@@ -12,30 +15,41 @@ class NavigatorFactory {
     const launched = await this.launchStrategy(navigatorInst);
 
     if (process.env.USE_SPECIFIC_PROFILE === 'true') {
-      // Persistente já retorna o contexto
       this.contextInstance = launched;
       return this.contextInstance;
     }
 
-    // Não persistente → cria contexto com state
     this.browserInstance = launched;
+
     this.contextInstance = await launched.newContext({
-      storageState: this._loadState()
+      storageState: this._loadState(),
     });
 
     return this.contextInstance;
   }
 
   async launchStrategy(navigator) {
+
+    const proxyIpPortGet = await this.randbomProxy.randProxy();
+    const proxyIpPort = 'http://'+proxyIpPortGet;
+
+    console.log('(launchStrategy) aplicando proxy: '+proxyIpPort);
+
     if (process.env.USE_SPECIFIC_PROFILE === 'true') {
       return await navigator.launchPersistentContext(process.env.PATH_SPECIFIC_PROFILE, {
         headless: false,
-        slowMo: 50
+        slowMo: 50,
+         proxy: {
+        server: proxyIpPort,
+      }
       });
     }
 
     return await navigator.launch({
-      headless: false
+      headless: false,
+       proxy: {
+        server: proxyIpPort,
+      }
     });
   }
 
@@ -43,7 +57,6 @@ class NavigatorFactory {
     if (!this.contextInstance) return;
 
     try {
-      // Salvar estado atual (cookies + storages)
       await this.contextInstance.storageState({ path: this.statePath });
     } catch (err) {
       console.error('(NavigatorFactory) erro ao salvar storageState:', err);

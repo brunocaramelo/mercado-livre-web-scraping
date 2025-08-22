@@ -14,25 +14,25 @@ module.exports = class HumanNavigates {
     }
 
     async mouseRandomMoveAllScreen(page, arrPreClick, arrPostClick){
-        const preClickMoves = numbersTools.randomIntFromInterval(arrPreClick[0], arrPreClick[1]);
+        const preClickMoves = this.numbersTools.randomIntFromInterval(arrPreClick[0], arrPreClick[1]);
        
         for (let i = 0; i < preClickMoves; i++) {
-            await page.mouse.move(numbersTools.randomIntFromInterval(1, 700),
-                                numbersTools.randomIntFromInterval(11, 990),
-                                {steps: numbersTools.randomIntFromInterval(7, 23)});
+            await page.mouse.move(this.numbersTools.randomIntFromInterval(1, 700),
+                                this.numbersTools.randomIntFromInterval(11, 990),
+                                {steps: this.numbersTools.randomIntFromInterval(7, 23)});
         }
 
         await page.mouse.down();
 
-        const postClickMoves = numbersTools.randomIntFromInterval(arrPostClick[0], arrPostClick[1]);
+        const postClickMoves = this.numbersTools.randomIntFromInterval(arrPostClick[0], arrPostClick[1]);
         for (let i = 0; i < postClickMoves; i++) {
-            await page.mouse.move(numbersTools.randomIntFromInterval(1, 700),
-                                numbersTools.randomIntFromInterval(11, 990),
-                                {steps: numbersTools.randomIntFromInterval(7, 23)});
+            await page.mouse.move(this.numbersTools.randomIntFromInterval(1, 700),
+                                this.numbersTools.randomIntFromInterval(11, 990),
+                                {steps: this.numbersTools.randomIntFromInterval(7, 23)});
         }
 
         await page.mouse.up();
         
-        await page.waitForTimeout(numbersTools.randomIntFromInterval(999, 1790));
+        await page.waitForTimeout(this.numbersTools.randomIntFromInterval(999, 1790));
     }
 }

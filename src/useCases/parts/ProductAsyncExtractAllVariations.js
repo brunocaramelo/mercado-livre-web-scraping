@@ -11,7 +11,7 @@ module.exports = class ProductAsyncExtractAllVariations {
     this.pageDataInitial = pageDataInitial;
     this.doDelay = new WaitingFor();
     this.numbersTools = new NumbersTools();
-    this.HumanNavigates = new HumanNavigates();
+    this.humanNavigates = new HumanNavigates();
   }
 
   async handle() {
@@ -47,7 +47,7 @@ module.exports = class ProductAsyncExtractAllVariations {
 
       for (const option of group.options.filter(opt => opt.available)) {
 
-        await this.mouseRandomMoveAllScreen(page, [1, 4], [2, 8]);
+        await this.humanNavigates.mouseRandomMoveAllScreen(page, [1, 4], [2, 8]);
 
         //await this.page.goto(option.href, {
         //  waitUntil: 'domcontentloaded',
