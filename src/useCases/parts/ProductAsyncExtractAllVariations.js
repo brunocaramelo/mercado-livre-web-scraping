@@ -49,27 +49,27 @@ module.exports = class ProductAsyncExtractAllVariations {
 
         await this.humanNavigates.mouseRandomMoveAllScreen(this.page, [1, 4], [2, 8]);
 
-        //await this.page.goto(option.href, {
-        //  waitUntil: 'domcontentloaded',
-        //  timeout: 600000
-        //});
-        
-        const linkSelector = `a.ui-pdp-variations--thumbnail[href="${option.href}"]`;
-        
-        await this.page.waitForSelector(linkSelector, {
-            visible: true,
-            timeout: 600000 
+        await this.page.goto(option.href, {
+         waitUntil: 'domcontentloaded',
+         timeout: 600000
         });
         
-        await this.page.click(linkSelector);
+        // const linkSelector = `a.ui-pdp-variations--thumbnail[href="${option.href}"]`;
+        
+        // await this.page.waitForSelector(linkSelector, {
+        //     visible: true,
+        //     timeout: 600000 
+        // });
+        
+        // await this.page.click(linkSelector);
 
-        await this.page.waitForNavigation({ 
-            waitUntil: 'domcontentloaded',
-            timeout: 600000
-        });
+        // await this.page.waitForNavigation({ 
+        //     waitUntil: 'domcontentloaded',
+        //     timeout: 600000
+        // });
 
         
-        await page.waitForTimeout(this.numbersTools.randomIntFromInterval((900 + level * 6), (1431 + level * 7)))
+        await this.page.waitForTimeout(this.numbersTools.randomIntFromInterval((900 + level * 6), (1431 + level * 7)))
 
         await processLevel(level + 1, [...selectedOptions, option]);
       }
