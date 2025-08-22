@@ -36,10 +36,15 @@ exports.productByUrlAsyncCallback = async (req, res) => {
 
               console.log(`[BG] Callback enviado para ${callbackUrl}`);
             } catch (err) {
-              console.error(`[BG] Erro no processamento (${externalId}):`, err);
-              if (retryCount === MAX_RETRIES) {
-                  console.error(`[BG] Todas as ${maxRety} tentativas falharam para ${externalId}. Lançando exceção.`);
-                  throw new Error(`Failed to process and callback after ${maxRety} retries for ${externalId} to get data into: ${callbackUrl}`);
+              console.error(`[BG] Erro no processamento (${externalId}) e pagina ${targetUrl} :`, err);
+              if (retryCount === maxRety) {
+                  console.error(`[BG] Todas as ${maxRety} tentativas falharam para ${externalId} e pagina ${targetUrl} . Lançando exceção.`);
+                  
+                  throw new Error(JSON.stringify({ 
+                      error: 'Failed to process and callback after ' + maxRety + ' retries',
+                      details: `Scraping for externalId: ${externalId} failed on target page ${targetUrl}`,
+                      lastError: err.message || 'Unknown error'
+                  }));
               }
             }
           }
@@ -47,6 +52,6 @@ exports.productByUrlAsyncCallback = async (req, res) => {
 
       } catch (error) {
         console.error('Api error:', error);
-        res.status(500).json({ error: 'Internal Server Error' });
+        res.status(500).json(JSON.parse(error));
       }
   };
