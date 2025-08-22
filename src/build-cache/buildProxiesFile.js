@@ -41,52 +41,122 @@ async function testProxy(ip, port) {
 }
 
 // Função original para buscar proxies
-async function fetchProxies() {
-  console.log("🔍 Baixando lista de proxies...");
+async function fetchProxiesHttp() {
+  console.log("🔍 Baixando lista de proxies http...");
   const { data } = await axios.get("https://free-proxy-list.net/pt/");
   const $ = cheerio.load(data);
 
+  let counterAllProxies = 0;
   const proxies = [];
   $(".table-striped tbody tr").each((_, row) => {
     const tds = $(row).find("td");
     const ip = $(tds[0]).text();
     const port = $(tds[1]).text();
+    const type = 'http';
     const https = $(tds[6]).text();
 
     if (https === "yes") {
-      proxies.push({ ip, port });
+      proxies.push({ ip, port , type });
     }
+
+    counterAllProxies++;
+
   });
 
-  console.log(`📋 Encontrados ${proxies.length} proxies HTTPS.`);
+  console.log(`📋 Buscando em ${counterAllProxies} proxies http.`);
+  console.log(`📋 Encontrados ${proxies.length} proxies http.`);
+
+  return proxies;
+}
+
+async function fetchProxiesSocks() {
+  console.log("🔍 Baixando lista de proxies socks...");
+  const { data } = await axios.get("https://free-proxy-list.net/pt/socks-proxy.html");
+  const $ = cheerio.load(data);
+
+  let counterAllProxies = 0;
+  const proxies = [];
+  $(".table-striped tbody tr").each((_, row) => {
+    const tds = $(row).find("td");
+    const ip = $(tds[0]).text();
+    const port = $(tds[1]).text();
+    const type = $(tds[4]).text();
+
+    // if (https === "yes") {
+      proxies.push({ ip, port , type });
+    // }
+
+    counterAllProxies++;
+
+  });
+
+  console.log(`📋 Encontrados ${proxies.length} proxies socks.`);
+
   return proxies;
 }
 
 // Função principal que orquestra tudo
 async function main() {
-  const proxies = await fetchProxies();
 
-  const workingProxies = [];
-  const limit = 5; // Limita a concorrência para evitar sobrecarga
+  const listHttp = await mainProxiesHttp();
+  const listSocks = await mainProxiesSocks();
+  
+  const workingProxies = [...listHttp, ...listSocks];
 
-  for (let i = 0; i < proxies.length; i += limit) {
-    const batch = proxies.slice(i, i + limit);
-    const results = await Promise.all(
-      batch.map((p) => testProxy(p.ip, p.port))
-    );
-    workingProxies.push(...results.filter((r) => r.success));
-  }
-
-  console.log("\n✅ Proxies funcionando:");
-  console.log(workingProxies);
-
-  // Salva os proxies em um arquivo JSON
   fs.writeFileSync(
-    "valid-proxies.json",
-    JSON.stringify(workingProxies, null, 2)
-  );
+      "valid-proxies.json",
+      JSON.stringify(workingProxies, null, 2)
+    );
 
   console.log("\n📁 Lista de proxies válidos salva em valid-proxies.json");
 }
+
+async function mainProxiesHttp(){
+  const proxies = await fetchProxiesHttp();
+
+    const workingProxies = [];
+    const limit = 5; // Limita a concorrência para evitar sobrecarga
+
+    for (let i = 0; i < proxies.length; i += limit) {
+      const batch = proxies.slice(i, i + limit);
+      const results = await Promise.all(
+        batch.map((p) => testProxy(p.ip, p.port))
+      );
+      workingProxies.push(...results.filter((r) => r.success));
+    }
+
+    console.log("\n✅ Proxies funcionando:");
+    console.log(workingProxies);
+
+    // Salva os proxies em um arquivo JSON
+    
+
+}
+
+async function mainProxiesSocks(){
+  const proxies = await fetchProxiesSocks();
+
+    const workingProxies = [];
+    const limit = 5; // Limita a concorrência para evitar sobrecarga
+
+    for (let i = 0; i < proxies.length; i += limit) {
+      const batch = proxies.slice(i, i + limit);
+      const results = await Promise.all(
+        batch.map((p) => testProxy(p.ip, p.port))
+      );
+      workingProxies.push(...results.filter((r) => r.success));
+    }
+
+    console.log("\n✅ Proxies funcionando:");
+    console.log(workingProxies);
+
+    // Salva os proxies em um arquivo JSON
+    fs.writeFileSync(
+      "valid-proxies.json",
+      JSON.stringify(workingProxies, null, 2)
+    );
+
+}
+
 
 main().catch(console.error);
