@@ -3,8 +3,10 @@ const cheerio = require("cheerio");
 const axios = require("axios");
 const fs = require("fs"); 
 
-async function testProxy(type ,ip, port) {
+async function testProxy(typeParam ,ip, port) {
   let browser = null;
+  const type = typeParam.toLowerCase();
+
   try {
     const proxyUrl = `${type}://${ip}:${port}`;
     console.log(`⏳ Testando proxy: ${proxyUrl}`);
@@ -29,7 +31,7 @@ async function testProxy(type ,ip, port) {
     return {type, ip, port, success: true };
   } catch (err) {
     console.log(`❌ FALHOU: ${ip}:${port}`);
-    return { ip, port, success: false };
+    return {type, ip, port, success: false };
   } finally {
     if (browser) {
       await browser.close();
