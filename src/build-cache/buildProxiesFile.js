@@ -25,7 +25,7 @@ async function testProxy(typeParam ,ip, port) {
    
     await page.goto(productUri, {
               waitUntil: 'domcontentloaded',
-              timeout: 600000
+              timeout: 10000
     });
  
     const targetFailedString = '/gz/account-verification';
@@ -106,7 +106,7 @@ async function fetchProxiesSocks() {
     const ip = $(tds[0]).text();
     const port = $(tds[1]).text();
     const type = $(tds[4]).text();
-
+    
     // if (https === "yes") {
       proxies.push({ ip, port , type });
     // }
