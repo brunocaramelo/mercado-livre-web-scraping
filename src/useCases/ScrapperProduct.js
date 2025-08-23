@@ -124,16 +124,17 @@ module.exports = class ScrapperProduct {
       }
 
      async checkBlockedLogin(page) {
-      const selector = 'span.andes-button__content:has-text("Sou novo")';
-      const element = await page.$(selector);
+        const targetFailedString = '/gz/account-verification';
 
-      console.log((new Date()).toISOString()+'(checkBlockedLogin) Verificando se fui bloqueado pela plataforma');
+        const currentUrl = page.url();
+        console.log((new Date()).toISOString()+'(checkBlockedLogin) Verificando se fui bloqueado pela plataforma');
 
-     if (element) {
-        throw new Error("⚠️ Bloqueio de login detectado: botão 'Sou novo' apareceu.");
+        if (currentUrl.includes(targetFailedString)) {
+          throw new Error('Bloqueio de login: A página de verificação de conta foi detectada.');
+        }
+        return true;
       }
-     return true;
-    }
+
       async getBaseInfo(page) {
         await page.waitForTimeout(this.numbersTools.randomIntFromInterval(900, 3500))
         await this.mouseRandomMove(page);

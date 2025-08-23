@@ -7,9 +7,10 @@ async function testProxy(typeParam ,ip, port) {
   let browser = null;
   const type = typeParam.toLowerCase();
 
+  const proxyUrl = `${type}://${ip}:${port}`;
+  console.log(`⏳ Testando proxy: ${proxyUrl}`);
+
   try {
-    const proxyUrl = `${type}://${ip}:${port}`;
-    console.log(`⏳ Testando proxy: ${proxyUrl}`);
 
     browser = await chromium.launch({
       proxy: {
@@ -20,18 +21,26 @@ async function testProxy(typeParam ,ip, port) {
 
     const page = await browser.newPage();
 
-    await page.goto("https://api.ipify.org?format=json", {
-      timeout: 15000, 
+    const productUri = "https://www.mercadolivre.com.br/alimento-premier-super-premium-racas-especificas-shih-tzu-para-co-adulto-de-raza-pequena-sabor-frango-de-75-kg/p/MLB12017777";
+   
+    await page.goto(productUri, {
+              waitUntil: 'domcontentloaded',
+              timeout: 600000
     });
+ 
+    const targetFailedString = '/gz/account-verification';
 
-    const body = await page.innerText("body");
-    const data = JSON.parse(body);
+    const currentUrl = page.url();
 
-    console.log(`✅ FUNCIONA: ${proxyUrl} -> ${data.ip}`);
+    if (currentUrl.includes(targetFailedString)) {
+      throw new Error('Bloqueio de login: A página de verificação de conta foi detectada.');
+    }
+
+    console.log(`✅ FUNCIONA: ${proxyUrl} -> ${currentUrl}`);
     return {type, ip, port, success: true };
   } catch (err) {
-    console.log(`❌ FALHOU: ${ip}:${port}`);
-    return {type, ip, port, success: false };
+    console.log(`❌ FALHOU: ${proxyUrl}, causa: `+err.message);
+    return {type, ip, port, success: false , exception: err.message};
   } finally {
     if (browser) {
       await browser.close();
@@ -40,29 +49,47 @@ async function testProxy(typeParam ,ip, port) {
 }
 
 async function fetchProxiesHttp() {
+  // Lista de URLs para buscar os proxies. Você pode adicionar mais aqui.
+  const proxyUrls = [
+    "https://free-proxy-list.net/pt/",
+    "https://free-proxy-list.net/pt/us-proxy.html",
+    "https://free-proxy-list.net/pt/uk-proxy.html",
+    "https://free-proxy-list.net/pt/ssl-proxy.html",
+    "https://free-proxy-list.net/pt/anonymous-proxy.html",
+    "https://free-proxy-list.net/pt/google-proxy.html",
+  ];
+
   console.log("🔍 Baixando lista de proxies http...");
-  const { data } = await axios.get("https://free-proxy-list.net/pt/");
-  const $ = cheerio.load(data);
-
-  let counterAllProxies = 0;
+  
+  const uniqueProxies = new Set();
   const proxies = [];
-  $(".table-striped tbody tr").each((_, row) => {
-    const tds = $(row).find("td");
-    const ip = $(tds[0]).text();
-    const port = $(tds[1]).text();
-    const type = 'http';
-    const https = $(tds[6]).text();
 
-    if (https === "yes") {
-      proxies.push({ ip, port , type });
+  for (const url of proxyUrls) {
+    try {
+      console.log(`📥 Processando URL: ${url}`);
+      const { data } = await axios.get(url, { timeout: 10000 }); // Adicionado timeout
+      const $ = cheerio.load(data);
+  
+      $(".table-striped tbody tr").each((_, row) => {
+        const tds = $(row).find("td");
+        const ip = $(tds[0]).text();
+        const port = $(tds[1]).text();
+        const type = 'http';
+  
+        const proxyKey = `${ip}:${port}`;
+
+        if (!uniqueProxies.has(proxyKey)) {
+          uniqueProxies.add(proxyKey);
+          proxies.push({ ip, port, type });
+        }
+      });
+
+    } catch (error) {
+      console.error(`❌ Erro ao buscar proxies da URL ${url}: ${error.message}`);
     }
+  }
 
-    counterAllProxies++;
-
-  });
-
-  console.log(`📋 Buscando em ${counterAllProxies} proxies http.`);
-  console.log(`📋 Encontrados ${proxies.length} proxies http.`);
+  console.log(`📋 Total de proxies encontrados (sem duplicatas): ${proxies.length}.`);
 
   return proxies;
 }
