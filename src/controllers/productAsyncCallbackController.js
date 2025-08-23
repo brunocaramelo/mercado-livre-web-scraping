@@ -17,7 +17,7 @@ exports.productByUrlAsyncCallback = async (req, res) => {
       res.status(200).json({ status: 'success', message: 'Processamento iniciado' });
 
       setImmediate(async () => {
-          const maxRety = 400;
+          const maxRety = 15;
 
           const getProductDataInstance = await new ScrapperProduct(targetUrl);
 

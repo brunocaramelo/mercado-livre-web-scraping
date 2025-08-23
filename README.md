@@ -83,7 +83,7 @@ This application has the following specifications:
 
 ## Post Installation
 
-1 - By Default we use a free proxy list to, get updated list , run command:
+1 - By Default we use a free proxy list to, get updated list (recommended daily) , run command, and wait....(slow):
     
     - node src/build-cache/buildProxiesFile.js
 
