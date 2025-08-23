@@ -2,6 +2,27 @@ const { chromium } = require("playwright");
 const cheerio = require("cheerio");
 const axios = require("axios");
 const fs = require("fs"); 
+const path = require("path");
+
+
+async function getOneRandomProductMl(){
+  const filePath = path.join(__dirname, "random-products-list.json");
+  try {
+    const data = fs.readFileSync(filePath, "utf8");
+    const products = JSON.parse(data);
+
+    if (!Array.isArray(products)) {
+      throw new Error("O JSON não contém uma lista de produtos válida.");
+    }
+
+    const randomIndex = Math.floor(Math.random() * products.length);
+    const randomProduct = products[randomIndex];
+
+    return randomProduct;
+  } catch (err) {
+    console.error("Erro ao ler ou processar o arquivo:", err.message);
+  }
+}
 
 async function testProxy(typeParam ,ip, port, country) {
   let browser = null;
@@ -21,7 +42,7 @@ async function testProxy(typeParam ,ip, port, country) {
 
     const page = await browser.newPage();
 
-    const productUri = "https://www.mercadolivre.com.br/alimento-premier-super-premium-racas-especificas-shih-tzu-para-co-adulto-de-raza-pequena-sabor-frango-de-75-kg/p/MLB12017777";
+    const productUri = await getOneRandomProductMl();
    
     await page.goto(productUri, {
               waitUntil: 'domcontentloaded',
@@ -36,7 +57,7 @@ async function testProxy(typeParam ,ip, port, country) {
       throw new Error('Bloqueio de login: A página de verificação de conta foi detectada.');
     }
 
-    console.log(`✅ FUNCIONA: ${proxyUrl} -> ${currentUrl}`);
+    console.log(`✅ FUNCIONA: ${proxyUrl} em produto ${currentUrl}`);
     return {type, ip, port, success: true , country: country};
   } catch (err) {
     console.log(`❌ FALHOU: ${proxyUrl}, causa: `+err.message);
@@ -49,7 +70,7 @@ async function testProxy(typeParam ,ip, port, country) {
 }
 
 async function fetchProxiesHttp() {
-  // Lista de URLs para buscar os proxies. Você pode adicionar mais aqui.
+
   const proxyUrls = [
     "https://free-proxy-list.net/pt/",
     "https://free-proxy-list.net/pt/us-proxy.html",
@@ -95,6 +116,55 @@ async function fetchProxiesHttp() {
   return proxies;
 }
 
+async function fetchProxysScrapeFromApi() {
+    console.log("🔍 Baixando lista de proxies da API ProxyScrape...");
+
+    const apiUrl = "https://api.proxyscrape.com/v4/free-proxy-list/get?request=display_proxies&proxy_format=protocolipport&format=text";
+
+    const proxies = [];
+
+    try {
+      const response = await axios.get(apiUrl, { timeout: 10000 });
+      const data = response.data;
+      
+      const lines = data.split('\n');
+      
+      const uniqueProxies = new Set();
+      
+      lines.forEach(line => {
+        const trimmedLine = line.trim();
+        if (trimmedLine === '') {
+          return;
+        }
+
+        const [protocolPart, addressPart] = trimmedLine.split('://');
+        
+        if (!addressPart) {
+          return;
+        }
+
+        const [ip, port] = addressPart.split(':');
+        
+        const proxyKey = `${protocolPart}://${ip}:${port}`;
+
+        if (ip && port && !uniqueProxies.has(proxyKey)) {
+          uniqueProxies.add(proxyKey);
+          proxies.push({
+            ip,
+            port,
+            type: protocolPart,
+            country: 'proxyscrape',
+          });
+        }
+      });
+
+      return proxies;
+    } catch (error) {
+      console.error(`❌ Erro ao buscar proxies da API ProxyScrape: ${error.message}`);
+      return [];
+  }
+}
+
 async function fetchProxiesSocks() {
   console.log("🔍 Baixando lista de proxies socks...");
   const { data } = await axios.get("https://free-proxy-list.net/pt/socks-proxy.html");
@@ -130,7 +200,7 @@ async function main() {
   const workingProxies = [...listHttp, ...listSocks];
 
   fs.writeFileSync(
-      "valid-proxies.json",
+      path.join(__dirname, "valid-proxies.json"),
       JSON.stringify(workingProxies, null, 2)
     );
 
@@ -138,13 +208,29 @@ async function main() {
 }
 
 async function mainProxiesHttp(){
-  const proxies = await fetchProxiesHttp();
+    
+    const [proxiesFromHttp, proxiesFromApi] = await Promise.all([
+      fetchProxiesHttp(),
+      fetchProxysScrapeFromApi()
+    ]);
+
+    const allProxies = [...proxiesFromHttp, ...proxiesFromApi];
+    const uniqueProxies = new Map();
+
+    allProxies.forEach(proxy => {
+      const key = `${proxy.ip}:${proxy.port}`;
+      if (!uniqueProxies.has(key)) {
+        uniqueProxies.set(key, proxy);
+      }
+    });
+
+    const finalProxiesList = Array.from(uniqueProxies.values());
 
     const workingProxies = [];
     const limit = 5;
 
-    for (let i = 0; i < proxies.length; i += limit) {
-      const batch = proxies.slice(i, i + limit);
+    for (let i = 0; i < finalProxiesList.length; i += limit) {
+      const batch = finalProxiesList.slice(i, i + limit);
       const results = await Promise.all(
         batch.map((p) => testProxy(p.type, p.ip, p.port, p.country))
       );

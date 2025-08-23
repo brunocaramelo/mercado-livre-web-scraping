@@ -11,7 +11,7 @@ module.exports = class FactoryProxyBrowser {
     }
 
     async getInstanceFreeProxyFromJson(){
-        const proxiesFilePath = path.resolve('valid-proxies.json');
+        const proxiesFilePath = path.resolve(__dirname, '../build-cache/valid-proxies.json');
 
         try {
             const fileContent = fs.readFileSync(proxiesFilePath, 'utf-8');

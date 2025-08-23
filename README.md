@@ -83,7 +83,11 @@ This application has the following specifications:
 
 ## Post Installation
 
-Command to Generate Json File Output:
+1 - By Default we use a free proxy list to, get updated list , run command:
+    
+    - node src/build-cache/buildProxiesFile.js
+
+2 - Command to Generate Json File Output:
 
     - node product/by-uri/generate-file/index.js [[ML_URI]]
 

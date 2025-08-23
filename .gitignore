@@ -1,3 +1,4 @@
 node_modules/*
 .env
 valid-proxies.json
+src/build-cache/valid-proxies.json
