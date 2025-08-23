@@ -3,7 +3,7 @@ const cheerio = require("cheerio");
 const axios = require("axios");
 const fs = require("fs"); 
 
-async function testProxy(typeParam ,ip, port) {
+async function testProxy(typeParam ,ip, port, country) {
   let browser = null;
   const type = typeParam.toLowerCase();
 
@@ -37,10 +37,10 @@ async function testProxy(typeParam ,ip, port) {
     }
 
     console.log(`✅ FUNCIONA: ${proxyUrl} -> ${currentUrl}`);
-    return {type, ip, port, success: true };
+    return {type, ip, port, success: true , country: country};
   } catch (err) {
     console.log(`❌ FALHOU: ${proxyUrl}, causa: `+err.message);
-    return {type, ip, port, success: false , exception: err.message};
+    return {type, ip, port, success: false , exception: err.message, country: country};
   } finally {
     if (browser) {
       await browser.close();
@@ -75,12 +75,13 @@ async function fetchProxiesHttp() {
         const ip = $(tds[0]).text();
         const port = $(tds[1]).text();
         const type = 'http';
-  
+        const country = $(tds[2]).text();
+
         const proxyKey = `${ip}:${port}`;
 
         if (!uniqueProxies.has(proxyKey)) {
           uniqueProxies.add(proxyKey);
-          proxies.push({ ip, port, type });
+          proxies.push({ ip, port, type , country});
         }
       });
 
@@ -106,9 +107,10 @@ async function fetchProxiesSocks() {
     const ip = $(tds[0]).text();
     const port = $(tds[1]).text();
     const type = $(tds[4]).text();
+    const country = $(tds[2]).text();
     
     // if (https === "yes") {
-      proxies.push({ ip, port , type });
+      proxies.push({ ip, port , type , country});
     // }
 
     counterAllProxies++;
@@ -144,7 +146,7 @@ async function mainProxiesHttp(){
     for (let i = 0; i < proxies.length; i += limit) {
       const batch = proxies.slice(i, i + limit);
       const results = await Promise.all(
-        batch.map((p) => testProxy(p.type, p.ip, p.port))
+        batch.map((p) => testProxy(p.type, p.ip, p.port, p.country))
       );
       workingProxies.push(...results.filter((r) => r.success));
     }
@@ -167,7 +169,7 @@ async function mainProxiesSocks(){
     for (let i = 0; i < proxies.length; i += limit) {
       const batch = proxies.slice(i, i + limit);
       const results = await Promise.all(
-        batch.map((p) => testProxy(p.type, p.ip, p.port))
+        batch.map((p) => testProxy(p.type, p.ip, p.port, p.country))
       );
       workingProxies.push(...results.filter((r) => r.success));
     }
