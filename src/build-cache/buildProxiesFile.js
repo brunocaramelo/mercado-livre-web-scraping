@@ -84,7 +84,7 @@ async function testProxy(typeParam ,ip, port, country) {
     console.log((new Date()).toISOString()+` ✅ ML-FUNCIONA: ${proxyUrl} em produto ${currentUrl}`);
     return {type, ip, port, success: true , country: country};
   } catch (err) {
-    console.log((new Date()).toISOString()+` ❌ ML-FALHOU: ${proxyUrl}, causa: `+err.message+' e sua stack: '+err.stack);
+    console.log((new Date()).toISOString()+` ❌ ML-FALHOU: ${proxyUrl}, causa: `+err.message);
     return {type, ip, port, success: false , exception: err.message, country: country};
   } finally {
     await navigatorFactory.close();
@@ -144,15 +144,16 @@ async function fetchTheSpeedXProxiesHttp() {
 
 async function fetchProxiesHttp() {
 
-  const proxyUrls = [
-    "https://free-proxy-list.net/pt/",
-    "https://free-proxy-list.net/pt/us-proxy.html",
-    "https://free-proxy-list.net/pt/uk-proxy.html",
-    "https://free-proxy-list.net/pt/ssl-proxy.html",
-    "https://free-proxy-list.net/pt/anonymous-proxy.html",
-    "https://free-proxy-list.net/pt/google-proxy.html",
-  ];
-  // const proxyUrls = [];
+   const proxyUrls = [
+     "https://free-proxy-list.net/pt/",
+     "https://free-proxy-list.net/pt/us-proxy.html",
+     "https://free-proxy-list.net/pt/uk-proxy.html",
+     "https://free-proxy-list.net/pt/ssl-proxy.html",
+     "https://free-proxy-list.net/pt/anonymous-proxy.html",
+     "https://free-proxy-list.net/pt/google-proxy.html",
+   ];
+  
+   //const proxyUrls = [];
 
   console.log((new Date()).toISOString()+" 🔍 Baixando lista de proxies http...");
   

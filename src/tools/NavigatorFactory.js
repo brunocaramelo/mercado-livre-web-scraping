@@ -16,9 +16,11 @@ class NavigatorFactory {
 
     this.browserInstance = launched;
 
+    const userAgentChoiced = this.factoryProxyBrowser.getRandbomUserAgent();
+
     this.contextInstance = await launched.newContext({
       storageState: this._loadState(),
-      userAgent: this.factoryProxyBrowser.getRandbomUserAgent().userAgent
+      userAgent: userAgentChoiced.userAgent
     });
 
     return this.contextInstance;
@@ -55,9 +57,11 @@ class NavigatorFactory {
     
     this.browserInstance = launched;
 
+    const userAgentChoiced = this.factoryProxyBrowser.getRandbomUserAgent();
+
     this.contextInstance = await launched.newContext({
       storageState: this._loadState(),
-      userAgent: this.factoryProxyBrowser.getRandbomUserAgent().userAgent
+      userAgent: userAgentChoiced.userAgent
     });
    
     return this.contextInstance;
