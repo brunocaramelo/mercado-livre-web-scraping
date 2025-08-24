@@ -37,7 +37,7 @@ module.exports = class FactoryProxyBrowser {
     }
 
     async getRandbomUserAgent(){
-        const filePath = path.join(__dirname, '../buil-cache/static/random-useragents.json');
+        const filePath = path.join(__dirname, '../build-cache/static/random-useragents.json');
         try {
         const data = fs.readFileSync(filePath, "utf8");
         const products = JSON.parse(data);

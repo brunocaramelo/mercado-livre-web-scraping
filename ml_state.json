@@ -4649,35 +4649,19 @@
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
+    },
+    {
+      "name": "_mldataSessionId",
+      "value": "e8e1d723-81df-4c8b-b03a-ebe595d04d8e",
+      "domain": ".mercadolivre.com.br",
+      "path": "/",
+      "expires": 1756071685.68424,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
     }
   ],
   "origins": [
-    {
-      "origin": "https://www.drconsulta.com",
-      "localStorage": [
-        {
-          "name": "nextauth.message",
-          "value": "{\"event\":\"session\",\"data\":{\"trigger\":\"getSession\"},\"timestamp\":1756066623}"
-        },
-        {
-          "name": "persist:funil",
-          "value": "{\"funil\":\"{\\\"city\\\":{},\\\"unit\\\":{},\\\"product\\\":{},\\\"slot\\\":{},\\\"professional\\\":{},\\\"specialty\\\":{},\\\"patient\\\":{},\\\"scheduled\\\":{},\\\"questionnaire\\\":{},\\\"healthregister\\\":{},\\\"modalBox\\\":{\\\"type\\\":\\\"info\\\",\\\"title\\\":\\\"\\\",\\\"description\\\":\\\"\\\",\\\"open\\\":false},\\\"selectedSlot\\\":null,\\\"selectedProduct\\\":null,\\\"selectedUnit\\\":null,\\\"selectedPatient\\\":null,\\\"selectedZipCode\\\":null,\\\"selectedMultiVacProducts\\\":[],\\\"multiProductOrder\\\":{},\\\"cupomSelecionado\\\":null,\\\"checkupSelecionado\\\":null}\",\"utils\":\"{\\\"anchorEl\\\":null,\\\"accountValidatedNow\\\":false,\\\"urlIsBeingCheckedNow\\\":false,\\\"backBtnPressedAgendamentoConsulta\\\":false}\",\"lpDrcCard\":\"{\\\"user\\\":{\\\"cpf\\\":null,\\\"name\\\":null,\\\"birthday\\\":null,\\\"phone\\\":null,\\\"email\\\":null,\\\"gender\\\":null,\\\"password\\\":null},\\\"address\\\":{\\\"address\\\":null,\\\"cep\\\":null,\\\"neighborhood\\\":null,\\\"number\\\":null,\\\"complement\\\":null,\\\"city\\\":null,\\\"state\\\":null},\\\"plan\\\":{\\\"name\\\":null,\\\"value\\\":null,\\\"numberOfInstallments\\\":null,\\\"planId\\\":null,\\\"planName\\\":null,\\\"orderId\\\":null,\\\"SKU\\\":null},\\\"pedido\\\":{\\\"idPagamento\\\":null}}\",\"eventoFunilAgendamento\":\"{\\\"pagamento\\\":{\\\"tipoPagamento\\\":null}}\",\"novoFunil\":\"{\\\"buscarPorUnidade\\\":{\\\"listaUnidades\\\":[],\\\"unidadeSelecionada\\\":null},\\\"quemSeraAtendido\\\":{\\\"listaTerceiros\\\":[],\\\"pacienteSelecionado\\\":null},\\\"areaAtuacaoSelecionada\\\":null,\\\"profissionalSelecionado\\\":null,\\\"localizacaoSelecionada\\\":null,\\\"modalidadeSelecionada\\\":{\\\"titulo\\\":\\\"Presencial\\\",\\\"id\\\":\\\"presencial\\\",\\\"podeSelecionarTerceiros\\\":true},\\\"parametrosBuscaAtual\\\":null,\\\"resultadoBusca\\\":null,\\\"agendamentoRealizado\\\":null,\\\"metodoPagamentoSelecionado\\\":null,\\\"statusPagamentoPix\\\":null,\\\"reagendar\\\":null,\\\"retorno\\\":false}\",\"cartaoDrcFunil\":\"{\\\"exibirOfertaCartaoDrc\\\":false,\\\"exibirOfertaCartaoBotao\\\":false,\\\"bannerCmsDados\\\":null,\\\"statusCompra\\\":null,\\\"modalOfertasStatus\\\":\\\"closed\\\",\\\"modalFormularioStatus\\\":\\\"closed\\\",\\\"pedidoCompraCartao\\\":null}\",\"_persist\":\"{\\\"version\\\":-1,\\\"rehydrated\\\":true}\"}"
-        }
-      ]
-    },
-    {
-      "origin": "https://www.casasbahia.com.br",
-      "localStorage": [
-        {
-          "name": "ak_a",
-          "value": "3D7F7F2DE77DFDF92F4FB3A59E351323"
-        },
-        {
-          "name": "ak_ax",
-          "value": "-1"
-        }
-      ]
-    },
     {
       "origin": "https://www.mercadolivre.com.br",
       "localStorage": [
@@ -4724,6 +4708,32 @@
         {
           "name": "_uetsid",
           "value": "44b1df407f0411f09ae369064ec87656"
+        }
+      ]
+    },
+    {
+      "origin": "https://www.drconsulta.com",
+      "localStorage": [
+        {
+          "name": "nextauth.message",
+          "value": "{\"event\":\"session\",\"data\":{\"trigger\":\"getSession\"},\"timestamp\":1756066623}"
+        },
+        {
+          "name": "persist:funil",
+          "value": "{\"funil\":\"{\\\"city\\\":{},\\\"unit\\\":{},\\\"product\\\":{},\\\"slot\\\":{},\\\"professional\\\":{},\\\"specialty\\\":{},\\\"patient\\\":{},\\\"scheduled\\\":{},\\\"questionnaire\\\":{},\\\"healthregister\\\":{},\\\"modalBox\\\":{\\\"type\\\":\\\"info\\\",\\\"title\\\":\\\"\\\",\\\"description\\\":\\\"\\\",\\\"open\\\":false},\\\"selectedSlot\\\":null,\\\"selectedProduct\\\":null,\\\"selectedUnit\\\":null,\\\"selectedPatient\\\":null,\\\"selectedZipCode\\\":null,\\\"selectedMultiVacProducts\\\":[],\\\"multiProductOrder\\\":{},\\\"cupomSelecionado\\\":null,\\\"checkupSelecionado\\\":null}\",\"utils\":\"{\\\"anchorEl\\\":null,\\\"accountValidatedNow\\\":false,\\\"urlIsBeingCheckedNow\\\":false,\\\"backBtnPressedAgendamentoConsulta\\\":false}\",\"lpDrcCard\":\"{\\\"user\\\":{\\\"cpf\\\":null,\\\"name\\\":null,\\\"birthday\\\":null,\\\"phone\\\":null,\\\"email\\\":null,\\\"gender\\\":null,\\\"password\\\":null},\\\"address\\\":{\\\"address\\\":null,\\\"cep\\\":null,\\\"neighborhood\\\":null,\\\"number\\\":null,\\\"complement\\\":null,\\\"city\\\":null,\\\"state\\\":null},\\\"plan\\\":{\\\"name\\\":null,\\\"value\\\":null,\\\"numberOfInstallments\\\":null,\\\"planId\\\":null,\\\"planName\\\":null,\\\"orderId\\\":null,\\\"SKU\\\":null},\\\"pedido\\\":{\\\"idPagamento\\\":null}}\",\"eventoFunilAgendamento\":\"{\\\"pagamento\\\":{\\\"tipoPagamento\\\":null}}\",\"novoFunil\":\"{\\\"buscarPorUnidade\\\":{\\\"listaUnidades\\\":[],\\\"unidadeSelecionada\\\":null},\\\"quemSeraAtendido\\\":{\\\"listaTerceiros\\\":[],\\\"pacienteSelecionado\\\":null},\\\"areaAtuacaoSelecionada\\\":null,\\\"profissionalSelecionado\\\":null,\\\"localizacaoSelecionada\\\":null,\\\"modalidadeSelecionada\\\":{\\\"titulo\\\":\\\"Presencial\\\",\\\"id\\\":\\\"presencial\\\",\\\"podeSelecionarTerceiros\\\":true},\\\"parametrosBuscaAtual\\\":null,\\\"resultadoBusca\\\":null,\\\"agendamentoRealizado\\\":null,\\\"metodoPagamentoSelecionado\\\":null,\\\"statusPagamentoPix\\\":null,\\\"reagendar\\\":null,\\\"retorno\\\":false}\",\"cartaoDrcFunil\":\"{\\\"exibirOfertaCartaoDrc\\\":false,\\\"exibirOfertaCartaoBotao\\\":false,\\\"bannerCmsDados\\\":null,\\\"statusCompra\\\":null,\\\"modalOfertasStatus\\\":\\\"closed\\\",\\\"modalFormularioStatus\\\":\\\"closed\\\",\\\"pedidoCompraCartao\\\":null}\",\"_persist\":\"{\\\"version\\\":-1,\\\"rehydrated\\\":true}\"}"
+        }
+      ]
+    },
+    {
+      "origin": "https://www.casasbahia.com.br",
+      "localStorage": [
+        {
+          "name": "ak_a",
+          "value": "3D7F7F2DE77DFDF92F4FB3A59E351323"
+        },
+        {
+          "name": "ak_ax",
+          "value": "-1"
         }
       ]
     },
