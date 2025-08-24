@@ -37,4 +37,47 @@ module.exports = class HumanNavigates {
 
         await page.evaluate(() => window.scrollTo(0, 0));
     }
+
+    async  extractRandomWords(url) {        
+        if (url.startsWith("https://www.mercadolivre.com.br")) {
+            const path = new URL(url).pathname.split("/")[1];
+
+            const words = path.split("-");
+            if (words.length === 0) return null;
+
+            const count = Math.floor(Math.random() * 3) + 1;
+
+            const selected = words.slice(-count);
+
+            return {
+                slug: selected.join("-"),
+                notSlug: selected.join("")
+            };
+        }
+
+        if (!url.startsWith("https://produto.mercadolivre.com.br")) {
+
+            const path = new URL(url).pathname;
+
+            const match = path.match(/MLB-\d+-(.+)/);
+            if (!match) return null;
+
+            let slug = match[1];
+
+            slug = slug.replace(/_.+$/, "");
+
+            const words = slug.split("-");
+            if (words.length === 0) return null;
+
+            const count = Math.floor(Math.random() * 3) + 1;
+
+            const selected = words.slice(-count);
+
+            return {
+                slug: selected.join("-"),
+                notSlug: selected.join("")
+            };
+        }
+        
+    }
 }

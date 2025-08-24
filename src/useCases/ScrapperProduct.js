@@ -39,6 +39,11 @@ module.exports = class ScrapperProduct {
 
         const context = await this.navigatorFactory.launchAndContexthStrategy(chromium);
         
+        await context.setExtraHTTPHeaders({
+          'origin': (await this.humanNavigates.extractRandomWords(this.productUri)),
+        });
+        
+        
         let page = await context.newPage();
         
         page = await this.ofuscateBotBrowser(page);
