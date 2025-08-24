@@ -1,9 +1,15 @@
-const { chromium } = require("playwright");
+const { chromium , firefox, webkit } = require('playwright-extra');
+const NavigatorFactory = require('../tools/NavigatorFactory');
 const cheerio = require("cheerio");
 const axios = require("axios");
 const fs = require("fs"); 
 const path = require("path");
-
+const buildProductList = require('./buildProductListStatic');
+const stealth = require('puppeteer-extra-plugin-stealth')(
+    {
+        useragent: true
+    }
+);
 
 async function getOneRandomProductMl(){
   const filePath = path.join(__dirname, "random-products-list.json");
@@ -16,7 +22,7 @@ async function getOneRandomProductMl(){
     }
 
     const randomIndex = Math.floor(Math.random() * products.length);
-    const randomProduct = products[randomIndex];
+    const randomProduct = products[randomIndex].link;
 
     return randomProduct;
   } catch (err) {
@@ -31,22 +37,26 @@ async function testProxy(typeParam ,ip, port, country) {
   const proxyUrl = `${type}://${ip}:${port}`;
   console.log(`⏳ Testando proxy: ${proxyUrl}`);
 
+  chromium.use(stealth);
+    
+  const navigatorFactory = new NavigatorFactory();
+  
   try {
-
-    browser = await chromium.launch({
+    const context = await navigatorFactory.launchWithOptionsParamContext(chromium,{
       proxy: {
         server: proxyUrl,
       },
-      timeout: 10000,
+      timeout: 40000,
+      headless: false
     });
 
-    const page = await browser.newPage();
+    const page = await context.newPage();
 
     const productUri = await getOneRandomProductMl();
    
     await page.goto(productUri, {
               waitUntil: 'domcontentloaded',
-              timeout: 10000
+              timeout: 600000
     });
  
     const targetFailedString = '/gz/account-verification';
@@ -63,9 +73,7 @@ async function testProxy(typeParam ,ip, port, country) {
     console.log(`❌ FALHOU: ${proxyUrl}, causa: `+err.message);
     return {type, ip, port, success: false , exception: err.message, country: country};
   } finally {
-    if (browser) {
-      await browser.close();
-    }
+      await navigatorFactory.close();
   }
 }
 
@@ -193,6 +201,8 @@ async function fetchProxiesSocks() {
 }
 
 async function main() {
+
+  await buildProductList();
 
   const listHttp = await mainProxiesHttp();
   const listSocks = await mainProxiesSocks();

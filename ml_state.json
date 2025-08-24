@@ -111,16 +111,6 @@
       "sameSite": "Lax"
     },
     {
-      "name": "_uetsid",
-      "value": "44b1df407f0411f09ae369064ec87656",
-      "domain": ".mercadolivre.com.br",
-      "path": "/",
-      "expires": 1755918118,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
-    },
-    {
       "name": "_uetvid",
       "value": "44b201107f0411f0a176f941f3e60327",
       "domain": ".mercadolivre.com.br",
@@ -171,16 +161,6 @@
       "sameSite": "Lax"
     },
     {
-      "name": "navigation_items",
-      "value": "MLB4077103187%7C22082025040016%7CMLB19745470%7CMLB19745416-MLB5290777766%7C22082025030140%7CMLB12017777%7CMLB10170063",
-      "domain": ".mercadolivre.com.br",
-      "path": "/",
-      "expires": -1,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
       "name": "_ga_NDJFKMJ2PD",
       "value": "GS2.1.s1755835260$o2$g0$t1755835260$j60$l0$h0",
       "domain": ".mercadolivre.com.br",
@@ -192,10 +172,30 @@
     },
     {
       "name": "_mldataSessionId",
-      "value": "468c5d7a-c321-4540-875a-e0d37ea34f47",
+      "value": "fbb13980-ba40-4a4f-a636-f5c6de61fa46",
       "domain": ".mercadolivre.com.br",
       "path": "/",
-      "expires": 1755905804.61755,
+      "expires": 1755998929.180291,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "c_deals",
+      "value": "11.50.0",
+      "domain": ".www.mercadolivre.com.br",
+      "path": "/",
+      "expires": 1758588791.291158,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "navigation_items",
+      "value": "MLB3807070759%7C24082025005848%7CMLB39089853%7CMLB25929484-MLB3936311015%7C24082025005802%7CMLB26869319%7CMLB26869316-MLB4594606276%7C24082025005642%7CMLB35587178%7CMLB35587177-MLB4077103187%7C22082025040016%7CMLB19745470%7CMLB19745416-MLB5290777766%7C22082025030140%7CMLB12017777%7CMLB10170063",
+      "domain": ".mercadolivre.com.br",
+      "path": "/",
+      "expires": -1,
       "httpOnly": false,
       "secure": true,
       "sameSite": "None"

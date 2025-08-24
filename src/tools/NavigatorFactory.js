@@ -26,7 +26,7 @@ class NavigatorFactory {
   async launchStrategy(navigator) {
 
     const proxyIpPortGet = await this.factoryProxyBrowser.getInstance();
-    
+
     const proxyIpPort = proxyIpPortGet.type+'://'+proxyIpPortGet.ip+':'+proxyIpPortGet.port;
 
     console.log((new Date()).toISOString()+'(launchStrategy) aplicando proxy: '+proxyIpPort);
@@ -38,7 +38,21 @@ class NavigatorFactory {
       }
     };
 
+    return await this.launchWithOptionsParam(navigator, optionsLaunch);
+  }
+
+  async launchWithOptionsParam(navigator, optionsLaunch) {
     return await navigator.launch(optionsLaunch);
+  }
+
+  async launchWithOptionsParamContext(navigator, optionsLaunch) {
+    const launched = await this.launchWithOptionsParam(navigator, optionsLaunch);
+   
+    this.contextInstance = await launched.newContext({
+      storageState: this._loadState(),
+    });
+   
+    return this.contextInstance;
   }
 
   async close() {

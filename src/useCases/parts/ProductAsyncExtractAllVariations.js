@@ -49,8 +49,8 @@ module.exports = class ProductAsyncExtractAllVariations {
 
         await this.humanNavigates.mouseRandomMoveAllScreen(this.page, [1, 4], [2, 8]);
 
-        console.log((new Date()).toISOString()+'(ProductAsyncExtractAllVariations) grupo de variacao: '+JSON.stringify(selectedOptions));
-        console.log((new Date()).toISOString()+'(ProductAsyncExtractAllVariations) visitando: '+option.href);
+        console.log((new Date()).toISOString()+' (ProductAsyncExtractAllVariations) grupo de variacao: '+JSON.stringify(selectedOptions));
+        console.log((new Date()).toISOString()+' (ProductAsyncExtractAllVariations) visitando: '+option.href);
 
         await this.page.goto(option.href, {
           waitUntil: 'domcontentloaded',
