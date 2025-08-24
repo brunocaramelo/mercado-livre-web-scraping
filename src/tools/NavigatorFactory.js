@@ -37,7 +37,10 @@ class NavigatorFactory {
        proxy: {
         server: proxyIpPort,
       },
-      args: ['--no-sandbox', '--disable-setuid-sandbox']
+      args: ['--no-sandbox',
+            '--disable-setuid-sandbox',
+            '--disable-web-security',
+            '--disable-features=VizDisplayCompositor']
     };
 
     return await this.launchWithOptionsParam(navigator, optionsLaunch);

@@ -56,7 +56,10 @@ async function testProxy(typeParam ,ip, port, country) {
       },
       timeout: 40000,
       headless: false,
-      args: ['--no-sandbox', '--disable-setuid-sandbox']
+      args: ['--no-sandbox',
+            '--disable-setuid-sandbox',
+            '--disable-web-security',
+            '--disable-features=VizDisplayCompositor']
     });
 
     await context.setExtraHTTPHeaders({
@@ -81,7 +84,7 @@ async function testProxy(typeParam ,ip, port, country) {
     console.log((new Date()).toISOString()+` ✅ ML-FUNCIONA: ${proxyUrl} em produto ${currentUrl}`);
     return {type, ip, port, success: true , country: country};
   } catch (err) {
-    console.log((new Date()).toISOString()+` ❌ ML-FALHOU: ${proxyUrl}, causa: `+err.stack);
+    console.log((new Date()).toISOString()+` ❌ ML-FALHOU: ${proxyUrl}, causa: `+err.message+' e sua stack: '+err.stack);
     return {type, ip, port, success: false , exception: err.message, country: country};
   } finally {
     await navigatorFactory.close();
@@ -91,9 +94,9 @@ async function testProxy(typeParam ,ip, port, country) {
 async function fetchTheSpeedXProxiesHttp() {
 
   const proxyUrls = [
+    {url: "https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/socks5.txt", type: "socks5"},
     {url: "https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/http.txt", type: "http"},
     {url: "https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/socks4.txt", type: "socks4"},
-    {url: "https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/socks5.txt", type: "socks5"},
  ];
 
   console.log((new Date()).toISOString()+" 🔍 Baixando lista de proxies http (TheSpeedX)...");
@@ -141,20 +144,21 @@ async function fetchTheSpeedXProxiesHttp() {
 
 async function fetchProxiesHttp() {
 
-  // const proxyUrls = [
-  //   "https://free-proxy-list.net/pt/",
-  //   "https://free-proxy-list.net/pt/us-proxy.html",
-  //   "https://free-proxy-list.net/pt/uk-proxy.html",
-  //   "https://free-proxy-list.net/pt/ssl-proxy.html",
-  //   "https://free-proxy-list.net/pt/anonymous-proxy.html",
-  //   "https://free-proxy-list.net/pt/google-proxy.html",
-  // ];
-  const proxyUrls = [];
+  const proxyUrls = [
+    "https://free-proxy-list.net/pt/",
+    "https://free-proxy-list.net/pt/us-proxy.html",
+    "https://free-proxy-list.net/pt/uk-proxy.html",
+    "https://free-proxy-list.net/pt/ssl-proxy.html",
+    "https://free-proxy-list.net/pt/anonymous-proxy.html",
+    "https://free-proxy-list.net/pt/google-proxy.html",
+  ];
+  // const proxyUrls = [];
 
   console.log((new Date()).toISOString()+" 🔍 Baixando lista de proxies http...");
   
   const uniqueProxies = new Set();
-  const proxies = await fetchTheSpeedXProxiesHttp();
+  // const proxies = await fetchTheSpeedXProxiesHttp();
+  const proxies = [];
 
   for (const url of proxyUrls) {
     try {

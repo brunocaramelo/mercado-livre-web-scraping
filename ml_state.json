@@ -4551,16 +4551,6 @@
       "sameSite": "None"
     },
     {
-      "name": "bm_sz",
-      "value": "B6698D1EBC68D04087AF0094CFA60A81~YAAQE20+FywpLLOYAQAAVB453RwDj3nQfolbCjBHTRCtsk1Cn5Kt8jSYHbDeTlz6lxjYGGpR95yLcXVbgKZCtICyw2QcH5arBImNg5qc6U5AJqHxGkG2nrRaqDLeMiBP2CLS2jb8QrDFVl/Tg9RvcJ7vGfvfKbmK6h1IYa2GU4fS0NDm088oT8lrGCNlhYYVYl4zzjseXwGtPkBy2RWQ0vIegr503YQADiJtaK1/OzRwEYv6G+6SJs8/EK+nNrFIExbYyd2zD6sMUspUWHknvkw8cYtMw2SpjtO1xe/bYTqyqEK+4mg7DAsXsKwYIcpacBJnwldGcVraBrMMM1qK85F7AQhFJLeJwqmtQodoG9jC3Bqng/Mj2h6bDUxwbTmrI+5CmwY5N9hn~4470066~3748664",
-      "domain": ".casasbahia.com.br",
-      "path": "/",
-      "expires": 1756072565.398035,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
       "name": "PIM-SESSION-ID",
       "value": "ipyJS8gihIkUvBNA",
       "domain": ".casasbahia.com.br",
@@ -4652,13 +4642,13 @@
     },
     {
       "name": "_mldataSessionId",
-      "value": "e8e1d723-81df-4c8b-b03a-ebe595d04d8e",
+      "value": "f4141474-fdb8-4a7a-becb-01fd376c3bb6",
       "domain": ".mercadolivre.com.br",
       "path": "/",
-      "expires": 1756072427.348022,
+      "expires": 1756075246.869479,
       "httpOnly": false,
       "secure": true,
-      "sameSite": "Lax"
+      "sameSite": "None"
     }
   ],
   "origins": [
