@@ -64,7 +64,7 @@ async function testHttpTunnelPre(proxyUrl, pageTarget) {
     //           timeout: 9000000
     // });
    
-    await page.goto(pageTarget, { timeout: 700000 });
+    await page.goto(pageTarget, { timeout: 120000 });
 
     console.log((new Date()).toISOString()+` ✅ PRE-FUNCIONOU: ${proxyUrl} em site ${pageTarget}`);
   
@@ -134,7 +134,7 @@ async function testProxy(typeParam ,ip, port, country) {
     const currentUrl = page.url();
 
     if (currentUrl.includes(targetFailedString)) {
-      throw new Error('Bloqueio de login: A página de verificação de conta foi detectada em :'+productUri);
+      throw new Error('Bloqueio de login: A página de verificação de conta foi detectada em :'+productUri+' , endereco do bloqueio : '+currentUrl);
     }
 
     console.log((new Date()).toISOString()+` ✅ ML-FUNCIONA: ${proxyUrl} em produto ${currentUrl}`);
@@ -147,27 +147,78 @@ async function testProxy(typeParam ,ip, port, country) {
   }
 }
 
-async function fetchProxiesHttp() {
-  // @TODO  invalidando funcao temporariamente
-  // return [];
-  const proxyUrls = [
-    "https://free-proxy-list.net/pt/",
-    "https://free-proxy-list.net/pt/us-proxy.html",
-    "https://free-proxy-list.net/pt/uk-proxy.html",
-    "https://free-proxy-list.net/pt/ssl-proxy.html",
-    "https://free-proxy-list.net/pt/anonymous-proxy.html",
-    "https://free-proxy-list.net/pt/google-proxy.html",
-  ];
+async function fetchTheSpeedXProxiesHttp() {
 
-  console.log((new Date()).toISOString()+" 🔍 Baixando lista de proxies http...");
+  const proxyUrls = [
+   {url: "https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/socks5.txt", type: "socks5"},
+   {url: "https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/socks4.txt", type: "socks4"},
+   {url: "https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/http.txt", type: "http"},
+ ];
+
+  console.log((new Date()).toISOString()+" 🔍 Baixando lista de proxies http (TheSpeedX)...");
   
   const uniqueProxies = new Set();
   const proxies = [];
 
+  for (const addresses of proxyUrls) {
+    try {
+      console.log((new Date()).toISOString()+`📥 TheSpeedX Processando URL: ${addresses.url}`);
+      const { data } = await axios.get(addresses.url, { timeout: 10000 }); 
+      
+      const lines = data.split('\n');
+
+       for (const line of lines) {
+        if (!line || line.startsWith('#')) continue;
+        const parts = line.split(':');
+        
+        if (parts.length >= 2) {
+            const ip = parts[0];
+            const port = parts[1];
+            
+            const proxyKey = `${ip}:${port}`;
+
+            if (!uniqueProxies.has(proxyKey)) {
+              uniqueProxies.add(proxyKey);
+              proxies.push({
+                ip: ip,
+                port: port,
+                type: addresses.type,
+                country: 'thespeedx'
+              });
+            }
+        }
+    }
+    
+
+    } catch (error) {
+      console.error(` ❌ Erro ao buscar proxies da URL ${url}: ${error.message}`);
+    }
+  }
+
+  return proxies;
+}
+
+async function fetchProxiesHttp() {
+
+  // const proxyUrls = [
+  //   "https://free-proxy-list.net/pt/",
+  //   "https://free-proxy-list.net/pt/us-proxy.html",
+  //   "https://free-proxy-list.net/pt/uk-proxy.html",
+  //   "https://free-proxy-list.net/pt/ssl-proxy.html",
+  //   "https://free-proxy-list.net/pt/anonymous-proxy.html",
+  //   "https://free-proxy-list.net/pt/google-proxy.html",
+  // ];
+  const proxyUrls = [];
+
+  console.log((new Date()).toISOString()+" 🔍 Baixando lista de proxies http...");
+  
+  const uniqueProxies = new Set();
+  const proxies = await fetchTheSpeedXProxiesHttp();
+
   for (const url of proxyUrls) {
     try {
       console.log((new Date()).toISOString()+`📥 Processando URL: ${url}`);
-      const { data } = await axios.get(url, { timeout: 10000 }); // Adicionado timeout
+      const { data } = await axios.get(url, { timeout: 10000 }); 
       const $ = cheerio.load(data);
   
       $(".table-striped tbody tr").each((_, row) => {
