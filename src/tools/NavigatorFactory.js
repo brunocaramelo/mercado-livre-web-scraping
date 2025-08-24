@@ -28,22 +28,28 @@ class NavigatorFactory {
 
   async launchStrategy(navigator) {
 
-    const proxyIpPortGet = await this.factoryProxyBrowser.getInstance();
-
-    const proxyIpPort = proxyIpPortGet.type+'://'+proxyIpPortGet.ip+':'+proxyIpPortGet.port;
-
-    console.log((new Date()).toISOString()+'(launchStrategy) aplicando proxy: '+proxyIpPort);
+    const useProxyConfig = process.env.USE_PROXY_TO_REQUESTS == 'true';
     
+    if (useProxyConfig) {
+      const proxyIpPortGet = await this.factoryProxyBrowser.getInstance();
+      const proxyIpPort = proxyIpPortGet.type+'://'+proxyIpPortGet.ip+':'+proxyIpPortGet.port;
+      
+      console.log((new Date()).toISOString()+'(launchStrategy) aplicando proxy: '+proxyIpPort);
+    }
+
+    
+
     let optionsLaunch = {
       headless: false,
-       proxy: {
-        server: proxyIpPort,
-      },
       args: ['--no-sandbox',
             '--disable-setuid-sandbox',
             '--disable-web-security',
             '--disable-features=VizDisplayCompositor']
     };
+
+    if (useProxyConfig) {
+      // optionsLaunch.proxy.server = ;
+    }
 
     return await this.launchWithOptionsParam(navigator, optionsLaunch);
   }

@@ -39,8 +39,10 @@ module.exports = class ScrapperProduct {
 
         const context = await this.navigatorFactory.launchAndContexthStrategy(chromium);
         
+        const extractedProductWords = (await this.humanNavigates.extractRandomWords(this.productUri));
+
         await context.setExtraHTTPHeaders({
-          'origin': (await this.humanNavigates.extractRandomWords(this.productUri)),
+          'origin': 'https://lista.mercadolivre.com.br/'+extractedProductWords.slug+'#D[A:'+encodeURIComponent(extractedProductWords.notSlug)+']',
         });
         
         
