@@ -192,16 +192,578 @@
     },
     {
       "name": "_mldataSessionId",
-      "value": "53fd2ced-6fe8-4344-bea7-73c910f18fe2",
+      "value": "bbe17dd4-29a5-4ff9-ad43-ae92a2ffc92e",
       "domain": ".mercadolivre.com.br",
       "path": "/",
-      "expires": 1756041631.64311,
+      "expires": 1756048541.678635,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "MUIDB",
+      "value": "290296DED3BE6F102E55808ED2C26EE1",
+      "domain": "www.bing.com",
+      "path": "/",
+      "expires": 1789740658.321734,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_EDGE_S",
+      "value": "SID=3EA9B991A72C6D9B0FE7AFC3A6906C2A",
+      "domain": ".bing.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "SRCHD",
+      "value": "AF=NOFORM",
+      "domain": ".bing.com",
+      "path": "/",
+      "expires": 1790604658.321827,
       "httpOnly": false,
       "secure": true,
       "sameSite": "None"
+    },
+    {
+      "name": "SRCHUID",
+      "value": "V=2&GUID=71DD4424AFD747629184DB2671B9F0BE&dmnchg=1",
+      "domain": ".bing.com",
+      "path": "/",
+      "expires": 1790604658.321844,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "SRCHUSR",
+      "value": "DOB=20250824",
+      "domain": ".bing.com",
+      "path": "/",
+      "expires": 1790604658.321857,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_SS",
+      "value": "SID=3EA9B991A72C6D9B0FE7AFC3A6906C2A",
+      "domain": ".bing.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_HPVN",
+      "value": "CS=eyJQbiI6eyJDbiI6MSwiU3QiOjAsIlFzIjowLCJQcm9kIjoiUCJ9LCJTYyI6eyJDbiI6MSwiU3QiOjAsIlFzIjowLCJQcm9kIjoiSCJ9LCJReiI6eyJDbiI6MSwiU3QiOjAsIlFzIjowLCJQcm9kIjoiVCJ9LCJBcCI6dHJ1ZSwiTXV0ZSI6dHJ1ZSwiTGFkIjoiMjAyNS0wOC0yNFQwMDowMDowMFoiLCJJb3RkIjowLCJHd2IiOjAsIlRucyI6MCwiRGZ0IjpudWxsLCJNdnMiOjAsIkZsdCI6MCwiSW1wIjoxLCJUb2JuIjowfQ==",
+      "domain": ".bing.com",
+      "path": "/",
+      "expires": 1790604658.321941,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ak_bmsc",
+      "value": "6903970B3053D23BCFD79455ACB4CD31~000000000000000000000000000000~YAAQk4wQApKTOqyYAQAAPAVr3BzvL/ANm4iyw/1fbWbswVIaC0fOs7LFArGJxNJDt9d/negwwt1BhONO4oSOU9h8kur6iwisAArwWlbvr1kW7+/QH43UtDQ1y5/fTExFoYWiZKIQoV254sB5x2h3wZ1uz7ueRWaPhAIB/Bbd3GbzRb8EWhVLhOLJOfBWHsKr1+GPKPm0GGzJwy+XorFSErg8BWOXnzNeC1CTOA1SEUm+bSJSHQFmm5YkdBkV+kCx52+DpAizFUI+h0NxgUIwMh3tmDYKJpVfvNe9pXNJpkze01PtlMEaGXsq4QcMSzMqXsgFm6rtEwJwfH5WC/yS34V51c1NkTckWPwg8eQcr6xJWL/b8BVk+ZDz0xoq7wg=",
+      "domain": ".bing.com",
+      "path": "/",
+      "expires": 1756051858.321958,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "SRCHHPGUSR",
+      "value": "SRCHLANG=pt-BR&IG=0E503389A5374B4D875EB66332D3E265&PREFCOL=0&BRW=M&BRH=M&CW=1280&CH=720&SCW=1280&SCH=720&DPR=1.0&UTC=-180",
+      "domain": ".bing.com",
+      "path": "/",
+      "expires": 1790604660.776275,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.152384415.1756045823",
+      "domain": ".nasa.gov",
+      "path": "/",
+      "expires": 1790605823.334547,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "_ga_CSLL4ZEK4L",
+      "value": "GS2.1.s1756045823$o1$g0$t1756045823$j60$l0$h0",
+      "domain": ".nasa.gov",
+      "path": "/",
+      "expires": 1790605823.071187,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "_ga_82GWVTTXCZ",
+      "value": "GS2.1.s1756045823$o1$g0$t1756045823$j60$l0$h0",
+      "domain": ".nasa.gov",
+      "path": "/",
+      "expires": 1790605823.372337,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "YSC",
+      "value": "yZtRRnnuRwc",
+      "domain": ".youtube.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "VISITOR_INFO1_LIVE",
+      "value": "nPnjh257_Ro",
+      "domain": ".youtube.com",
+      "path": "/",
+      "expires": 1771598584.044324,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "VISITOR_PRIVACY_METADATA",
+      "value": "CgJERRIEEgAgVg%3D%3D",
+      "domain": ".youtube.com",
+      "path": "/",
+      "expires": 1771598584.044368,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "RT",
+      "value": "\"z=1&dm=einstein.br&si=qgmtu0vmm3q&ss=mepsqwg5&sl=0&tt=0\"",
+      "domain": ".einstein.br",
+      "path": "/",
+      "expires": 1756651301,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "wordpress_google_apps_login",
+      "value": "3da8f5d4d278fb10488d326d246b321a",
+      "domain": "unicamp.br",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__Secure-ROLLOUT_TOKEN",
+      "value": "CLC60aas_9bwVxDy3p7F1qOPAxi50Lqm16OPAw%3D%3D",
+      "domain": ".youtube.com",
+      "path": "/",
+      "expires": 1771598584.044392,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.1035013366.1756046589",
+      "domain": ".unicamp.br",
+      "path": "/",
+      "expires": 1790607570.769624,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "sp_t",
+      "value": "c012bb07f3ec2021a9c4bdc9a7059813",
+      "domain": ".spotify.com",
+      "path": "/",
+      "expires": 1787582620.464737,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "sp_landing",
+      "value": "http%3A%2F%2Fopen.spotify.com%2Fembed%2Fshow%2F3qWYa2Tqbx1G0Ryyn2JU0u%3Fsp_cid%3Dc012bb07f3ec2021a9c4bdc9a7059813%26device%3Ddesktop%26utm_source%3Dgenerator",
+      "domain": ".spotify.com",
+      "path": "/",
+      "expires": 1756133020.464782,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "Encrypted-Local-Storage-Key",
+      "value": "C/ZR+VtIjeHxr0tmDc6geVRnefFvm+L5Bs836U0eIcQ",
+      "domain": "www.gov.br",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "NID",
+      "value": "525=dWFYbIKdHCQqXBefqOjdWPzStrpwHgWcIQPi7ZYGJHqWWpbOOGxqy2HYflXghmMm0MMRBX9ccjv6_I84fCIJWJRBdcdoD6tRGj1O8XmbJ444cbTpmB6ObjpmnJGp-Cn9tf_EDmKMe96cfQltzqdmaWPuGaNnOHxc0bl-o2EeAF4UjOGVRDgjjhYegLNjki7qEA",
+      "domain": ".google.com",
+      "path": "/",
+      "expires": 1771857792.818991,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_ga_1VXJ83ESPC",
+      "value": "GS2.1.s1756046799$o1$g0$t1756046799$j60$l0$h1091682622",
+      "domain": ".otempo.com.br",
+      "path": "/",
+      "expires": 1790606799.395888,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.1709393353.1756046799",
+      "domain": ".otempo.com.br",
+      "path": "/",
+      "expires": 1790606799.396591,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_cb",
+      "value": "BMWHlnBTuwFRnKZZx",
+      "domain": ".otempo.com.br",
+      "path": "/",
+      "expires": 1790174810,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_chartbeat2",
+      "value": ".1756046810278.1756046810278.1.BGMy2WB4YxPiDr7oETCdkCgHCly-ja.1",
+      "domain": ".otempo.com.br",
+      "path": "/",
+      "expires": 1790174810,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_cb_svref",
+      "value": "external",
+      "domain": ".otempo.com.br",
+      "path": "/",
+      "expires": 1756048610,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ivc",
+      "value": "28d3a774-5549-436d-8670-c6dd4c76789e",
+      "domain": ".otempo.com.br",
+      "path": "/",
+      "expires": 1790606817.024116,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_scor_uid",
+      "value": "e17e874ef2d94703bd7f3f35738428ed",
+      "domain": ".otempo.com.br",
+      "path": "/",
+      "expires": 1789742817,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "CLID",
+      "value": "e2fe91380be64381a0ddd1cbfbb05ba3.20250824.20260824",
+      "domain": "www.clarity.ms",
+      "path": "/",
+      "expires": 1787582818.375239,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_gcl_au",
+      "value": "1.1.1709950305.1756046913",
+      "domain": ".globo.com",
+      "path": "/",
+      "expires": 1763822913,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "cookie-banner-consent-accepted",
+      "value": "false",
+      "domain": ".globo.com",
+      "path": "/",
+      "expires": 1787150913,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "test_cookie",
+      "value": "CheckForPermission",
+      "domain": ".doubleclick.net",
+      "path": "/",
+      "expires": 1756047814.136779,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "permutive-id",
+      "value": "420ff2a7-e6f4-4db1-8bf4-77db61739363",
+      "domain": ".globo.com",
+      "path": "/",
+      "expires": 1771944515,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "pxid",
+      "value": "fa259e1a-29ed-473f-a8ed-a4e1720f6449",
+      "domain": ".d39f98ec-9259-4f8b-896d-7ab58be1f900.prmutv.co",
+      "path": "/",
+      "expires": 1763995716.237634,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_ga_FCF1T9KPWF",
+      "value": "GS2.1.s1756047014$o1$g0$t1756047014$j60$l0$h0",
+      "domain": ".portalr3.com.br",
+      "path": "/",
+      "expires": 1790607014.776043,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.1270630658.1756047015",
+      "domain": ".portalr3.com.br",
+      "path": "/",
+      "expires": 1790607014.776774,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_tfpvi",
+      "value": "YTQ1ZDBlOTItZjBjYi00NWY0LWIzZDktZThmZThkNjhkMjgxIy04LTU%3D",
+      "domain": "www.portalr3.com.br",
+      "path": "/",
+      "expires": 1787583018,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga_PDVB8KC1ZQ",
+      "value": "GS2.1.s1756046588$o1$g1$t1756047570$j60$l0$h0",
+      "domain": ".unicamp.br",
+      "path": "/",
+      "expires": 1790607570.769306,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
     }
   ],
   "origins": [
+    {
+      "origin": "https://g1.globo.com",
+      "localStorage": [
+        {
+          "name": "_GESPSK-pubcid.org",
+          "value": "[\"pubcid.org\",null,1756046914394,null,null,null,null,null,null,[100]]"
+        },
+        {
+          "name": "_GESPSK-crwdcntrl.net",
+          "value": "[\"crwdcntrl.net\",null,1756046914394,null,null,null,null,null,null,[100]]"
+        },
+        {
+          "name": "_GESPSK-uidapi.com",
+          "value": "[\"uidapi.com\",null,1756046914394,null,null,null,null,null,null,[100]]"
+        },
+        {
+          "name": "permutive-data-queries",
+          "value": "{\"event-source-id\":\"ee5b7376-95e4-49da-b858-93756f86543c\"}"
+        },
+        {
+          "name": "permutive-consent",
+          "value": "{\"opt_in\":true,\"token\":\"permutive-consent\"}"
+        },
+        {
+          "name": "permutive-session",
+          "value": "{\"session_id\":\"5fab8d9f-83f3-4403-b126-dce11c775247\",\"last_updated\":\"2025-08-24T14:48:35.292Z\",\"hasChanged\":true}"
+        },
+        {
+          "name": "_psegs",
+          "value": "[139332,139334,139335,139336,139337,142110,147079,166023,171982,171984,175699,187202,188468,194858,194859,88434,90176]"
+        },
+        {
+          "name": "_GESPSK-id5-sync.com",
+          "value": "[\"id5-sync.com\",null,1756046914394,null,null,null,null,null,null,[100]]"
+        },
+        {
+          "name": "_GESPSK-esp.criteo.com",
+          "value": "[\"esp.criteo.com\",null,1756046914394,null,null,null,null,null,null,[100]]"
+        },
+        {
+          "name": "_gcl_ls",
+          "value": "{\"schema\":\"gcl\",\"version\":1,\"gcl_ctr\":{\"value\":{\"value\":0,\"creationTimeMs\":1756046913201},\"expires\":1763822913201}}"
+        },
+        {
+          "name": "permutive-id",
+          "value": "420ff2a7-e6f4-4db1-8bf4-77db61739363"
+        },
+        {
+          "name": "permutive-data-misc",
+          "value": "{\"metricsEnabled\":false,\"addon:tracking_pixel\":{}}"
+        },
+        {
+          "name": "_pfws",
+          "value": "[]"
+        },
+        {
+          "name": "permutive-app",
+          "value": "{\"eventPublication\":{\"eventUpload\":[]},\"core\":{\"activations\":{\"dfp\":[],\"xandr_ssp\":[],\"adswizz_keyvalue\":[]},\"cohorts\":{\"all\":[],\"ql\":[],\"qlCustom\":[],\"qlStandard\":[]},\"masterEventsCache\":null,\"workerState\":null,\"stateMigrated\":false},\"metricContext\":{\"session_count\":{\"scope\":\"420ff2a7-e6f4-4db1-8bf4-77db61739363\",\"lastValue\":\"5fab8d9f-83f3-4403-b126-dce11c775247\",\"count\":1},\"session_init_count\":{\"scope\":\"420ff2a7-e6f4-4db1-8bf4-77db61739363,5fab8d9f-83f3-4403-b126-dce11c775247\",\"lastValue\":\"0.9912965097264524\",\"count\":1},\"session_view_count\":{\"scope\":\"420ff2a7-e6f4-4db1-8bf4-77db61739363,5fab8d9f-83f3-4403-b126-dce11c775247\",\"lastValue\":\"7d875676-276b-4741-b7fc-fef23db6eb28\",\"count\":1}},\"sdkql\":{},\"strategicPartnerships\":{},\"mediaAndEntertainment\":{},\"advertisers\":{}}"
+        },
+        {
+          "name": "lib_analytics_ambient",
+          "value": "web"
+        },
+        {
+          "name": "_GESPSK-openx",
+          "value": "[\"openx\",null,1756046914394,null,null,null,null,null,null,[100]]"
+        },
+        {
+          "name": "_GESPSK-permutive-secure-signal",
+          "value": "[\"permutive-secure-signal\",null,1756046915335,null,null,null,null,null,null,[100]]"
+        },
+        {
+          "name": "_pcrprs",
+          "value": "[\"adv\",\"bqfy\"]"
+        },
+        {
+          "name": "_pssps",
+          "value": "{\"ssps\":[\"pubmatic\",\"appnexus\",\"ix\",\"openx\"],\"cohorts\":[\"cur\",\"adv\"]}"
+        },
+        {
+          "name": "_GESPSK-rtbhouse",
+          "value": "[\"rtbhouse\",null,1756046914394,null,null,null,null,null,null,[100]]"
+        },
+        {
+          "name": "_pdfps",
+          "value": "[\"142110\",\"166023\",\"171982\",\"171984\",\"175699\",\"187202\",\"194858\",\"194859\",\"88434\",\"90176\",\"adv\",\"bqfy\"]"
+        }
+      ]
+    },
+    {
+      "origin": "https://www.otempo.com.br",
+      "localStorage": [
+        {
+          "name": "_GESPSK-pubcid.org",
+          "value": "[\"pubcid.org\",null,1756046825297,null,null,null,null,null,null,[100]]"
+        },
+        {
+          "name": "_GESPSK-crwdcntrl.net",
+          "value": "[\"crwdcntrl.net\",null,1756046825297,null,null,null,null,null,null,[100]]"
+        },
+        {
+          "name": "_GESPSK-uidapi.com",
+          "value": "[\"uidapi.com\",null,1756046825297,null,null,null,null,null,null,[100]]"
+        },
+        {
+          "name": "_cb",
+          "value": "BMWHlnBTuwFRnKZZx"
+        },
+        {
+          "name": "_GESPSK-id5-sync.com",
+          "value": "[\"id5-sync.com\",null,1756046825297,null,null,null,null,null,null,[100]]"
+        },
+        {
+          "name": "_GESPSK-esp.criteo.com",
+          "value": "[\"esp.criteo.com\",null,1756046825297,null,null,null,null,null,null,[100]]"
+        },
+        {
+          "name": "_chartbeat2",
+          "value": ".1756046810278.1756046810278.1.BGMy2WB4YxPiDr7oETCdkCgHCly-ja.1"
+        },
+        {
+          "name": "_cb_expires",
+          "value": "1790174810279"
+        },
+        {
+          "name": "_GESPSK-euid.eu",
+          "value": "[\"euid.eu\",null,1756046825296,null,null,null,null,null,null,[100]]"
+        },
+        {
+          "name": "_GESPSK-intimatemerger.com",
+          "value": "[\"intimatemerger.com\",null,1756046825297,null,null,null,null,null,null,[100]]"
+        },
+        {
+          "name": "_cb_svref",
+          "value": "external"
+        },
+        {
+          "name": "_qcses_p-G3ARhEZrGqJdA",
+          "value": "{\"lastEvent\":1756046819551,\"sid\":\"4d957b50-be05-4aee-b6ba-9dc5a67944b1\",\"engagementState\":{\"eventsCount\":0,\"engagementDurationMs\":0,\"hasConversionEvent\":false,\"lastVisibleTs\":1756046819551},\"config\":{\"timeoutMs\":1800000}}"
+        },
+        {
+          "name": "_GESPSK-yahoo.com",
+          "value": "[\"yahoo.com\",null,1756046825297,null,null,null,null,null,null,[100]]"
+        },
+        {
+          "name": "_GESPSK-openx",
+          "value": "[\"openx\",null,1756046825297,null,null,null,null,null,null,[100]]"
+        },
+        {
+          "name": "_chartbeat2_expires",
+          "value": "1790174810279"
+        },
+        {
+          "name": "_GESPSK-33across.com",
+          "value": "[\"33across.com\",null,1756046825297,null,null,null,null,null,null,[100]]"
+        },
+        {
+          "name": "_cb_svref_expires",
+          "value": "1756048610284"
+        }
+      ]
+    },
     {
       "origin": "https://www.mercadolivre.com.br",
       "localStorage": [
@@ -215,7 +777,7 @@
         },
         {
           "name": "NRBA_SESSION",
-          "value": "{\"value\":\"3779a275c09fd8f5\",\"inactiveAt\":1756039513998,\"expiresAt\":1756052113998,\"updatedAt\":1756037713999,\"sessionReplayMode\":0,\"sessionReplaySentFirstChunk\":false,\"sessionTraceMode\":0,\"traceHarvestStarted\":false,\"loggingMode\":0,\"serverTimeDiff\":null,\"custom\":{},\"numOfResets\":0}"
+          "value": "{\"value\":\"ce9861e71d6ea6bb\",\"inactiveAt\":1756044304810,\"expiresAt\":1756056904810,\"updatedAt\":1756042504812,\"sessionReplayMode\":0,\"sessionReplaySentFirstChunk\":false,\"sessionTraceMode\":0,\"traceHarvestStarted\":false,\"loggingMode\":0,\"serverTimeDiff\":null,\"custom\":{},\"numOfResets\":0}"
         },
         {
           "name": "_uetvid_exp",
@@ -248,6 +810,41 @@
         {
           "name": "_uetsid",
           "value": "44b1df407f0411f09ae369064ec87656"
+        }
+      ]
+    },
+    {
+      "origin": "https://www.gov.br",
+      "localStorage": [
+        {
+          "name": "BARRA-GOVBR-LO",
+          "value": "e"
+        }
+      ]
+    },
+    {
+      "origin": "https://www.bing.com",
+      "localStorage": [
+        {
+          "name": "eventLogQueue_Offline",
+          "value": "[]"
+        }
+      ]
+    },
+    {
+      "origin": "https://www.youtube.com",
+      "localStorage": [
+        {
+          "name": "yt-remote-connected-devices",
+          "value": "{\"data\":\"[]\",\"expiration\":1756132987099,\"creation\":1756046587099}"
+        },
+        {
+          "name": "yt-remote-device-id",
+          "value": "{\"data\":\"89fb79dc-ab92-4419-b001-230935a5c6a2\",\"expiration\":1787582587085,\"creation\":1756046587085}"
+        },
+        {
+          "name": "ytidb::LAST_RESULT_ENTRY_KEY",
+          "value": "{\"data\":{\"hasSucceededOnce\":true},\"expiration\":1758638586366,\"creation\":1756046586366}"
         }
       ]
     }

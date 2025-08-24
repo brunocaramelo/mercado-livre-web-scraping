@@ -1,5 +1,6 @@
 const { chromium , firefox, webkit } = require('playwright-extra');
 const NavigatorFactory = require('../tools/NavigatorFactory');
+const { HttpsProxyAgent } = require("https-proxy-agent");
 const cheerio = require("cheerio");
 const axios = require("axios");
 const fs = require("fs"); 
@@ -34,18 +35,47 @@ async function getOneRandomByJsonThisPath(fileName){
   }
 }
 
-async function testHttpTunnelAxios(proxyObj, pageTarget) {
-    console.log(`⏳ Testando proxy por axios, protocol: ${proxyObj.type}, host: ${proxyObj.ip} e port: ${proxyObj.port} na rota: ${pageTarget}`);
-    const res = await axios.get(pageTarget, {
+async function testHttpTunnelAxios(proxyUrl, pageTarget) {
+
+  chromium.use(stealth);
+
+  const navigatorFactory = new NavigatorFactory();
+  
+  const productUri = await getOneRandomProductMl();
+
+  try {
+    console.log(
+      `⏳ Testando proxy por browser: ${proxyUrl} na rota: ${pageTarget}`
+    );
+
+    const context = await navigatorFactory.launchWithOptionsParamContext(chromium,{
       proxy: {
-        protocol: proxyObj.type,
-        host: proxyObj.ip,
-        port: proxyObj.port,
+        server: proxyUrl,
       },
-      timeout: 90000,
+      timeout: 40000,
+      headless: false
     });
-    return true;
+
+    const page = await context.newPage();
+   
+    await page.goto(pageTarget, {
+              waitUntil: 'domcontentloaded',
+              timeout: 900000
+    });
+
+    console.log(`✅ FUNCIONA: ${proxyUrl} em produto ${pageTarget}`);
+
+    return { success: true, status: 'success' };
+  } catch (err) {
+    console.log(
+      `❌ FALHOU: ${proxyUrl}, causa: ${err.message}, conteudo: `
+    );
+    return { success: false, error: err.message};
+  } finally {
+    await navigatorFactory.close();
+  }
 }
+
 
 async function testProxy(typeParam ,ip, port, country) {
   let browser = null;
@@ -62,9 +92,13 @@ async function testProxy(typeParam ,ip, port, country) {
 
   try {
     
-    await testHttpTunnelAxios({type: type, ip:ip, port:port}, 
+    const responseOfAxioTest = await testHttpTunnelAxios(proxyUrl, 
           await getOneRandomByJsonThisPath('random-famous-sites.json')
     );
+
+    if (responseOfAxioTest.success == false) {
+      throw new Error('Requisição inicial do proxy pelo browser falhou: '+responseOfAxioTest.error);
+    }
 
     const context = await navigatorFactory.launchWithOptionsParamContext(chromium,{
       proxy: {
@@ -74,12 +108,12 @@ async function testProxy(typeParam ,ip, port, country) {
       headless: false
     });
 
-    const page = await context.newPage();
-   
     await context.setExtraHTTPHeaders({
       'origin': 'https://www.mercadolivre.com.br/mais-vendidos',
     });
 
+    const page = await context.newPage();
+   
     await page.goto(productUri, {
               waitUntil: 'domcontentloaded',
               timeout: 900000
@@ -109,7 +143,8 @@ async function testProxy(typeParam ,ip, port, country) {
 }
 
 async function fetchProxiesHttp() {
-
+  // @TODO  invalidando funcao temporariamente
+  // return [];
   const proxyUrls = [
     "https://free-proxy-list.net/pt/",
     "https://free-proxy-list.net/pt/us-proxy.html",
