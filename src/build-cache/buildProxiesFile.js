@@ -81,7 +81,7 @@ async function testProxy(typeParam ,ip, port, country) {
     console.log((new Date()).toISOString()+` ✅ ML-FUNCIONA: ${proxyUrl} em produto ${currentUrl}`);
     return {type, ip, port, success: true , country: country};
   } catch (err) {
-    console.log((new Date()).toISOString()+` ❌ ML-FALHOU: ${proxyUrl}, causa: `+err.stack);
+    console.log((new Date()).toISOString()+` ❌ ML-FALHOU: ${proxyUrl}, causa: `+err.message);
     return {type, ip, port, success: false , exception: err.message, country: country};
   } finally {
     await navigatorFactory.close();
