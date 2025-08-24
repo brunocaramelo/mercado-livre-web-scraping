@@ -74,9 +74,10 @@ async function testProxy(typeParam ,ip, port, country) {
     console.log(`❌ FALHOU: ${proxyUrl}, causa: `+err.message);
     return {type, ip, port, success: false , exception: err.message, country: country};
   } finally {
-    if (navigatorFactory) {
-      // await navigatorFactory.close();
-      await navigatorFactory.closeContextAndState();
+     try {
+      await navigatorFactory.close();
+    } catch(e) {
+      console.error('Erro ao fechar navegador:', e.message);
     }
   }
 }
