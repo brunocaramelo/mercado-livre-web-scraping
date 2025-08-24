@@ -12,7 +12,11 @@ const stealth = require('puppeteer-extra-plugin-stealth')(
 );
 
 async function getOneRandomProductMl(){
-  const filePath = path.join(__dirname, "random-products-list.json");
+  return await getOneRandomByJsonThisPath('random-products-list.json');
+}
+
+async function getOneRandomByJsonThisPath(fileName){
+  const filePath = path.join(__dirname, fileName);
   try {
     const data = fs.readFileSync(filePath, "utf8");
     const products = JSON.parse(data);
@@ -58,7 +62,9 @@ async function testProxy(typeParam ,ip, port, country) {
 
   try {
     
-    await testHttpTunnelAxios({type: type, ip:ip, port:port}, productUri);
+    await testHttpTunnelAxios({type: type, ip:ip, port:port}, 
+          await getOneRandomByJsonThisPath('random-famous-sites.json')
+    );
 
     const context = await navigatorFactory.launchWithOptionsParamContext(chromium,{
       proxy: {
@@ -70,11 +76,15 @@ async function testProxy(typeParam ,ip, port, country) {
 
     const page = await context.newPage();
    
+    await context.setExtraHTTPHeaders({
+      'origin': 'https://www.mercadolivre.com.br/mais-vendidos',
+    });
+
     await page.goto(productUri, {
               waitUntil: 'domcontentloaded',
               timeout: 900000
     });
- 
+    
     const targetFailedString = '/gz/account-verification';
 
     const currentUrl = page.url();
