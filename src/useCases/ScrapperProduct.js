@@ -60,7 +60,7 @@ module.exports = class ScrapperProduct {
 
           await page.goto(this.productUri, {
               waitUntil: 'domcontentloaded',
-              timeout: 600000
+              timeout: 900000
           });
           
           await this.checkBlockedLogin(page);

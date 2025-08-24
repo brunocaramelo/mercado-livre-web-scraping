@@ -56,7 +56,7 @@ async function testProxy(typeParam ,ip, port, country) {
    
     await page.goto(productUri, {
               waitUntil: 'domcontentloaded',
-              timeout: 600000
+              timeout: 900000
     });
  
     const targetFailedString = '/gz/account-verification';

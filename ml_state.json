@@ -175,10 +175,10 @@
       "value": "fbb13980-ba40-4a4f-a636-f5c6de61fa46",
       "domain": ".mercadolivre.com.br",
       "path": "/",
-      "expires": 1755998929.180291,
+      "expires": 1755999088.385436,
       "httpOnly": false,
       "secure": true,
-      "sameSite": "Lax"
+      "sameSite": "None"
     },
     {
       "name": "c_deals",
