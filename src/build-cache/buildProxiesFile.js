@@ -141,15 +141,16 @@ async function fetchTheSpeedXProxiesHttp() {
 
 async function fetchProxiesHttp() {
 
-  // const proxyUrls = [
-  //   "https://free-proxy-list.net/pt/",
-  //   "https://free-proxy-list.net/pt/us-proxy.html",
-  //   "https://free-proxy-list.net/pt/uk-proxy.html",
-  //   "https://free-proxy-list.net/pt/ssl-proxy.html",
-  //   "https://free-proxy-list.net/pt/anonymous-proxy.html",
-  //   "https://free-proxy-list.net/pt/google-proxy.html",
-  // ];
-  const proxyUrls = [];
+   const proxyUrls = [
+     "https://free-proxy-list.net/pt/",
+     "https://free-proxy-list.net/pt/us-proxy.html",
+     "https://free-proxy-list.net/pt/uk-proxy.html",
+     "https://free-proxy-list.net/pt/ssl-proxy.html",
+     "https://free-proxy-list.net/pt/anonymous-proxy.html",
+     "https://free-proxy-list.net/pt/google-proxy.html",
+   ];
+  
+   //const proxyUrls = [];
 
   console.log((new Date()).toISOString()+" 🔍 Baixando lista de proxies http...");
   
