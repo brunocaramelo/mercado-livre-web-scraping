@@ -66,6 +66,12 @@ async function testHttpTunnelAxios(proxyUrl, pageTarget) {
     await page.goto(pageTarget);
 
     console.log(`✅ PRE-FUNCIONOU: ${proxyUrl} em site ${pageTarget}`);
+  
+    const randomIntervalIteration = Math.floor(Math.random() * (10000 - 3000 + 1) + 3000);
+
+    console.log(`Aguardar ${randomIntervalIteration} para proxima iteração`);
+  
+    await page.waitForTimeout(randomIntervalIteration);
 
     return { success: true, status: 'success' };
   } catch (err) {
@@ -92,8 +98,6 @@ async function testProxy(typeParam ,ip, port, country) {
   
   const productUri = await getOneRandomProductMl();
 
-  const randomIntervalIteration = Math.floor(Math.random() * (10000 - 3000 + 1) + 3000);
-
   try {
     
     const responseOfAxioTest = await testHttpTunnelAxios(proxyUrl, 
@@ -103,9 +107,6 @@ async function testProxy(typeParam ,ip, port, country) {
     if (responseOfAxioTest.success == false) {
       throw new Error('Requisição inicial do proxy pelo browser falhou: '+responseOfAxioTest.error);
     }
-
-    console.log(`Aguardar ${randomIntervalIteration} para proxima iteração`);
-    await page.waitForTimeout(randomIntervalIteration);
 
     const context = await navigatorFactory.launchWithOptionsParamContext(chromium,{
       proxy: {
