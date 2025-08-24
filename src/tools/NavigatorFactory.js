@@ -71,7 +71,7 @@ class NavigatorFactory {
       console.error('(NavigatorFactory) erro ao salvar storageState:', err);
     }
 
-    this.closeContext();
+    await this.closeContext();
   }
 
   async closeContext() {

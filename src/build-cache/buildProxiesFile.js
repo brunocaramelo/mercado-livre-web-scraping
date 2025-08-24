@@ -42,6 +42,7 @@ async function testProxy(typeParam ,ip, port, country) {
   const navigatorFactory = new NavigatorFactory();
   
   try {
+    
     const context = await navigatorFactory.launchWithOptionsParamContext(chromium,{
       proxy: {
         server: proxyUrl,
@@ -73,7 +74,10 @@ async function testProxy(typeParam ,ip, port, country) {
     console.log(`❌ FALHOU: ${proxyUrl}, causa: `+err.message);
     return {type, ip, port, success: false , exception: err.message, country: country};
   } finally {
+    if (navigatorFactory) {
+      // await navigatorFactory.close();
       await navigatorFactory.closeContextAndState();
+    }
   }
 }
 
