@@ -195,7 +195,7 @@
       "value": "bbe17dd4-29a5-4ff9-ad43-ae92a2ffc92e",
       "domain": ".mercadolivre.com.br",
       "path": "/",
-      "expires": 1756048541.678635,
+      "expires": 1756050869.873912,
       "httpOnly": false,
       "secure": true,
       "sameSite": "Lax"
@@ -335,7 +335,7 @@
       "value": "nPnjh257_Ro",
       "domain": ".youtube.com",
       "path": "/",
-      "expires": 1771598584.044324,
+      "expires": 1771600722.778892,
       "httpOnly": true,
       "secure": true,
       "sameSite": "None"
@@ -345,7 +345,7 @@
       "value": "CgJERRIEEgAgVg%3D%3D",
       "domain": ".youtube.com",
       "path": "/",
-      "expires": 1771598584.044368,
+      "expires": 1771600722.778922,
       "httpOnly": true,
       "secure": true,
       "sameSite": "None"
@@ -471,16 +471,6 @@
       "sameSite": "Lax"
     },
     {
-      "name": "_cb_svref",
-      "value": "external",
-      "domain": ".otempo.com.br",
-      "path": "/",
-      "expires": 1756048610,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "Lax"
-    },
-    {
       "name": "_ivc",
       "value": "28d3a774-5549-436d-8670-c6dd4c76789e",
       "domain": ".otempo.com.br",
@@ -526,16 +516,6 @@
       "domain": ".globo.com",
       "path": "/",
       "expires": 1787150913,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
-      "name": "test_cookie",
-      "value": "CheckForPermission",
-      "domain": ".doubleclick.net",
-      "path": "/",
-      "expires": 1756047814.136779,
       "httpOnly": false,
       "secure": true,
       "sameSite": "None"
@@ -599,9 +579,913 @@
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
+    },
+    {
+      "name": "__uzma",
+      "value": "7890167f-b707-476c-97b6-d9e10f9eecda",
+      "domain": "www.caixa.gov.br",
+      "path": "/",
+      "expires": 1771772812.55158,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__uzmb",
+      "value": "1756048012",
+      "domain": "www.caixa.gov.br",
+      "path": "/",
+      "expires": 1771772812.55163,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__uzme",
+      "value": "2015",
+      "domain": "www.caixa.gov.br",
+      "path": "/",
+      "expires": 1771772812.551672,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "security",
+      "value": "true",
+      "domain": "www.caixa.gov.br",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__uzmc",
+      "value": "852341389800",
+      "domain": "www.caixa.gov.br",
+      "path": "/",
+      "expires": 1771772817.659892,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__uzmd",
+      "value": "1756048016",
+      "domain": "www.caixa.gov.br",
+      "path": "/",
+      "expires": 1771772817.659935,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "dtCookie",
+      "value": "v_4_srv_-2D972_sn_QOG4L8207ED4664V52K8O8N77KUUF0R1",
+      "domain": ".banco.bradesco",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "rxVisitor",
+      "value": "1756048033475DN3BBPKLPTK93QH61GC5D3EU086B0QD5",
+      "domain": ".banco.bradesco",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "bm_mi",
+      "value": "816DD6507BFA5A9480D755CC6D2EB0DE~YAAQ6xghFyxsV7+YAQAA7ome3ByF5FbxpP1JurJaM7fOdkaNZssI+L8QvhOG3qYmkRZaYRI4fbOTeWTUhwM2+RCWcF/GeqfBcT9AtIw5WFjSQ7g8nY9GOVFqIOIX35WqGBPkW4h1Ie3WkZKpGkGNZwZ2Cts52ZEnKZ9aFk/aK4wbYjbGGUxJxn16tGYdDu7xYwiNe1KQAFwXQDT8FnoJ0OqmVDMIfHkhLxcOn854qpzmaIElzTv5gtYQsXsK7GLylKb++/uo2JGJjHC0s/wVQBoUoik7nIswYydwHRyts3nN19nvuxKagemFmKWOaOYon1GyRJoV/wapMX31caBtDzS0ONos6A==~1",
+      "domain": ".banco.bradesco",
+      "path": "/",
+      "expires": 1756055233.521743,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "bm_sv",
+      "value": "FD362298C6D5BA4EE7C43629011BE422~YAAQ6xghFy1sV7+YAQAA7ome3Bx1aARTdHFLo22yy14DCa7p6gdXVWPoYoOldfkEhi8C2gyK/6Z635dIdZzJ9R4UJO6uEasOn+iG24gt3R4jWDviKqE/Rp+zWbjYn6sU5GnVZLKQd3PplPyiMFHRLglyJTDGYlHE2qNpKK53bJ3zDM7OhpTZ9NZ0sizjRHFu0afvbhQFZdadfWpxywtjx8psYy5WxixS2YlHus/mv0TqoT6hrqBZOtxq7/zg/pTk9xfMZA==~1",
+      "domain": ".banco.bradesco",
+      "path": "/",
+      "expires": 1756055234.521787,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "dtPC",
+      "value": "-972$448033473_176h1p-972$448034781_564h1vCMAFRHMUPUPVUCMCKCOFHKDPMPKFNGNC-0e0",
+      "domain": ".banco.bradesco",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "at_check",
+      "value": "true",
+      "domain": ".banco.bradesco",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "dtSa",
+      "value": "-",
+      "domain": ".banco.bradesco",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "rxvt",
+      "value": "1756049837467|1756048033476",
+      "domain": ".banco.bradesco",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "mbox",
+      "value": "session#7b65a9e58345411d8cd1b2bd574acef2#1756049899|PC#7b65a9e58345411d8cd1b2bd574acef2.34_0#1819292839",
+      "domain": ".banco.bradesco",
+      "path": "/",
+      "expires": 1790608038.588749,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "RT",
+      "value": "\"z=1&dm=banco.bradesco&si=a79392a2-9cda-43c3-9f63-875832b30b48&ss=meptnqh4&sl=0&tt=0\"",
+      "domain": ".banco.bradesco",
+      "path": "/",
+      "expires": 1756652838,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ak_bmsc",
+      "value": "908668C9B71CA0DDB0AAA1B73F40CF29~000000000000000000000000000000~YAAQ6xghF4dtV7+YAQAAjZye3ByEysQK2ge8E/nvKqChyWUJmXrGPVZ0UMDN5OFe0fGbxa3inRI5o+JbhstpME09uiqpl0+AuKHJpKnOxM0pSyk2Ysd3fmsdVo/l6cS9D3tpg7CrseKfu51cJlD5/8l5snuRJUvVHqiocsQpZMWeOOjbwgglkXhzm1/QJG+cT5s8Q3E5I2zvgUH8ea3derE/uYUghVsQTlRJaLX+MLTWJLUs8LZnSGrl/4ays/6SlN7kF3+jgals+VEboyVAbNITwIXudwUWAnB+b58lASD/LYEXheY7Db2vTQgEUxQMxfE7RSUshD9deeoOTCHCV7ZY5F6FFoVxfie+CCJ50p4wKidInFuyPLOnQJUVTD1aFs9Sv8QuzTc/QEfaxI7ROKkgKlN6v2Fr7nXQTqXE6wscnflYNLXs7ECbhDGh0bJrXtOb6fgmaFTJ4THR04NZrX/WVZj6aU7vCPb16oda5uNJKJwU1BANT6dkky+qaM5Ue2ec6g==",
+      "domain": ".banco.bradesco",
+      "path": "/",
+      "expires": 1756055233.193689,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "",
+      "value": "test",
+      "domain": "guiadoestudante.abril.com.br",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_parsely_session",
+      "value": "{%22sid%22:1%2C%22surl%22:%22https://guiadoestudante.abril.com.br/%22%2C%22sref%22:%22%22%2C%22sts%22:1756048096156%2C%22slts%22:0}",
+      "domain": ".abril.com.br",
+      "path": "/",
+      "expires": 1756049896,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_parsely_visitor",
+      "value": "{%22id%22:%22pid=1e12d2c552ca23c5483402bb176a1644%22%2C%22session_count%22:1%2C%22last_session_ts%22:1756048096156}",
+      "domain": ".abril.com.br",
+      "path": "/",
+      "expires": 1790212096,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "abril_exec_pushNews",
+      "value": "true",
+      "domain": ".abril.com.br",
+      "path": "/",
+      "expires": 1756134496,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "permutive-id",
+      "value": "e33a58fd-5ff3-4a4a-867c-424cb0746cf2",
+      "domain": ".abril.com.br",
+      "path": "/",
+      "expires": 1771945696,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "___nrbic",
+      "value": "%7B%22isNewUser%22%3Atrue%2C%22previousVisit%22%3A1756048096%2C%22lastBeat%22%3A1756048096%2C%22currentVisitStarted%22%3A1756048096%2C%22sessionId%22%3A%22134ac2a7-23e5-4b4e-a445-d02c7c908664%22%2C%22sessionVars%22%3A%5B%5D%2C%22visitedInThisSession%22%3Atrue%2C%22pagesViewed%22%3A1%2C%22landingPage%22%3A%22https%3A//guiadoestudante.abril.com.br/%22%2C%22referrer%22%3A%22%22%2C%22lpti%22%3Anull%7D",
+      "domain": ".abril.com.br",
+      "path": "/",
+      "expires": 1771600096,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "___nrbi",
+      "value": "%7B%22firstVisit%22%3A1756048096%2C%22userId%22%3A%22dbcdc81c-4e4d-4f0f-994d-c6b99b3b382a%22%2C%22userVars%22%3A%5B%5D%2C%22futurePreviousVisit%22%3A1756048096%2C%22timesVisited%22%3A1%7D",
+      "domain": ".abril.com.br",
+      "path": "/",
+      "expires": 1771600096,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "compass_uid",
+      "value": "dbcdc81c-4e4d-4f0f-994d-c6b99b3b382a",
+      "domain": ".abril.com.br",
+      "path": "/",
+      "expires": 1771600096,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "AWSALB",
+      "value": "YpWcyniJED9c9Px/UTuoywrs0k0ogvq3DH9RA0erlXexCX/EseDOxg4Sxkuh342hb16usRh2NPo1kAxZ2B2jlwyZX6in52nqflE2i3Ek9E/owl1FkyCoP0dqH+O+",
+      "domain": "www.tuasaude.com",
+      "path": "/",
+      "expires": 1756652937.679941,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "AWSALBCORS",
+      "value": "YpWcyniJED9c9Px/UTuoywrs0k0ogvq3DH9RA0erlXexCX/EseDOxg4Sxkuh342hb16usRh2NPo1kAxZ2B2jlwyZX6in52nqflE2i3Ek9E/owl1FkyCoP0dqH+O+",
+      "domain": "www.tuasaude.com",
+      "path": "/",
+      "expires": 1756652937.680008,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "bm_sz",
+      "value": "DA082424156CE1D295F356ECC7FAE1EF~YAAQpzIZuMcUBdOYAQAAoBSh3BxF6WMey+1olQxmDGB0Mse8u9LD9xuiyYDhLKFSwKI2SGUwdH7K1mMyJOV6UVKdnu1t5vfFonawpU2TQxSDFehHKYkdVDqoDiJ1bj4Ere3R8Co1KPQJZCHDLZkxTH+0SGSNDHH9k5xEnoTNbsaaUxdxRNkyfVatZj17hN7rvWTFqiWsVZkc6KWRF6+tIuxCbaYNGiOvnEH807LPazC8MWBZFStdXJHh93HIN2qSp3nwJy8+YYmPO56+GRyG2MqXRh/F0gYoXrfq6RhgCCmhAgNx9nx+zUnBWcsQ8UAGfJGPr9ZNNShUZdMV/RhFPMn0aQM1r5FSCD2UnWe1Egzp4eWCQ7i42mvXEJCI9DeADmJ3SYSD04PwNSOpS7+tzA==~4539959~4473923",
+      "domain": ".terra.com.br",
+      "path": "/",
+      "expires": 1756062600.970609,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ak_bmsc",
+      "value": "FB1C166B983E04E60E4C99CB10BC093D~000000000000000000000000000000~YAAQpzIZuF0YBdOYAQAAxyyh3BzjRYDIjc/xs6rxDFgSQypXvm93kUM79LSq700GnjGo68BHKgAa3mRVAjM09Va53+4yJyC3uXQWz3WyGEkvBO8uMpbU2SQeKfGN0EC12QZXVCI2fbt7qZVxyh+WEcxFDhC+ssJ0CrQCfAIdtyoAtv/N0R8IeVh9arC91KHPx1e28qf2T/sBRH31FTjlU9V7ThzhMPwgJCud+X/DXnfIopCuLMnU2sG5RfHMHIWD0pjfu2ERrtz1t6HRGtBFYutmzSeTrbekADvAhI1YuLbaOZWyfg+ewsXP/P+QoV0yiwenXYz6NVLpo0eGgI3Gtkf0hhlEny1SFL1hKOsM206N9X8+Bxb38crZ3sty1LNdYmTA+cG5z9QjiyyTBM3Rgff9+IqytSs=",
+      "domain": ".terra.com.br",
+      "path": "/",
+      "expires": 1756055400.156273,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "bm_sv",
+      "value": "DC9E3FC7B55847503AD0BAB357FFB2E1~YAAQpzIZuNoZBdOYAQAAdjWh3BzNIyMINGsLdWIeUuJOAcGQJUcfX3rEgqh+QnRC2Q/CkajmzMgmfxni65Gj7aN/F2BwMezSuxMokGZ7N2H/9ySzswlXS3GN79bOs92SNJFBzTEEWonpnLV6Q0gxdaEdsU0kYp/FXtSp2jrAO+3vZivdK+wjJwOwdtgJo9mlVP3JkBCbBmzwm5PGgE3z7HACq+e+Bp5ombcJ4DwSeEbbw73ZN+L6Xlu0sUjV6JTeGKI=~1",
+      "domain": ".terra.com.br",
+      "path": "/",
+      "expires": 1756055409.378853,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_abck",
+      "value": "CC9D6D5BCD063FD63921AB6487E7C6BB~-1~YAAQpzIZuGYaBdOYAQAA4zih3A7uQmkDc8tLJ7pYkYEIVZV8RpRN12SaoSqBO6K3QxF2rED6+ZZtGpdUdGyrvYbOxnwA0eRCRMpLeNQMQ52vkOoevuIYNn1U1j1ZX3A0snKsph3Mvh5+SiDUdir2SZrkM+ch/Aa3J+Yon+4eAUyNy6z6qVEVLYnhVaUtPHZqx4auPi9aX42stXIkKqQAZ+cTpCVJiJ6h/r5b+lNAbEir5M2jy5hKbo3mpMkQ49pN8QW64xixwP0BwccPXDssSjWMMIKjW6ZPt89sIcXNU0arv+b0hf6FRGvRCKujXtUyvhXMeMB28ROr35uzw10eC6iVoHiB7LqrCZityD+oGck2P+2lnkfdtw07QOJ2QuVVxPI3tJZkwA7V40bTELroVvrftE5ikYJoZxTWruSC35DF9S5t2iAcWhl+PRQ53Bspm0QWQXglwUhk+yT7t979LNnjlU8BeAhKRC7prD5aa0PggoPV53i1tOvVLkarzsGUC4TYdRDzMttUHvBJiNc8Kt+nX4eHVwAbjzbHHSrfuImkC/g=~-1~-1~-1~~",
+      "domain": ".terra.com.br",
+      "path": "/",
+      "expires": 1787584210.254456,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "xman_us_f",
+      "value": "x_locale=en_US&x_l=0&x_c_chg=1&acs_rt=0e27efcb685b496da9cf5f088e49c7af&intl_locale=en_US",
+      "domain": ".aliexpress.com",
+      "path": "/",
+      "expires": 1790608248.427055,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "acs_usuc_t",
+      "value": "x_csrf=q24ko6eq8omw&acs_rt=0e27efcb685b496da9cf5f088e49c7af",
+      "domain": ".aliexpress.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "intl_locale",
+      "value": "en_US",
+      "domain": ".aliexpress.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "xman_t",
+      "value": "Vz921263iuseJxRJyYj3VooqGV8egvhKJrcs0o7aLOoBLlh+KSVZ2/w+L23DFiJy",
+      "domain": ".aliexpress.com",
+      "path": "/",
+      "expires": 1763824245.663934,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "intl_common_forever",
+      "value": "wKeFnkpngN1TO6IAcRe2DrJhsNw0AtlKUNSmOT1iBiTD3PEg0LxJAQ==",
+      "domain": ".aliexpress.com",
+      "path": "/",
+      "expires": 1790608245.66396,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "xman_f",
+      "value": "OtekIdX+5mHAraiZ0vwToCZ2mCVO2hx6yNSoTSVC/y5Nh894QyLG890cjfxNFoCG3eg4j5UrHrfER3hizSk9THzw7JB3QD9cmKXBlcbvFHpokbPVXOdK/W5UfomoHFslKqOJAs2jRJg=",
+      "domain": ".aliexpress.com",
+      "path": "/",
+      "expires": 1790608245.663992,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "acs_usuc_t",
+      "value": "x_csrf=5_m73uma8ddi&acs_rt=a3161a455b7a4ce5819876bc57904568",
+      "domain": ".aliexpress.us",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "xman_t",
+      "value": "sqjEZcXr1uX46FfL2qVqsVipSpy9KFXmr+F8ZBZd8a/IGKKCvG0nM9ghAjz49wEV",
+      "domain": ".aliexpress.us",
+      "path": "/",
+      "expires": 1763824246.667597,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "aep_usuc_f",
+      "value": "site=usa&c_tp=USD&ga_saved=yes&region=US&b_locale=en_US",
+      "domain": ".aliexpress.com",
+      "path": "/",
+      "expires": 1790608248.427118,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_ga_save",
+      "value": "yes",
+      "domain": ".aliexpress.com",
+      "path": "/",
+      "expires": 1789485048.427148,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.1466633665098035.1756048248169",
+      "domain": ".aliexpress.com",
+      "path": "/",
+      "expires": 1789744248.427186,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga_save",
+      "value": "yes",
+      "domain": ".aliexpress.us",
+      "path": "/",
+      "expires": 1789485049.288025,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.1466633665098035.1756048248169",
+      "domain": ".aliexpress.us",
+      "path": "/",
+      "expires": 1789744249.288037,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "xman_us_f",
+      "value": "x_locale=en_US&x_l=0&x_c_chg=1&acs_rt=0e27efcb685b496da9cf5f088e49c7af&intl_locale=en_US",
+      "domain": ".aliexpress.us",
+      "path": "/",
+      "expires": 1790608250.038836,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "intl_locale",
+      "value": "en_US",
+      "domain": ".aliexpress.us",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "aep_usuc_f",
+      "value": "site=usa&ga_saved=yes&c_tp=USD&region=US&b_locale=en_US",
+      "domain": ".aliexpress.us",
+      "path": "/",
+      "expires": 1790608250.038925,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "intl_common_forever",
+      "value": "7Kh7i3NcpbrgV/9cEGFXZaN6K/yWUVSPtuO0euZpEh2BBBRVsgZvmw==",
+      "domain": ".aliexpress.us",
+      "path": "/",
+      "expires": 1790608250.038946,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "xman_f",
+      "value": "URgNiRYxlKT+FT9WQDOklp0WFSoApTZagvNwWjRPRrmuk4B5urljMEAT6vB4tzQ3RDwTchHu0GdLbVt5/uqPKp8TTcX/GNgay/HAnz8CTE37JOFMAe6C+K7B93z5rgp17g1Csp1ps3c=",
+      "domain": ".aliexpress.us",
+      "path": "/",
+      "expires": 1790608250.03896,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_baxia_sec_cookie_",
+      "value": "%257B%2522lwrid%2522%253A%2522AgGY3KHzDV1fsHrdr8TkX39uI%25252BOq%2522%257D",
+      "domain": ".aliexpress.us",
+      "path": "/",
+      "expires": 1771600257,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "first_time_load",
+      "value": "false",
+      "domain": ".infomoney.com.br",
+      "path": "/",
+      "expires": 1787152481,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "last-access",
+      "value": "https%3A%2F%2Fwww.infomoney.com.br%2F",
+      "domain": ".infomoney.com.br",
+      "path": "/",
+      "expires": 1787152482,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "pll_language",
+      "value": "pt",
+      "domain": "ufrj.br",
+      "path": "/",
+      "expires": 1787584678.494084,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "",
+      "value": "Secure",
+      "domain": "www.centauro.com.br",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "GCB-TRACKING",
+      "value": "47.91.124.149",
+      "domain": ".pontofrio.com.br",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ak_geo",
+      "value": "DUBAI::25.25:55.28:",
+      "domain": "www.pontofrio.com.br",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "bab",
+      "value": "B",
+      "domain": "www.pontofrio.com.br",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "AB50X50",
+      "value": "A",
+      "domain": "www.pontofrio.com.br",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "AB95X05",
+      "value": "A",
+      "domain": "www.pontofrio.com.br",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "akavpau_wwwpontofrio",
+      "value": "1756049130~id=affeafa47d0b14104dc4c8849893ea84",
+      "domain": "www.pontofrio.com.br",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.2077872155.1756048923",
+      "domain": ".revistaforum.com.br",
+      "path": "/",
+      "expires": 1790608922.885839,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_gcl_au",
+      "value": "1.1.832041613.1756048933",
+      "domain": ".revistaforum.com.br",
+      "path": "/",
+      "expires": 1763824932,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_clck",
+      "value": "jgv79q%5E2%5Efyq%5E0%5E2062",
+      "domain": ".revistaforum.com.br",
+      "path": "/",
+      "expires": 1787584938,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__gads",
+      "value": "ID=d56faf34e09d2fc4:T=1756048939:RT=1756048939:S=ALNI_MYEHbfByIJ3dmv32xlnaeQxT9_DMA",
+      "domain": ".revistaforum.com.br",
+      "path": "/",
+      "expires": 1789744939,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__gpi",
+      "value": "UID=0000118579573bf7:T=1756048939:RT=1756048939:S=ALNI_MYGFZSXfhoiLT30O6RWcHWpeHwQGQ",
+      "domain": ".revistaforum.com.br",
+      "path": "/",
+      "expires": 1789744939,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__eoi",
+      "value": "ID=77bbf42a19b047e9:T=1756048939:RT=1756048939:S=AA-Afjao0KV_NZ7nXXADgaliKWi3",
+      "domain": ".revistaforum.com.br",
+      "path": "/",
+      "expires": 1771600939,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_ga_H3CJNVYHNQ",
+      "value": "GS2.1.s1756048922$o1$g1$t1756048941$j59$l0$h0",
+      "domain": ".revistaforum.com.br",
+      "path": "/",
+      "expires": 1790608941.355333,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "IDE",
+      "value": "AHWqTUklaCSUInw16dzQVFLSMVoNJ9ssOXUzBXhqQZ2SsVfVwibJOQelNvVtlhpn1nc",
+      "domain": ".doubleclick.net",
+      "path": "/",
+      "expires": 1790608941.377548,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AKA_A2",
+      "value": "A",
+      "domain": ".r7.com",
+      "path": "/",
+      "expires": 1756052552.829239,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_scor_uid",
+      "value": "ccab8a83b98c40c1b9ae377f22ea1231",
+      "domain": ".r7.com",
+      "path": "/",
+      "expires": 1789744973,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_gcl_au",
+      "value": "1.1.970094294.1756048977",
+      "domain": ".r7.com",
+      "path": "/",
+      "expires": 1763824976,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
     }
   ],
   "origins": [
+    {
+      "origin": "https://www.mercadolivre.com.br",
+      "localStorage": [
+        {
+          "name": "__rtbh.lid",
+          "value": "{\"eventType\":\"lid\",\"id\":\"zS7DjKRNx830Ho9XEVdk\",\"expiryDate\":\"2026-08-22T03:02:05.687Z\"}"
+        },
+        {
+          "name": "lastExternalReferrerTime",
+          "value": "1755831725846"
+        },
+        {
+          "name": "NRBA_SESSION",
+          "value": "{\"value\":\"ce9861e71d6ea6bb\",\"inactiveAt\":1756044304810,\"expiresAt\":1756056904810,\"updatedAt\":1756042504812,\"sessionReplayMode\":0,\"sessionReplaySentFirstChunk\":false,\"sessionTraceMode\":0,\"traceHarvestStarted\":false,\"loggingMode\":0,\"serverTimeDiff\":null,\"custom\":{},\"numOfResets\":0}"
+        },
+        {
+          "name": "_uetvid_exp",
+          "value": "Wed, 16 Sep 2026 03:01:58 GMT"
+        },
+        {
+          "name": "_uetsid_exp",
+          "value": "Sat, 23 Aug 2025 03:01:58 GMT"
+        },
+        {
+          "name": "topicsLastReferenceTime",
+          "value": "1755831725859"
+        },
+        {
+          "name": "__rtbh.uid",
+          "value": "{\"eventType\":\"uid\",\"id\":\"undefined\",\"expiryDate\":\"2026-08-22T03:02:05.687Z\"}"
+        },
+        {
+          "name": "_uetvid",
+          "value": "44b201107f0411f0a176f941f3e60327"
+        },
+        {
+          "name": "lastExternalReferrer",
+          "value": "empty"
+        },
+        {
+          "name": "_gcl_ls",
+          "value": "{\"schema\":\"gcl\",\"version\":1,\"gcl_ctr\":{\"value\":{\"value\":0,\"creationTimeMs\":1755831619660},\"expires\":1763607619660}}"
+        },
+        {
+          "name": "_uetsid",
+          "value": "44b1df407f0411f09ae369064ec87656"
+        }
+      ]
+    },
+    {
+      "origin": "https://www.r7.com",
+      "localStorage": [
+        {
+          "name": "_gcl_ls",
+          "value": "{\"schema\":\"gcl\",\"version\":1,\"gcl_ctr\":{\"value\":{\"value\":0,\"creationTimeMs\":1756048976523},\"expires\":1763824976523}}"
+        }
+      ]
+    },
+    {
+      "origin": "https://revistaforum.com.br",
+      "localStorage": [
+        {
+          "name": "as_client_id",
+          "value": "asc_1dtcggv115gis4v29n741kj0lyhmepu70y3u"
+        },
+        {
+          "name": "as_session_number",
+          "value": "1"
+        },
+        {
+          "name": "_GESPSK-esp.criteo.com",
+          "value": "[\"esp.criteo.com\",null,1756048936578,null,null,null,null,null,null,[100]]"
+        },
+        {
+          "name": "_GESPSK-33across.com",
+          "value": "[\"33across.com\",null,1756048940007,null,null,null,null,null,null,[109]]"
+        },
+        {
+          "name": "_GESPSK-permutive-secure-signal",
+          "value": "[\"permutive-secure-signal\",null,1756048936579,null,null,null,null,null,null,[100]]"
+        },
+        {
+          "name": "_gcl_ls",
+          "value": "{\"schema\":\"gcl\",\"version\":1,\"gcl_ctr\":{\"value\":{\"value\":0,\"creationTimeMs\":1756048932978},\"expires\":1763824932978}}"
+        },
+        {
+          "name": "as.trace",
+          "value": "{\"fl\":\"976f21\",\"h\":\"one.one.one.one\",\"ip\":\"42.118.0.194\",\"ts\":\"1756048921.515\",\"visit_scheme\":\"https\",\"uag\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36\",\"colo\":\"HKG\",\"sliver\":\"none\",\"http\":\"http/2\",\"loc\":\"VN\",\"tls\":\"TLSv1.3\",\"sni\":\"plaintext\",\"warp\":\"off\",\"gateway\":\"off\",\"rbi\":\"off\",\"kex\":\"X25519MLKEM768\"}"
+        },
+        {
+          "name": "goog:cached:topics",
+          "value": "[null,1756048940024,3]"
+        },
+        {
+          "name": "as_client_timestamp",
+          "value": "1756048933515"
+        },
+        {
+          "name": "_GESPSK-rtbhouse",
+          "value": "[\"rtbhouse\",null,1756048936578,null,null,null,null,null,null,[100]]"
+        },
+        {
+          "name": "as_session_id",
+          "value": "ass_1k2lyk0jnd45o1f29jeh1hpovwimepu70y3l"
+        },
+        {
+          "name": "as_session_timestamp",
+          "value": "1756048933516"
+        }
+      ]
+    },
+    {
+      "origin": "https://www.aliexpress.us",
+      "localStorage": [
+        {
+          "name": "lwrid__",
+          "value": "AgGY3KHzDV1fsHrdr8TkX39uI%2BOq"
+        },
+        {
+          "name": "__fastimg_local_avif_check__",
+          "value": "1"
+        },
+        {
+          "name": "ae_u_webp",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "origin": "https://guiadoestudante.abril.com.br",
+      "localStorage": [
+        {
+          "name": "permutive-data-queries",
+          "value": "{\"event-source-id\":\"09de41d5-8394-49ae-8759-22b040f93434\"}"
+        },
+        {
+          "name": "permutive-session",
+          "value": "{\"session_id\":\"8c65f7a9-c8f1-49fc-bcf6-ce477aa28890\",\"last_updated\":\"2025-08-24T15:08:16.307Z\",\"hasChanged\":true}"
+        },
+        {
+          "name": "marfeel-sdk-store",
+          "value": "eyJjcmVhdGlvbiI6MTc1NjA0ODA5NjM3MiwidXBkYXRlIjoxNzU2MDQ4MDk2MzczLCJlbnRyaWVzIjp7ImNyb3VwaWVyLWV4cGVyaWVuY2VzLWNvdW50LWVudHJ5Ijp7IkFDX2xxVzl6ZDhoUWVHVi1vb1dBUzJjVWciOnsiMjAyNSI6eyI3Ijp7IjI0Ijp7ImltcHJlc3Npb24iOjEsImNsb3NlIjowfSwidG90YWwiOnsiaW1wcmVzc2lvbiI6MSwiY2xvc2UiOjB9fSwidG90YWwiOnsiaW1wcmVzc2lvbiI6MSwiY2xvc2UiOjB9LCJ3MzQiOnsiaW1wcmVzc2lvbiI6MSwiY2xvc2UiOjB9fSwidG90YWwiOnsiaW1wcmVzc2lvbiI6MSwiY2xvc2UiOjB9LCJsYXN0Ijp7ImltcHJlc3Npb24iOjE3NTYwNDgwOTYzNzMsImNsb3NlIjowfX19fX0="
+        },
+        {
+          "name": "permutive-app",
+          "value": "{\"eventPublication\":{\"eventUpload\":[]},\"core\":{\"activations\":{\"dfp\":[],\"xandr_ssp\":[],\"adswizz_keyvalue\":[]},\"cohorts\":{\"all\":[],\"ql\":[],\"qlCustom\":[],\"qlStandard\":[]},\"masterEventsCache\":null,\"workerState\":null,\"stateMigrated\":false},\"metricContext\":{\"session_count\":{\"scope\":\"e33a58fd-5ff3-4a4a-867c-424cb0746cf2\",\"lastValue\":\"8c65f7a9-c8f1-49fc-bcf6-ce477aa28890\",\"count\":1},\"session_init_count\":{\"scope\":\"e33a58fd-5ff3-4a4a-867c-424cb0746cf2,8c65f7a9-c8f1-49fc-bcf6-ce477aa28890\",\"lastValue\":\"0.623211742162661\",\"count\":1},\"session_view_count\":{\"scope\":\"e33a58fd-5ff3-4a4a-867c-424cb0746cf2,8c65f7a9-c8f1-49fc-bcf6-ce477aa28890\",\"lastValue\":\"e0835648-c983-43bd-bf9c-6584dd56e16d\",\"count\":1}},\"sdkql\":{},\"strategicPartnerships\":{},\"mediaAndEntertainment\":{},\"advertisers\":{}}"
+        },
+        {
+          "name": "permutive-consent",
+          "value": "{\"opt_in\":true,\"token\":\"permutive-consent\"}"
+        },
+        {
+          "name": "_gcl_ls",
+          "value": "{\"schema\":\"gcl\",\"version\":1,\"gcl_ctr\":{\"value\":{\"value\":0,\"creationTimeMs\":1756048096491},\"expires\":1763824096491}}"
+        },
+        {
+          "name": "permutive-id",
+          "value": "e33a58fd-5ff3-4a4a-867c-424cb0746cf2"
+        },
+        {
+          "name": "abrilUserId",
+          "value": "1150737172.1756048097|Sun Aug 24 2025"
+        },
+        {
+          "name": "permutive-data-misc",
+          "value": "{\"metricsEnabled\":false}"
+        },
+        {
+          "name": "permutive-prebid-rtd",
+          "value": "{\"acBidders\":[]}"
+        },
+        {
+          "name": "_pdfps",
+          "value": "[]"
+        },
+        {
+          "name": "abril_shipping_purchase",
+          "value": "[{\"nomMetadado\":\"referrer\",\"datMetadado\":\"2025-08-24T12:08:16\",\"vlrMetadado\":\"direto\"}]"
+        }
+      ]
+    },
+    {
+      "origin": "https://banco.bradesco",
+      "localStorage": [
+        {
+          "name": "tgt:tlm:0",
+          "value": "{\"execution\":1721.1,\"parsing\":0,\"request\":{\"tls\":998.7,\"timeToFirstByte\":338.4,\"download\":0.7,\"responseSize\":259},\"telemetryServerToken\":\"p4YQxyYgYUTaezwmtUViaDqkTGMoMWlxcXcNCQ2Qbps=\",\"mode\":\"edge\",\"features\":{\"executePageLoad\":true,\"prefetchViewCount\":1,\"decisioningMethod\":\"server-side\"},\"requestId\":\"01dcdfc7d94d4cf691315639c66f66f6\",\"timestamp\":1756048038585}"
+        },
+        {
+          "name": "tgt:tlm:upper",
+          "value": "0"
+        }
+      ]
+    },
     {
       "origin": "https://g1.globo.com",
       "localStorage": [
@@ -765,55 +1649,6 @@
       ]
     },
     {
-      "origin": "https://www.mercadolivre.com.br",
-      "localStorage": [
-        {
-          "name": "__rtbh.lid",
-          "value": "{\"eventType\":\"lid\",\"id\":\"zS7DjKRNx830Ho9XEVdk\",\"expiryDate\":\"2026-08-22T03:02:05.687Z\"}"
-        },
-        {
-          "name": "lastExternalReferrerTime",
-          "value": "1755831725846"
-        },
-        {
-          "name": "NRBA_SESSION",
-          "value": "{\"value\":\"ce9861e71d6ea6bb\",\"inactiveAt\":1756044304810,\"expiresAt\":1756056904810,\"updatedAt\":1756042504812,\"sessionReplayMode\":0,\"sessionReplaySentFirstChunk\":false,\"sessionTraceMode\":0,\"traceHarvestStarted\":false,\"loggingMode\":0,\"serverTimeDiff\":null,\"custom\":{},\"numOfResets\":0}"
-        },
-        {
-          "name": "_uetvid_exp",
-          "value": "Wed, 16 Sep 2026 03:01:58 GMT"
-        },
-        {
-          "name": "_uetsid_exp",
-          "value": "Sat, 23 Aug 2025 03:01:58 GMT"
-        },
-        {
-          "name": "topicsLastReferenceTime",
-          "value": "1755831725859"
-        },
-        {
-          "name": "__rtbh.uid",
-          "value": "{\"eventType\":\"uid\",\"id\":\"undefined\",\"expiryDate\":\"2026-08-22T03:02:05.687Z\"}"
-        },
-        {
-          "name": "_uetvid",
-          "value": "44b201107f0411f0a176f941f3e60327"
-        },
-        {
-          "name": "lastExternalReferrer",
-          "value": "empty"
-        },
-        {
-          "name": "_gcl_ls",
-          "value": "{\"schema\":\"gcl\",\"version\":1,\"gcl_ctr\":{\"value\":{\"value\":0,\"creationTimeMs\":1755831619660},\"expires\":1763607619660}}"
-        },
-        {
-          "name": "_uetsid",
-          "value": "44b1df407f0411f09ae369064ec87656"
-        }
-      ]
-    },
-    {
       "origin": "https://www.gov.br",
       "localStorage": [
         {
@@ -844,7 +1679,16 @@
         },
         {
           "name": "ytidb::LAST_RESULT_ENTRY_KEY",
-          "value": "{\"data\":{\"hasSucceededOnce\":true},\"expiration\":1758638586366,\"creation\":1756046586366}"
+          "value": "{\"data\":{\"hasSucceededOnce\":true},\"expiration\":1758640734651,\"creation\":1756048734651}"
+        }
+      ]
+    },
+    {
+      "origin": "https://www.google.com",
+      "localStorage": [
+        {
+          "name": "rc::a",
+          "value": "OHZkNDI3NnY3cDBr"
         }
       ]
     }

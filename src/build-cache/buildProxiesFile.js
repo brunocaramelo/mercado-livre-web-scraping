@@ -58,12 +58,14 @@ async function testHttpTunnelAxios(proxyUrl, pageTarget) {
 
     const page = await context.newPage();
    
-    await page.goto(pageTarget, {
-              waitUntil: 'domcontentloaded',
-              timeout: 900000
-    });
+    // await page.goto(pageTarget, {
+    //           waitUntil: 'domcontentloaded',
+    //           timeout: 9000000
+    // });
+   
+    await page.goto(pageTarget);
 
-    console.log(`✅ FUNCIONA: ${proxyUrl} em produto ${pageTarget}`);
+    console.log(`✅ PRE-FUNCIONOU: ${proxyUrl} em site ${pageTarget}`);
 
     return { success: true, status: 'success' };
   } catch (err) {
@@ -90,6 +92,8 @@ async function testProxy(typeParam ,ip, port, country) {
   
   const productUri = await getOneRandomProductMl();
 
+  const randomIntervalIteration = Math.floor(Math.random() * (10000 - 3000 + 1) + 3000);
+
   try {
     
     const responseOfAxioTest = await testHttpTunnelAxios(proxyUrl, 
@@ -99,6 +103,9 @@ async function testProxy(typeParam ,ip, port, country) {
     if (responseOfAxioTest.success == false) {
       throw new Error('Requisição inicial do proxy pelo browser falhou: '+responseOfAxioTest.error);
     }
+
+    console.log(`Aguardar ${randomIntervalIteration} para proxima iteração`);
+    await page.waitForTimeout(randomIntervalIteration);
 
     const context = await navigatorFactory.launchWithOptionsParamContext(chromium,{
       proxy: {
@@ -124,13 +131,8 @@ async function testProxy(typeParam ,ip, port, country) {
     const currentUrl = page.url();
 
     if (currentUrl.includes(targetFailedString)) {
-      throw new Error('Bloqueio de login: A página de verificação de conta foi detectada.');
+      throw new Error('Bloqueio de login: A página de verificação de conta foi detectada em :'+productUri);
     }
-
-    const randomIntervalIteration = Math.floor(Math.random() * (10000 - 3000 + 1) + 3000);
-
-    console.log(`Aguardar ${randomIntervalIteration} para proxima iteração`);
-    await page.waitForTimeout(randomIntervalIteration);
 
     console.log(`✅ FUNCIONA: ${proxyUrl} em produto ${currentUrl}`);
     return {type, ip, port, success: true , country: country};
