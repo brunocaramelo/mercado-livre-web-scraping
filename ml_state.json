@@ -195,10 +195,10 @@
       "value": "bbe17dd4-29a5-4ff9-ad43-ae92a2ffc92e",
       "domain": ".mercadolivre.com.br",
       "path": "/",
-      "expires": 1756050869.873912,
+      "expires": 1756051696.489828,
       "httpOnly": false,
       "secure": true,
-      "sameSite": "Lax"
+      "sameSite": "None"
     },
     {
       "name": "MUIDB",
@@ -765,7 +765,7 @@
       "value": "{%22sid%22:1%2C%22surl%22:%22https://guiadoestudante.abril.com.br/%22%2C%22sref%22:%22%22%2C%22sts%22:1756048096156%2C%22slts%22:0}",
       "domain": ".abril.com.br",
       "path": "/",
-      "expires": 1756049896,
+      "expires": 1756051168,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
@@ -775,7 +775,7 @@
       "value": "{%22id%22:%22pid=1e12d2c552ca23c5483402bb176a1644%22%2C%22session_count%22:1%2C%22last_session_ts%22:1756048096156}",
       "domain": ".abril.com.br",
       "path": "/",
-      "expires": 1790212096,
+      "expires": 1790213368,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
@@ -785,7 +785,7 @@
       "value": "true",
       "domain": ".abril.com.br",
       "path": "/",
-      "expires": 1756134496,
+      "expires": 1756135769,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
@@ -795,27 +795,17 @@
       "value": "e33a58fd-5ff3-4a4a-867c-424cb0746cf2",
       "domain": ".abril.com.br",
       "path": "/",
-      "expires": 1771945696,
+      "expires": 1771946976,
       "httpOnly": false,
       "secure": true,
       "sameSite": "None"
-    },
-    {
-      "name": "___nrbic",
-      "value": "%7B%22isNewUser%22%3Atrue%2C%22previousVisit%22%3A1756048096%2C%22lastBeat%22%3A1756048096%2C%22currentVisitStarted%22%3A1756048096%2C%22sessionId%22%3A%22134ac2a7-23e5-4b4e-a445-d02c7c908664%22%2C%22sessionVars%22%3A%5B%5D%2C%22visitedInThisSession%22%3Atrue%2C%22pagesViewed%22%3A1%2C%22landingPage%22%3A%22https%3A//guiadoestudante.abril.com.br/%22%2C%22referrer%22%3A%22%22%2C%22lpti%22%3Anull%7D",
-      "domain": ".abril.com.br",
-      "path": "/",
-      "expires": 1771600096,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "Lax"
     },
     {
       "name": "___nrbi",
       "value": "%7B%22firstVisit%22%3A1756048096%2C%22userId%22%3A%22dbcdc81c-4e4d-4f0f-994d-c6b99b3b382a%22%2C%22userVars%22%3A%5B%5D%2C%22futurePreviousVisit%22%3A1756048096%2C%22timesVisited%22%3A1%7D",
       "domain": ".abril.com.br",
       "path": "/",
-      "expires": 1771600096,
+      "expires": 1771601371,
       "httpOnly": false,
       "secure": true,
       "sameSite": "Lax"
@@ -825,7 +815,7 @@
       "value": "dbcdc81c-4e4d-4f0f-994d-c6b99b3b382a",
       "domain": ".abril.com.br",
       "path": "/",
-      "expires": 1771600096,
+      "expires": 1771601371,
       "httpOnly": false,
       "secure": true,
       "sameSite": "Lax"
@@ -1289,6 +1279,436 @@
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
+    },
+    {
+      "name": "abrilUserId",
+      "value": "1150737172.1756048097|Sun Aug 24 2025",
+      "domain": ".abril.com.br",
+      "path": "/",
+      "expires": 1787585367,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "___nrbic",
+      "value": "%7B%22isNewUser%22%3Atrue%2C%22previousVisit%22%3A1756048096%2C%22lastBeat%22%3A1756049370%2C%22currentVisitStarted%22%3A1756048096%2C%22sessionId%22%3A%22134ac2a7-23e5-4b4e-a445-d02c7c908664%22%2C%22sessionVars%22%3A%5B%5D%2C%22visitedInThisSession%22%3Atrue%2C%22pagesViewed%22%3A2%2C%22landingPage%22%3A%22https%3A//guiadoestudante.abril.com.br/%22%2C%22referrer%22%3A%22%22%2C%22lpti%22%3Anull%7D",
+      "domain": ".abril.com.br",
+      "path": "/",
+      "expires": 1771601371,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "3166_u",
+      "value": "dbcdc81c-4e4d-4f0f-994d-c6b99b3b382a",
+      "domain": ".newsroom.bi",
+      "path": "/",
+      "expires": 1771601382.094566,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "3166_s",
+      "value": "134ac2a7-23e5-4b4e-a445-d02c7c908664",
+      "domain": ".newsroom.bi",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "3166_lv",
+      "value": "null",
+      "domain": ".newsroom.bi",
+      "path": "/",
+      "expires": 1758641382.094685,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "3166_ut",
+      "value": "0",
+      "domain": ".newsroom.bi",
+      "path": "/",
+      "expires": 1758641382.094711,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_ga_0HTYQ9ZBSJ",
+      "value": "GS2.1.s1756049374$o1$g0$t1756049374$j60$l0$h0",
+      "domain": ".abril.com.br",
+      "path": "/",
+      "expires": 1790609374.81781,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.1768815200.1756049375",
+      "domain": ".abril.com.br",
+      "path": "/",
+      "expires": 1790609374.818261,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_gcl_au",
+      "value": "1.1.1035609106.1756049375",
+      "domain": ".abril.com.br",
+      "path": "/",
+      "expires": 1763825375,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_scor_uid",
+      "value": "c16efa788de84dea865f51e50f9c7052",
+      "domain": ".abril.com.br",
+      "path": "/",
+      "expires": 1789745375,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_ga_E5YJHBJ3M4",
+      "value": "GS2.1.s1756049378$o1$g0$t1756049378$j60$l0$h0",
+      "domain": ".abril.com.br",
+      "path": "/",
+      "expires": 1790609378.324111,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "pxid",
+      "value": "7cfb711b-4409-4de0-a690-6663385c0eea",
+      "domain": ".3e28a662-3f1b-4a03-b3e0-83740dfc78fd.prmutv.co",
+      "path": "/",
+      "expires": 1763998178.479088,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_cb_folha",
+      "value": "BxdtUoBB8U5UCBYLF-",
+      "domain": ".folha.uol.com.br",
+      "path": "/",
+      "expires": 1790177514,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_chartbeat2_folha",
+      "value": ".1756049514851.1756049514851.1.BPrIFFCp7M-HBYbpAiNBhWsDVI7HA.1",
+      "domain": ".folha.uol.com.br",
+      "path": "/",
+      "expires": 1790177514,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_cb_svref_folha",
+      "value": "external",
+      "domain": ".folha.uol.com.br",
+      "path": "/",
+      "expires": 1756051314,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_sp_ses.8894",
+      "value": "*",
+      "domain": ".folha.uol.com.br",
+      "path": "/",
+      "expires": 1756051329,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_matheriSegs",
+      "value": "MATHER_U9_INSTANTMET2_20200701",
+      "domain": ".folha.uol.com.br",
+      "path": "/",
+      "expires": 1790609519.22931,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_matherSegments",
+      "value": "MATHER_U9_INSTANTMET2_20200701",
+      "domain": ".folha.uol.com.br",
+      "path": "/",
+      "expires": 1790609519.22979,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_gcl_au",
+      "value": "1.1.380646116.1756049520",
+      "domain": ".uol.com.br",
+      "path": "/",
+      "expires": 1763825519,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "UOLID",
+      "value": "6b1683f2-4d9c-44ad-aa8b-bcea6a831ff2|0",
+      "domain": ".udr.uol.com.br",
+      "path": "/",
+      "expires": 1787585520.709031,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "acessofolha",
+      "value": "3d20134827cc4f5aaf02dd849fede282",
+      "domain": ".paywall.folha.uol.com.br",
+      "path": "/",
+      "expires": 1787585522.870168,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "folha_ga_userType",
+      "value": "not_logged",
+      "domain": ".folha.uol.com.br",
+      "path": "/",
+      "expires": 1763825522,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "folha_ga_loginType",
+      "value": "folha",
+      "domain": ".folha.uol.com.br",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "folha_ga_userGroup",
+      "value": "none",
+      "domain": ".folha.uol.com.br",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "folha_ga_swgt",
+      "value": "none",
+      "domain": ".folha.uol.com.br",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ivc",
+      "value": "d3b7b38b-468c-403c-8282-be24f9bfeec7",
+      "domain": ".uol.com.br",
+      "path": "/",
+      "expires": 1790609523.068492,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_fbp",
+      "value": "fb.2.1756049525885.861793422959436025",
+      "domain": ".uol.com.br",
+      "path": "/",
+      "expires": 1763825525,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.376966831.1756049527",
+      "domain": ".uol.com.br",
+      "path": "/",
+      "expires": 1790609526.97852,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga_RY1LTN28TR",
+      "value": "GS2.1.s1756049526$o1$g0$t1756049526$j60$l0$h0",
+      "domain": ".uol.com.br",
+      "path": "/",
+      "expires": 1790609526.989781,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_sp_id.8894",
+      "value": "cd46fc2a-215e-44f5-9883-a78d94166507.1756049519.1.1756049529.1756049519",
+      "domain": ".folha.uol.com.br",
+      "path": "/",
+      "expires": 1790609529.227232,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ak_bmsc",
+      "value": "DE0BDB1911E5EF383F90125070BEAD23~000000000000000000000000000000~YAAQh2PKFyV0J7uYAQAAVrq63BznwXeHg7VHuKB+zptzH0BGHbHzOTW00RtM7LSfum+w5SJKCKYcEcputVC5SRvpXT4BzgRdU7nCFofKaJQ0Ctki07YhEIuIWDcuXiaqND0bfMeacwF39up2VSsnQ6BMRKki7DqF5W9NSnwok1so0frb0Bzpqy+KxXkk+uCV8jEhnLHEwUw/K+GTRmLMkqlzYO0IeqLmgkTGte8f4COnImyeurJivcjWAmRoMnfmM600yjPgBnCCxkmia7H/CKILumL2OB26FS1OzDkPDlP6GRbwU5QBkNjrnJ19lnJRYDvAcIRgKnjQUUeoDLAPCDh2VTZdRUYe/AI5oFOimV8FFy9hFxCZBVobnHZtEzP6cNPjCLP5PQ==",
+      "domain": ".santander.com.br",
+      "path": "/",
+      "expires": 1756057080.940287,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "bm_sz",
+      "value": "1489685C2096A5092EA2E2B7BFC4ACB5~YAAQh2PKFyZ0J7uYAQAAVrq63BwZH4Yf371znC9VUChQozoalpLSnVXBep9G1DmIYMv6zSqfz6H7F6gTbT9pROsh6aOWSM9mhXBX2gsik4wKwK+DianYvRNg2+ozFYW3CD30UWw1oiXfu5WxV0oVix9XE5KxSCeTdHzwmQq6sbccvcZfdVnqsqB4Wf6edsrzP6lTTu6KCJCluKi7xTYs4mA8eOWnB1zxACkygY7I9UdbO7NGocV+qlF+Tbijv5RLgVInX2omPNnHtTYc5utNhPdIEEgF52XQhl0/AkCEiwM5l9AWRuGHlEHP37q3DiTtNuxigj29x+L4v4gg2BCNze7+wpRInLVOILow+73t/t/Ok9WP1Ld9Gi137YebwvIjrb7yiq84gb0sGEY=~3749936~4536132",
+      "domain": ".santander.com.br",
+      "path": "/",
+      "expires": 1756064280.940308,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "rxVisitor",
+      "value": "1756049883437JIB1CHR7P16QNBELOD1NM3CVFFHI31HS",
+      "domain": ".santander.com.br",
+      "path": "/",
+      "expires": 1790609892.831666,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "dtSa",
+      "value": "-",
+      "domain": ".santander.com.br",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_abck",
+      "value": "4CAC4768AC8BBAE4F108115C7A988F49~-1~YAAQh2PKF+J7J7uYAQAAIc663A7adoF3mtGFUhNKnXvsw82NOWliw1zNZjHOZmLV689EIv1suDFmIewPi7LveR95D1OKP1PszRej/AwyGWudUUeNY3P7ocTiiPSXsD70HZZY5dRVc01D46Vd742pXcBYcjvR/V07wkOiG3NPXuliTgaaaFP5ru7Efx6dcSTmUolefQZWKpk0cO6l0aYDxkzq4tVs3IBk5qN2YCPrta+4+VlfGkqZaqUAN4Z1Xftw/H0wBXxeRkfLla4krUd/8YhxKAc503GchP/vWSB9Lp55GIV2+qtUFdfAcwSONFhp73l80chNA0A7rvZdbxOygEsU8ywVcmGUGZfIn3BpaB+PCf86vO9kxhsica83v1S1zVyt7jlNNZkqKwN+niYSFqD9ZfA8kPRxsWC8Bu4zdIPTXX3zxlE4FxNbcvY29z92JIEQLG/fhDaTpNpU7BqYoyRpVRUSwZGUWg5SG1260XNpCT0qrOFGV2SxIIV46sXLlTl4ESKMxJno63aO/NsAD219qAiXeC01g0q/S0pG3xSDaZcFqxARJGjND1BK782iBObGqxg0ZeRBhUNjlKcQ76HGWgNE001aZm2E4U/0xqsKnISSX4lyAwugl1RujE3r0aW8~-1~-1~-1~~",
+      "domain": ".santander.com.br",
+      "path": "/",
+      "expires": 1787585886.817714,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "demdex",
+      "value": "39364165257732798783387345381810260190",
+      "domain": ".demdex.net",
+      "path": "/",
+      "expires": 1771601887.061887,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "kndctr_0F98784661041F810A495F97_AdobeOrg_cluster",
+      "value": "or2",
+      "domain": ".santander.com.br",
+      "path": "/",
+      "expires": 1756051687,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "kndctr_0F98784661041F810A495F97_AdobeOrg_identity",
+      "value": "CiY0NDUxODgyMDcwOTg2NDEwNDM1MjYyNDE3NjM1MTI0NTkzMTQxOVISCMqd6-WNMxABGAEqA09SMjAA8AHKnevljTM=",
+      "domain": ".santander.com.br",
+      "path": "/",
+      "expires": 1790177887,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AMCV_0F98784661041F810A495F97%40AdobeOrg",
+      "value": "MCMID|44518820709864104352624176351245931419",
+      "domain": ".santander.com.br",
+      "path": "/",
+      "expires": 1789745887,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "rxvt",
+      "value": "1756051689678|1756049883439",
+      "domain": ".santander.com.br",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "dtPC",
+      "value": "-26991$449883435_175h-vKIJJWQEPNKFMRELKQTFKHHWKVARUFHVU-0e0",
+      "domain": ".santander.com.br",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "dtCookie",
+      "value": "v_4_srv_13_sn_KMQ5LDBLQ8TL95KGS9RUDFN5EVKFDHM2_perc_100000_ol_0_mul_1_app-3Ae85f0941daca705e_1",
+      "domain": ".santander.com.br",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "bm_sv",
+      "value": "784E738707B2EAD0EE7446CC7AE27D4B~YAAQh2PKF7CEJ7uYAQAA3+e63BzlX3qitP4Ipk9rSFNb9PG8oPUNrpuwuAHq0jlgm2149YN7Uu8UuMTxiF9PxBV/cBn3QtFANpKEYTn8WN873LVgVhczt1C7uXHz4huglrYR9UWmqlwfP6eDPwBEP3b3XfNEU84On7+kBS1QnZhxORvZtDQYwKOTpvj+X2wuK1mGMvTrPipvQl8KF9uSCnsk4vzzBKtww1HYJqFA0R4/IrQJ2nhY2JEgAfM5eNDJ/RhfourI~1",
+      "domain": ".santander.com.br",
+      "path": "/",
+      "expires": 1756057091.404676,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
     }
   ],
   "origins": [
@@ -1338,6 +1758,153 @@
         {
           "name": "_uetsid",
           "value": "44b1df407f0411f09ae369064ec87656"
+        }
+      ]
+    },
+    {
+      "origin": "https://www.santander.com.br",
+      "localStorage": [
+        {
+          "name": "ak_a",
+          "value": "4CAC4768AC8BBAE4F108115C7A988F49"
+        },
+        {
+          "name": "rxVisitor",
+          "value": "1756049883437JIB1CHR7P16QNBELOD1NM3CVFFHI31HS"
+        },
+        {
+          "name": "ak_ax",
+          "value": "-1"
+        }
+      ]
+    },
+    {
+      "origin": "https://www.folha.uol.com.br",
+      "localStorage": [
+        {
+          "name": "undefined",
+          "value": "null"
+        },
+        {
+          "name": "lastExternalReferrerTime",
+          "value": "1756049525873"
+        },
+        {
+          "name": "_cb",
+          "value": "BxdtUoBB8U5UCBYLF-"
+        },
+        {
+          "name": "_cb_svref",
+          "value": "external"
+        },
+        {
+          "name": "uolDataLayer",
+          "value": "{\"UOLID\":\"6b1683f2-4d9c-44ad-aa8b-bcea6a831ff2\",\"ppid\":\"6b1683f2-4d9c-44ad-aa8b-bcea6a831ff2\"}"
+        },
+        {
+          "name": "_chartbeat2_expires",
+          "value": "1790177514854"
+        },
+        {
+          "name": "_mather",
+          "value": "eyJ1c2VyREIiOnsic2VnbWVudHMiOlt7InR5cGUiOiJsb2NhbFN0b3JhZ2V8aVNlZyIsIm5hbWUiOiJNQVRIRVJfVTlfSU5TVEFOVE1FVDJfMjAyMDA3MDEifV0sIm1ldGVyRGF0YSI6eyJtZXRlclRocmVzaG9sZCI6IjAiLCJyZXNldE1ldGVyIjoiMCJ9LCJwYWdlVmlld3MiOjEsImR1aWQiOiJjZDQ2ZmMyYS0yMTVlLTQ0ZjUtOTg4My1hNzhkOTQxNjY1MDciLCJmcm9tQ2FjaGUiOnRydWV9LCJhdWRpZW5jZSI6W3sicHJvdmlkZXIiOiJ1c2VyREIiLCJzZWdtZW50cyI6WyJNQVRIRVJfVTlfSU5TVEFOVE1FVDJfMjAyMDA3MDEiXSwicGFnZUlkIjoiOGM3MzI4YzgtMmU1ZC00NTMxLWExYzktMTI1NmM2ZTYyNTljIn0seyJwcm92aWRlciI6ImlTZWdzIiwic2VnbWVudHMiOlsiTUFUSEVSX1U5X0lOU1RBTlRNRVQyXzIwMjAwNzAxIl0sInBhZ2VJZCI6IjhjNzMyOGM4LTJlNWQtNDUzMS1hMWM5LTEyNTZjNmU2MjU5YyJ9XSwiX3BlcnNpc3QiOnsiYXVkaWVuY2UiOnRydWV9fQ=="
+        },
+        {
+          "name": "topicsLastReferenceTime",
+          "value": "1756049525897"
+        },
+        {
+          "name": "lastExternalReferrer",
+          "value": "empty"
+        },
+        {
+          "name": "_chartbeat2",
+          "value": ".1756049514851.1756049514851.1.BPrIFFCp7M-HBYbpAiNBhWsDVI7HA.1"
+        },
+        {
+          "name": "_gcl_ls",
+          "value": "{\"schema\":\"gcl\",\"version\":1,\"gcl_ctr\":{\"value\":{\"value\":0,\"creationTimeMs\":1756049519524},\"expires\":1763825519524}}"
+        },
+        {
+          "name": "UDR.DATA",
+          "value": "{\"uolid\":\"6b1683f2-4d9c-44ad-aa8b-bcea6a831ff2\",\"ppid\":\"6b1683f2-4d9c-44ad-aa8b-bcea6a831ff2\",\"ifa_type\":\"ppid\",\"sort_index\":0.4196,\"data\":{}}"
+        },
+        {
+          "name": "_cb_svref_expires",
+          "value": "1756051314861"
+        },
+        {
+          "name": "_matherSegments",
+          "value": "MATHER_U9_INSTANTMET2_20200701"
+        },
+        {
+          "name": "_cb_expires",
+          "value": "1790177514854"
+        }
+      ]
+    },
+    {
+      "origin": "https://guiadoestudante.abril.com.br",
+      "localStorage": [
+        {
+          "name": "permutive-data-queries",
+          "value": "{\"event-source-id\":\"09de41d5-8394-49ae-8759-22b040f93434\"}"
+        },
+        {
+          "name": "permutive-session",
+          "value": "{\"session_id\":\"8c65f7a9-c8f1-49fc-bcf6-ce477aa28890\",\"last_updated\":\"2025-08-24T15:29:36.682Z\",\"hasChanged\":false}"
+        },
+        {
+          "name": "marfeel-sdk-store",
+          "value": "eyJjcmVhdGlvbiI6MTc1NjA0ODA5NjM3MiwidXBkYXRlIjoxNzU2MDQ5MzcwMjYzLCJlbnRyaWVzIjp7ImNyb3VwaWVyLWV4cGVyaWVuY2VzLWNvdW50LWVudHJ5Ijp7IkFDX2xxVzl6ZDhoUWVHVi1vb1dBUzJjVWciOnsiMjAyNSI6eyI3Ijp7IjI0Ijp7ImltcHJlc3Npb24iOjIsImNsb3NlIjowfSwidG90YWwiOnsiaW1wcmVzc2lvbiI6MiwiY2xvc2UiOjB9fSwidG90YWwiOnsiaW1wcmVzc2lvbiI6MiwiY2xvc2UiOjB9LCJ3MzQiOnsiaW1wcmVzc2lvbiI6MiwiY2xvc2UiOjB9fSwidG90YWwiOnsiaW1wcmVzc2lvbiI6MiwiY2xvc2UiOjB9LCJsYXN0Ijp7ImltcHJlc3Npb24iOjE3NTYwNDkzNzAyNjMsImNsb3NlIjowfX19fX0="
+        },
+        {
+          "name": "permutive-app",
+          "value": "{\"eventPublication\":{\"eventUpload\":[[\"PageviewComplete-d249c8d3-cd12-4ba1-bef0-b91c40bb9683\",{\"event\":{\"name\":\"PageviewComplete\",\"time\":\"2025-08-24T15:29:38.690Z\",\"properties\":{\"isp_info\":{\"isp\":\"OVHcloud\",\"organization\":\"OVHcloud\",\"autonomous_system_number\":16276,\"autonomous_system_organization\":\"OVH SAS\"},\"geo_info\":{\"continent\":\"Europe\",\"country\":\"Germany\",\"city\":\"Frankfurt am Main\",\"province\":\"Hesse\"},\"tipo_pagina\":\"page\",\"status_pagina\":\"publish\",\"autor\":\"100058408\",\"editor\":\"\",\"tags\":[\"home\",\"nbsp\"],\"editoria\":\"\",\"nome_blog\":\"\",\"programa\":\"\",\"oferecimento\":\"\",\"autor_sem_pagina\":\"\",\"autor_com_pagina\":\"Redação do Guia do Estudante\",\"tipo_paywall\":\"\",\"status_usuario\":\"não logado\",\"palavra_linkada\":\"\",\"url_linkada\":\"\",\"posts_caracteres\":\"\",\"navegg\":{\"gender\":\"\",\"age\":\"\",\"education\":\"\",\"marital\":\"\",\"income\":\"\",\"interest\":[],\"cluster\":[],\"custom\":[],\"industry\":[],\"everyone\":[],\"everybuyer\":[]},\"client\":{\"domain\":\"guiadoestudante.abril.com.br\",\"referrer\":\"\",\"title\":\"Guia do Estudante\",\"type\":\"web\",\"url\":\"https://guiadoestudante.abril.com.br\",\"user_agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 PermutiveWebSDK/v20.47.0\"},\"contextual\":{\"classifications\":null},\"aggregations\":{\"PageviewEngagement\":{\"engaged_time\":0},\"SegmentEntry\":[207294],\"SegmentExit\":[],\"CohortEntry\":[\"207294\"],\"CohortExit\":[]}},\"session_id\":\"8c65f7a9-c8f1-49fc-bcf6-ce477aa28890\",\"view_id\":\"d249c8d3-cd12-4ba1-bef0-b91c40bb9683\",\"segments\":[207294],\"user_id\":\"e33a58fd-5ff3-4a4a-867c-424cb0746cf2\",\"cohorts\":[\"207294\",\"adv\",\"cur\",\"adv\"]},\"requiresEnrichment\":false,\"sdkProcessed\":true}]]},\"core\":{\"activations\":{\"dfp\":[\"adv\"],\"dfp_contextual\":[]},\"cohorts\":{\"all\":[\"207294\",\"adv\",\"cur\",\"adv\"],\"ql\":[207294],\"qlCustom\":[207294],\"qlStandard\":[]},\"stateMigrated\":true},\"metricContext\":{\"session_count\":{\"scope\":\"e33a58fd-5ff3-4a4a-867c-424cb0746cf2\",\"lastValue\":\"8c65f7a9-c8f1-49fc-bcf6-ce477aa28890\",\"count\":1},\"session_init_count\":{\"scope\":\"e33a58fd-5ff3-4a4a-867c-424cb0746cf2,8c65f7a9-c8f1-49fc-bcf6-ce477aa28890\",\"lastValue\":\"0.7266613918018439\",\"count\":2},\"session_view_count\":{\"scope\":\"e33a58fd-5ff3-4a4a-867c-424cb0746cf2,8c65f7a9-c8f1-49fc-bcf6-ce477aa28890\",\"lastValue\":\"d249c8d3-cd12-4ba1-bef0-b91c40bb9683\",\"count\":2}},\"sdkql\":{},\"strategicPartnerships\":{},\"mediaAndEntertainment\":{},\"advertisers\":{}}"
+        },
+        {
+          "name": "permutive-consent",
+          "value": "{\"opt_in\":true,\"token\":\"permutive-consent\"}"
+        },
+        {
+          "name": "_psegs",
+          "value": "[207294]"
+        },
+        {
+          "name": "_gcl_ls",
+          "value": "{\"schema\":\"gcl\",\"version\":1,\"gcl_ctr\":{\"value\":{\"value\":0,\"creationTimeMs\":1756049375079},\"expires\":1763825375079}}"
+        },
+        {
+          "name": "_pcrprs",
+          "value": "[\"adv\"]"
+        },
+        {
+          "name": "_pssps",
+          "value": "{\"cohorts\":[\"cur\",\"adv\"],\"ssps\":[\"openx\",\"pubmatic\",\"appnexus\",\"ix\"]}"
+        },
+        {
+          "name": "abrilUserId",
+          "value": "1150737172.1756048097|Sun Aug 24 2025"
+        },
+        {
+          "name": "permutive-prebid-rtd",
+          "value": "{\"acBidders\":[]}"
+        },
+        {
+          "name": "permutive-data-misc",
+          "value": "{\"identities\":{\"pxid\":{\"value\":\"7cfb711b-4409-4de0-a690-6663385c0eea\",\"expiry\":1756135778687},\"appnexus\":{\"expiry\":1756135778687}},\"metricsEnabled\":false}"
+        },
+        {
+          "name": "permutive-id",
+          "value": "e33a58fd-5ff3-4a4a-867c-424cb0746cf2"
+        },
+        {
+          "name": "_pdfps",
+          "value": "[\"207294\",\"adv\"]"
+        },
+        {
+          "name": "abril_shipping_purchase",
+          "value": "[{\"nomMetadado\":\"referrer\",\"datMetadado\":\"2025-08-24T12:08:16\",\"vlrMetadado\":\"direto\"}]"
         }
       ]
     },
@@ -1417,59 +1984,6 @@
         {
           "name": "ae_u_webp",
           "value": "1"
-        }
-      ]
-    },
-    {
-      "origin": "https://guiadoestudante.abril.com.br",
-      "localStorage": [
-        {
-          "name": "permutive-data-queries",
-          "value": "{\"event-source-id\":\"09de41d5-8394-49ae-8759-22b040f93434\"}"
-        },
-        {
-          "name": "permutive-session",
-          "value": "{\"session_id\":\"8c65f7a9-c8f1-49fc-bcf6-ce477aa28890\",\"last_updated\":\"2025-08-24T15:08:16.307Z\",\"hasChanged\":true}"
-        },
-        {
-          "name": "marfeel-sdk-store",
-          "value": "eyJjcmVhdGlvbiI6MTc1NjA0ODA5NjM3MiwidXBkYXRlIjoxNzU2MDQ4MDk2MzczLCJlbnRyaWVzIjp7ImNyb3VwaWVyLWV4cGVyaWVuY2VzLWNvdW50LWVudHJ5Ijp7IkFDX2xxVzl6ZDhoUWVHVi1vb1dBUzJjVWciOnsiMjAyNSI6eyI3Ijp7IjI0Ijp7ImltcHJlc3Npb24iOjEsImNsb3NlIjowfSwidG90YWwiOnsiaW1wcmVzc2lvbiI6MSwiY2xvc2UiOjB9fSwidG90YWwiOnsiaW1wcmVzc2lvbiI6MSwiY2xvc2UiOjB9LCJ3MzQiOnsiaW1wcmVzc2lvbiI6MSwiY2xvc2UiOjB9fSwidG90YWwiOnsiaW1wcmVzc2lvbiI6MSwiY2xvc2UiOjB9LCJsYXN0Ijp7ImltcHJlc3Npb24iOjE3NTYwNDgwOTYzNzMsImNsb3NlIjowfX19fX0="
-        },
-        {
-          "name": "permutive-app",
-          "value": "{\"eventPublication\":{\"eventUpload\":[]},\"core\":{\"activations\":{\"dfp\":[],\"xandr_ssp\":[],\"adswizz_keyvalue\":[]},\"cohorts\":{\"all\":[],\"ql\":[],\"qlCustom\":[],\"qlStandard\":[]},\"masterEventsCache\":null,\"workerState\":null,\"stateMigrated\":false},\"metricContext\":{\"session_count\":{\"scope\":\"e33a58fd-5ff3-4a4a-867c-424cb0746cf2\",\"lastValue\":\"8c65f7a9-c8f1-49fc-bcf6-ce477aa28890\",\"count\":1},\"session_init_count\":{\"scope\":\"e33a58fd-5ff3-4a4a-867c-424cb0746cf2,8c65f7a9-c8f1-49fc-bcf6-ce477aa28890\",\"lastValue\":\"0.623211742162661\",\"count\":1},\"session_view_count\":{\"scope\":\"e33a58fd-5ff3-4a4a-867c-424cb0746cf2,8c65f7a9-c8f1-49fc-bcf6-ce477aa28890\",\"lastValue\":\"e0835648-c983-43bd-bf9c-6584dd56e16d\",\"count\":1}},\"sdkql\":{},\"strategicPartnerships\":{},\"mediaAndEntertainment\":{},\"advertisers\":{}}"
-        },
-        {
-          "name": "permutive-consent",
-          "value": "{\"opt_in\":true,\"token\":\"permutive-consent\"}"
-        },
-        {
-          "name": "_gcl_ls",
-          "value": "{\"schema\":\"gcl\",\"version\":1,\"gcl_ctr\":{\"value\":{\"value\":0,\"creationTimeMs\":1756048096491},\"expires\":1763824096491}}"
-        },
-        {
-          "name": "permutive-id",
-          "value": "e33a58fd-5ff3-4a4a-867c-424cb0746cf2"
-        },
-        {
-          "name": "abrilUserId",
-          "value": "1150737172.1756048097|Sun Aug 24 2025"
-        },
-        {
-          "name": "permutive-data-misc",
-          "value": "{\"metricsEnabled\":false}"
-        },
-        {
-          "name": "permutive-prebid-rtd",
-          "value": "{\"acBidders\":[]}"
-        },
-        {
-          "name": "_pdfps",
-          "value": "[]"
-        },
-        {
-          "name": "abril_shipping_purchase",
-          "value": "[{\"nomMetadado\":\"referrer\",\"datMetadado\":\"2025-08-24T12:08:16\",\"vlrMetadado\":\"direto\"}]"
         }
       ]
     },

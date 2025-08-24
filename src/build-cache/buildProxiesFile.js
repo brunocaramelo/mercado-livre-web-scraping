@@ -35,7 +35,7 @@ async function getOneRandomByJsonThisPath(fileName){
   }
 }
 
-async function testHttpTunnelAxios(proxyUrl, pageTarget) {
+async function testHttpTunnelPre(proxyUrl, pageTarget) {
 
   chromium.use(stealth);
 
@@ -44,8 +44,8 @@ async function testHttpTunnelAxios(proxyUrl, pageTarget) {
   const productUri = await getOneRandomProductMl();
 
   try {
-    console.log(
-      `⏳ Testando proxy por browser: ${proxyUrl} na rota: ${pageTarget}`
+    console.log((new Date()).toISOString()+
+      ` ⏳ Testando proxy por browser: ${proxyUrl} na rota: ${pageTarget}`
     );
 
     const context = await navigatorFactory.launchWithOptionsParamContext(chromium,{
@@ -53,7 +53,8 @@ async function testHttpTunnelAxios(proxyUrl, pageTarget) {
         server: proxyUrl,
       },
       timeout: 40000,
-      headless: false
+      headless: false,
+      args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
 
     const page = await context.newPage();
@@ -63,20 +64,20 @@ async function testHttpTunnelAxios(proxyUrl, pageTarget) {
     //           timeout: 9000000
     // });
    
-    await page.goto(pageTarget);
+    await page.goto(pageTarget, { timeout: 700000 });
 
-    console.log(`✅ PRE-FUNCIONOU: ${proxyUrl} em site ${pageTarget}`);
+    console.log((new Date()).toISOString()+` ✅ PRE-FUNCIONOU: ${proxyUrl} em site ${pageTarget}`);
   
     const randomIntervalIteration = Math.floor(Math.random() * (10000 - 3000 + 1) + 3000);
 
-    console.log(`Aguardar ${randomIntervalIteration} para proxima iteração`);
+    console.log((new Date()).toISOString()+` (testHttpTunnelPre) Aguardar ${randomIntervalIteration} para proxima iteração`);
   
     await page.waitForTimeout(randomIntervalIteration);
 
     return { success: true, status: 'success' };
   } catch (err) {
-    console.log(
-      `❌ FALHOU: ${proxyUrl}, causa: ${err.message}, conteudo: `
+    console.log((new Date()).toISOString()+
+      ` ❌ PRE-FALHOU: ${proxyUrl}, causa: ${err.message}, conteudo: `
     );
     return { success: false, error: err.message};
   } finally {
@@ -90,7 +91,7 @@ async function testProxy(typeParam ,ip, port, country) {
   const type = typeParam.toLowerCase();
 
   const proxyUrl = `${type}://${ip}:${port}`;
-  console.log(`⏳ Testando proxy: ${proxyUrl}`);
+  console.log((new Date()).toISOString()+` ⏳ Testando proxy: ${proxyUrl}`);
 
   chromium.use(stealth);
     
@@ -100,7 +101,7 @@ async function testProxy(typeParam ,ip, port, country) {
 
   try {
     
-    const responseOfAxioTest = await testHttpTunnelAxios(proxyUrl, 
+    const responseOfAxioTest = await testHttpTunnelPre(proxyUrl, 
           await getOneRandomByJsonThisPath('random-famous-sites.json')
     );
 
@@ -113,7 +114,8 @@ async function testProxy(typeParam ,ip, port, country) {
         server: proxyUrl,
       },
       timeout: 40000,
-      headless: false
+      headless: false,
+      args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
 
     await context.setExtraHTTPHeaders({
@@ -135,10 +137,10 @@ async function testProxy(typeParam ,ip, port, country) {
       throw new Error('Bloqueio de login: A página de verificação de conta foi detectada em :'+productUri);
     }
 
-    console.log(`✅ FUNCIONA: ${proxyUrl} em produto ${currentUrl}`);
+    console.log((new Date()).toISOString()+` ✅ ML-FUNCIONA: ${proxyUrl} em produto ${currentUrl}`);
     return {type, ip, port, success: true , country: country};
   } catch (err) {
-    console.log(`❌ FALHOU: ${proxyUrl}, causa: `+err.message);
+    console.log((new Date()).toISOString()+` ❌ ML-FALHOU: ${proxyUrl}, causa: `+err.message);
     return {type, ip, port, success: false , exception: err.message, country: country};
   } finally {
     await navigatorFactory.close();
@@ -157,14 +159,14 @@ async function fetchProxiesHttp() {
     "https://free-proxy-list.net/pt/google-proxy.html",
   ];
 
-  console.log("🔍 Baixando lista de proxies http...");
+  console.log((new Date()).toISOString()+" 🔍 Baixando lista de proxies http...");
   
   const uniqueProxies = new Set();
   const proxies = [];
 
   for (const url of proxyUrls) {
     try {
-      console.log(`📥 Processando URL: ${url}`);
+      console.log((new Date()).toISOString()+`📥 Processando URL: ${url}`);
       const { data } = await axios.get(url, { timeout: 10000 }); // Adicionado timeout
       const $ = cheerio.load(data);
   
@@ -184,17 +186,17 @@ async function fetchProxiesHttp() {
       });
 
     } catch (error) {
-      console.error(`❌ Erro ao buscar proxies da URL ${url}: ${error.message}`);
+      console.error(` ❌ Erro ao buscar proxies da URL ${url}: ${error.message}`);
     }
   }
 
-  console.log(`📋 Total de proxies encontrados (sem duplicatas): ${proxies.length}.`);
+  console.log((new Date()).toISOString()+` 📋 Total de proxies encontrados (sem duplicatas): ${proxies.length}.`);
 
   return proxies;
 }
 
 async function fetchProxysScrapeFromApi() {
-    console.log("🔍 Baixando lista de proxies da API ProxyScrape...");
+    console.log((new Date()).toISOString()+"🔍 Baixando lista de proxies da API ProxyScrape...");
 
     const apiUrl = "https://api.proxyscrape.com/v4/free-proxy-list/get?request=display_proxies&proxy_format=protocolipport&format=text";
 
@@ -237,13 +239,13 @@ async function fetchProxysScrapeFromApi() {
 
       return proxies;
     } catch (error) {
-      console.error(`❌ Erro ao buscar proxies da API ProxyScrape: ${error.message}`);
+      console.error(` ❌ Erro ao buscar proxies da API ProxyScrape: ${error.message}`);
       return [];
   }
 }
 
 async function fetchProxiesSocks() {
-  console.log("🔍 Baixando lista de proxies socks...");
+  console.log((new Date()).toISOString()+" 🔍 Baixando lista de proxies socks...");
   const { data } = await axios.get("https://free-proxy-list.net/pt/socks-proxy.html");
   const $ = cheerio.load(data);
 
@@ -264,7 +266,7 @@ async function fetchProxiesSocks() {
 
   });
 
-  console.log(`📋 Encontrados ${proxies.length} proxies socks.`);
+  console.log((new Date()).toISOString()+` 📋 Encontrados ${proxies.length} proxies socks.`);
 
   return proxies;
 }
@@ -283,7 +285,7 @@ async function main() {
       JSON.stringify(workingProxies, null, 2)
     );
 
-  console.log("\n📁 Lista de proxies válidos salva em valid-proxies.json");
+  console.log((new Date()).toISOString()+" \n📁 Lista de proxies válidos salva em valid-proxies.json");
 }
 
 async function mainProxiesHttp(){
@@ -316,8 +318,8 @@ async function mainProxiesHttp(){
       workingProxies.push(...results.filter((r) => r.success));
     }
 
-    console.log("\n✅ Proxies funcionando:");
-    console.log(workingProxies);
+    console.log((new Date()).toISOString()+" \n✅ Proxies funcionando:");
+    console.log((new Date()).toISOString()+workingProxies);
 
     return workingProxies;    
 }
@@ -339,8 +341,8 @@ async function mainProxiesSocks(){
       workingProxies.push(...results.filter((r) => r.success));
     }
 
-    console.log("\n✅ Proxies funcionando:");
-    console.log(workingProxies);
+    console.log((new Date()).toISOString()+" \n✅ Proxies funcionando:");
+    console.log((new Date()).toISOString()+' '+workingProxies);
 
     return workingProxies;
 }

@@ -35,7 +35,8 @@ class NavigatorFactory {
       headless: false,
        proxy: {
         server: proxyIpPort,
-      }
+      },
+      args: ['--no-sandbox', '--disable-setuid-sandbox']
     };
 
     return await this.launchWithOptionsParam(navigator, optionsLaunch);
