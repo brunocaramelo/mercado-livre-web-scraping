@@ -58,8 +58,12 @@ class NavigatorFactory {
   }
 
   async close() {
-    await this.closeContextAndState();
-    await this.closeBrowser();
+     try {
+      await this.closeContextAndState();
+      await this.closeBrowser();
+    } catch(e) {
+      console.error('Erro ao fechar navegador:', e.message);
+    }
   }
 
   async closeContextAndState() {

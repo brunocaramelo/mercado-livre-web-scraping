@@ -171,16 +171,6 @@
       "sameSite": "Lax"
     },
     {
-      "name": "_mldataSessionId",
-      "value": "fbb13980-ba40-4a4f-a636-f5c6de61fa46",
-      "domain": ".mercadolivre.com.br",
-      "path": "/",
-      "expires": 1756001557.987021,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
       "name": "c_deals",
       "value": "11.50.0",
       "domain": ".www.mercadolivre.com.br",
@@ -199,6 +189,16 @@
       "httpOnly": false,
       "secure": true,
       "sameSite": "None"
+    },
+    {
+      "name": "_mldataSessionId",
+      "value": "53fd2ced-6fe8-4344-bea7-73c910f18fe2",
+      "domain": ".mercadolivre.com.br",
+      "path": "/",
+      "expires": 1756040344.426664,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
     }
   ],
   "origins": [
@@ -215,7 +215,7 @@
         },
         {
           "name": "NRBA_SESSION",
-          "value": "{\"value\":\"423cf838ee58cd91\",\"inactiveAt\":1755837060977,\"expiresAt\":1755849629190,\"updatedAt\":1755835260977,\"sessionReplayMode\":0,\"sessionReplaySentFirstChunk\":false,\"sessionTraceMode\":0,\"traceHarvestStarted\":false,\"loggingMode\":0,\"serverTimeDiff\":-2341,\"custom\":{}}"
+          "value": "{\"value\":\"3779a275c09fd8f5\",\"inactiveAt\":1756039513998,\"expiresAt\":1756052113998,\"updatedAt\":1756037713999,\"sessionReplayMode\":0,\"sessionReplaySentFirstChunk\":false,\"sessionTraceMode\":0,\"traceHarvestStarted\":false,\"loggingMode\":0,\"serverTimeDiff\":null,\"custom\":{},\"numOfResets\":0}"
         },
         {
           "name": "_uetvid_exp",

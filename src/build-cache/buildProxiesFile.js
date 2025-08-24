@@ -30,6 +30,19 @@ async function getOneRandomProductMl(){
   }
 }
 
+async function testHttpTunnelAxios(proxyObj, pageTarget) {
+    console.log(`⏳ Testando proxy por axios, protocol: ${proxyObj.type}, host: ${proxyObj.ip} e port: ${proxyObj.port} na rota: ${pageTarget}`);
+    const res = await axios.get(pageTarget, {
+      proxy: {
+        protocol: proxyObj.type,
+        host: proxyObj.ip,
+        port: proxyObj.port,
+      },
+      timeout: 90000,
+    });
+    return true;
+}
+
 async function testProxy(typeParam ,ip, port, country) {
   let browser = null;
   const type = typeParam.toLowerCase();
@@ -41,8 +54,12 @@ async function testProxy(typeParam ,ip, port, country) {
     
   const navigatorFactory = new NavigatorFactory();
   
+  const productUri = await getOneRandomProductMl();
+
   try {
     
+    await testHttpTunnelAxios({type: type, ip:ip, port:port}, productUri);
+
     const context = await navigatorFactory.launchWithOptionsParamContext(chromium,{
       proxy: {
         server: proxyUrl,
@@ -52,8 +69,6 @@ async function testProxy(typeParam ,ip, port, country) {
     });
 
     const page = await context.newPage();
-
-    const productUri = await getOneRandomProductMl();
    
     await page.goto(productUri, {
               waitUntil: 'domcontentloaded',
@@ -68,17 +83,18 @@ async function testProxy(typeParam ,ip, port, country) {
       throw new Error('Bloqueio de login: A página de verificação de conta foi detectada.');
     }
 
+    const randomIntervalIteration = Math.floor(Math.random() * (10000 - 3000 + 1) + 3000);
+
+    console.log(`Aguardar ${randomIntervalIteration} para proxima iteração`);
+    await page.waitForTimeout(randomIntervalIteration);
+
     console.log(`✅ FUNCIONA: ${proxyUrl} em produto ${currentUrl}`);
     return {type, ip, port, success: true , country: country};
   } catch (err) {
     console.log(`❌ FALHOU: ${proxyUrl}, causa: `+err.message);
     return {type, ip, port, success: false , exception: err.message, country: country};
   } finally {
-     try {
-      await navigatorFactory.close();
-    } catch(e) {
-      console.error('Erro ao fechar navegador:', e.message);
-    }
+    await navigatorFactory.close();
   }
 }
 
@@ -242,7 +258,7 @@ async function mainProxiesHttp(){
     const finalProxiesList = Array.from(uniqueProxies.values());
 
     const workingProxies = [];
-    const limit = 5;
+    const limit = 2;
 
     for (let i = 0; i < finalProxiesList.length; i += limit) {
       const batch = finalProxiesList.slice(i, i + limit);
