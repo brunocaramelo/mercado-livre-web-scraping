@@ -47,7 +47,9 @@ class NavigatorFactory {
 
   async launchWithOptionsParamContext(navigator, optionsLaunch) {
     const launched = await this.launchWithOptionsParam(navigator, optionsLaunch);
-   
+    
+    this.browserInstance = launched;
+
     this.contextInstance = await launched.newContext({
       storageState: this._loadState(),
     });
@@ -56,6 +58,11 @@ class NavigatorFactory {
   }
 
   async close() {
+    await this.closeContextAndState();
+    await this.closeBrowser();
+  }
+
+  async closeContextAndState() {
     if (!this.contextInstance) return;
 
     try {
@@ -64,13 +71,17 @@ class NavigatorFactory {
       console.error('(NavigatorFactory) erro ao salvar storageState:', err);
     }
 
-    if (process.env.USE_SPECIFIC_PROFILE === 'true') {
-      await this.contextInstance.close();
-    } else {
-      await this.contextInstance.close();
-      if (this.browserInstance) {
-        await this.browserInstance.close();
-      }
+    this.closeContext();
+  }
+
+  async closeContext() {
+    if (!this.contextInstance) return;
+    await this.contextInstance.close();
+  }
+
+  async closeBrowser() {
+    if (this.browserInstance) {
+      await this.browserInstance.close();
     }
   }
 
