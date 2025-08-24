@@ -1,5 +1,6 @@
 node_modules/*
 .env
 valid-proxies.json
-src/build-cache/valid-proxies.json
+src/build-cache/static/valid-proxies.json
+src/build-cache/static/products-list.json
 logProxy.log

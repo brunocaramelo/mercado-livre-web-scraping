@@ -13,7 +13,7 @@ const stealth = require('puppeteer-extra-plugin-stealth')(
 );
 
 async function getOneRandomProductMl(){
-  return await getOneRandomByJsonThisPath('random-products-list.json');
+  return await getOneRandomByJsonThisPath('/static/random-products-list.json');
 }
 
 async function getOneRandomByJsonThisPath(fileName){
@@ -27,7 +27,7 @@ async function getOneRandomByJsonThisPath(fileName){
     }
 
     const randomIndex = Math.floor(Math.random() * products.length);
-    const randomProduct = products[randomIndex].link;
+    const randomProduct = products[randomIndex];
 
     return randomProduct;
   } catch (err) {
@@ -41,7 +41,7 @@ async function testHttpTunnelPre(proxyUrl, pageTarget) {
 
   const navigatorFactory = new NavigatorFactory();
   
-  const productUri = await getOneRandomProductMl();
+  const productUri = await getOneRandomProductMl().link;
 
   try {
     console.log((new Date()).toISOString()+
@@ -97,17 +97,17 @@ async function testProxy(typeParam ,ip, port, country) {
     
   const navigatorFactory = new NavigatorFactory();
   
-  const productUri = await getOneRandomProductMl();
+  const productUri = await getOneRandomProductMl().link;
 
   try {
     
-    const responseOfAxioTest = await testHttpTunnelPre(proxyUrl, 
-          await getOneRandomByJsonThisPath('random-famous-sites.json')
-    );
+    // const responseOfAxioTest = await testHttpTunnelPre(proxyUrl, 
+    //       await getOneRandomByJsonThisPath('/static/random-famous-sites.json')
+    // );
 
-    if (responseOfAxioTest.success == false) {
-      throw new Error('Requisição inicial do proxy pelo browser falhou: '+responseOfAxioTest.error);
-    }
+    // if (responseOfAxioTest.success == false) {
+    //   throw new Error('Requisição inicial do proxy pelo browser falhou: '+responseOfAxioTest.error);
+    // }
 
     const context = await navigatorFactory.launchWithOptionsParamContext(chromium,{
       proxy: {
@@ -150,9 +150,9 @@ async function testProxy(typeParam ,ip, port, country) {
 async function fetchTheSpeedXProxiesHttp() {
 
   const proxyUrls = [
-   {url: "https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/socks5.txt", type: "socks5"},
-   {url: "https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/socks4.txt", type: "socks4"},
-   {url: "https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/http.txt", type: "http"},
+    {url: "https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/http.txt", type: "http"},
+    {url: "https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/socks4.txt", type: "socks4"},
+    {url: "https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/socks5.txt", type: "socks5"},
  ];
 
   console.log((new Date()).toISOString()+" 🔍 Baixando lista de proxies http (TheSpeedX)...");
@@ -332,7 +332,7 @@ async function main() {
   const workingProxies = [...listHttp, ...listSocks];
 
   fs.writeFileSync(
-      path.join(__dirname, "valid-proxies.json"),
+      path.join(__dirname, "/static/valid-proxies.json"),
       JSON.stringify(workingProxies, null, 2)
     );
 

@@ -47,7 +47,7 @@ module.exports = async function buildProductList() {
 
 //   console.log(JSON.stringify(productDetails));
 
-  fs.writeFileSync(path.join(__dirname, 'random-products-list.json'), JSON.stringify(productDetails));
+  fs.writeFileSync(path.join(__dirname, '/static/random-products-list.json'), JSON.stringify(productDetails));
 
   console.log(`Foram salvos ${productDetails.length} links em random-products-list.json`);
 

@@ -221,16 +221,6 @@
       "sameSite": "None"
     },
     {
-      "name": "_mldataSessionId",
-      "value": "bbe17dd4-29a5-4ff9-ad43-ae92a2ffc92e",
-      "domain": ".mercadolivre.com.br",
-      "path": "/",
-      "expires": 1756055902.991973,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "Lax"
-    },
-    {
       "name": "MUIDB",
       "value": "290296DED3BE6F102E55808ED2C26EE1",
       "domain": "www.bing.com",
@@ -671,16 +661,6 @@
       "sameSite": "Lax"
     },
     {
-      "name": "ak_bmsc",
-      "value": "908668C9B71CA0DDB0AAA1B73F40CF29~000000000000000000000000000000~YAAQ6xghF4dtV7+YAQAAjZye3ByEysQK2ge8E/nvKqChyWUJmXrGPVZ0UMDN5OFe0fGbxa3inRI5o+JbhstpME09uiqpl0+AuKHJpKnOxM0pSyk2Ysd3fmsdVo/l6cS9D3tpg7CrseKfu51cJlD5/8l5snuRJUvVHqiocsQpZMWeOOjbwgglkXhzm1/QJG+cT5s8Q3E5I2zvgUH8ea3derE/uYUghVsQTlRJaLX+MLTWJLUs8LZnSGrl/4ays/6SlN7kF3+jgals+VEboyVAbNITwIXudwUWAnB+b58lASD/LYEXheY7Db2vTQgEUxQMxfE7RSUshD9deeoOTCHCV7ZY5F6FFoVxfie+CCJ50p4wKidInFuyPLOnQJUVTD1aFs9Sv8QuzTc/QEfaxI7ROKkgKlN6v2Fr7nXQTqXE6wscnflYNLXs7ECbhDGh0bJrXtOb6fgmaFTJ4THR04NZrX/WVZj6aU7vCPb16oda5uNJKJwU1BANT6dkky+qaM5Ue2ec6g==",
-      "domain": ".banco.bradesco",
-      "path": "/",
-      "expires": 1756055233.193689,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
-    },
-    {
       "name": "",
       "value": "test",
       "domain": "guiadoestudante.abril.com.br",
@@ -759,36 +739,6 @@
       "httpOnly": false,
       "secure": true,
       "sameSite": "None"
-    },
-    {
-      "name": "bm_sz",
-      "value": "DA082424156CE1D295F356ECC7FAE1EF~YAAQpzIZuMcUBdOYAQAAoBSh3BxF6WMey+1olQxmDGB0Mse8u9LD9xuiyYDhLKFSwKI2SGUwdH7K1mMyJOV6UVKdnu1t5vfFonawpU2TQxSDFehHKYkdVDqoDiJ1bj4Ere3R8Co1KPQJZCHDLZkxTH+0SGSNDHH9k5xEnoTNbsaaUxdxRNkyfVatZj17hN7rvWTFqiWsVZkc6KWRF6+tIuxCbaYNGiOvnEH807LPazC8MWBZFStdXJHh93HIN2qSp3nwJy8+YYmPO56+GRyG2MqXRh/F0gYoXrfq6RhgCCmhAgNx9nx+zUnBWcsQ8UAGfJGPr9ZNNShUZdMV/RhFPMn0aQM1r5FSCD2UnWe1Egzp4eWCQ7i42mvXEJCI9DeADmJ3SYSD04PwNSOpS7+tzA==~4539959~4473923",
-      "domain": ".terra.com.br",
-      "path": "/",
-      "expires": 1756062600.970609,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "ak_bmsc",
-      "value": "FB1C166B983E04E60E4C99CB10BC093D~000000000000000000000000000000~YAAQpzIZuF0YBdOYAQAAxyyh3BzjRYDIjc/xs6rxDFgSQypXvm93kUM79LSq700GnjGo68BHKgAa3mRVAjM09Va53+4yJyC3uXQWz3WyGEkvBO8uMpbU2SQeKfGN0EC12QZXVCI2fbt7qZVxyh+WEcxFDhC+ssJ0CrQCfAIdtyoAtv/N0R8IeVh9arC91KHPx1e28qf2T/sBRH31FTjlU9V7ThzhMPwgJCud+X/DXnfIopCuLMnU2sG5RfHMHIWD0pjfu2ERrtz1t6HRGtBFYutmzSeTrbekADvAhI1YuLbaOZWyfg+ewsXP/P+QoV0yiwenXYz6NVLpo0eGgI3Gtkf0hhlEny1SFL1hKOsM206N9X8+Bxb38crZ3sty1LNdYmTA+cG5z9QjiyyTBM3Rgff9+IqytSs=",
-      "domain": ".terra.com.br",
-      "path": "/",
-      "expires": 1756055400.156273,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "bm_sv",
-      "value": "DC9E3FC7B55847503AD0BAB357FFB2E1~YAAQpzIZuNoZBdOYAQAAdjWh3BzNIyMINGsLdWIeUuJOAcGQJUcfX3rEgqh+QnRC2Q/CkajmzMgmfxni65Gj7aN/F2BwMezSuxMokGZ7N2H/9ySzswlXS3GN79bOs92SNJFBzTEEWonpnLV6Q0gxdaEdsU0kYp/FXtSp2jrAO+3vZivdK+wjJwOwdtgJo9mlVP3JkBCbBmzwm5PGgE3z7HACq+e+Bp5ombcJ4DwSeEbbw73ZN+L6Xlu0sUjV6JTeGKI=~1",
-      "domain": ".terra.com.br",
-      "path": "/",
-      "expires": 1756055409.378853,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "Lax"
     },
     {
       "name": "_abck",
@@ -1471,26 +1421,6 @@
       "sameSite": "Lax"
     },
     {
-      "name": "ak_bmsc",
-      "value": "DE0BDB1911E5EF383F90125070BEAD23~000000000000000000000000000000~YAAQh2PKFyV0J7uYAQAAVrq63BznwXeHg7VHuKB+zptzH0BGHbHzOTW00RtM7LSfum+w5SJKCKYcEcputVC5SRvpXT4BzgRdU7nCFofKaJQ0Ctki07YhEIuIWDcuXiaqND0bfMeacwF39up2VSsnQ6BMRKki7DqF5W9NSnwok1so0frb0Bzpqy+KxXkk+uCV8jEhnLHEwUw/K+GTRmLMkqlzYO0IeqLmgkTGte8f4COnImyeurJivcjWAmRoMnfmM600yjPgBnCCxkmia7H/CKILumL2OB26FS1OzDkPDlP6GRbwU5QBkNjrnJ19lnJRYDvAcIRgKnjQUUeoDLAPCDh2VTZdRUYe/AI5oFOimV8FFy9hFxCZBVobnHZtEzP6cNPjCLP5PQ==",
-      "domain": ".santander.com.br",
-      "path": "/",
-      "expires": 1756057080.940287,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
-      "name": "bm_sz",
-      "value": "1489685C2096A5092EA2E2B7BFC4ACB5~YAAQh2PKFyZ0J7uYAQAAVrq63BwZH4Yf371znC9VUChQozoalpLSnVXBep9G1DmIYMv6zSqfz6H7F6gTbT9pROsh6aOWSM9mhXBX2gsik4wKwK+DianYvRNg2+ozFYW3CD30UWw1oiXfu5WxV0oVix9XE5KxSCeTdHzwmQq6sbccvcZfdVnqsqB4Wf6edsrzP6lTTu6KCJCluKi7xTYs4mA8eOWnB1zxACkygY7I9UdbO7NGocV+qlF+Tbijv5RLgVInX2omPNnHtTYc5utNhPdIEEgF52XQhl0/AkCEiwM5l9AWRuGHlEHP37q3DiTtNuxigj29x+L4v4gg2BCNze7+wpRInLVOILow+73t/t/Ok9WP1Ld9Gi137YebwvIjrb7yiq84gb0sGEY=~3749936~4536132",
-      "domain": ".santander.com.br",
-      "path": "/",
-      "expires": 1756064280.940308,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
       "name": "rxVisitor",
       "value": "1756049883437JIB1CHR7P16QNBELOD1NM3CVFFHI31HS",
       "domain": ".santander.com.br",
@@ -1581,26 +1511,6 @@
       "sameSite": "Lax"
     },
     {
-      "name": "bm_sv",
-      "value": "784E738707B2EAD0EE7446CC7AE27D4B~YAAQh2PKF7CEJ7uYAQAA3+e63BzlX3qitP4Ipk9rSFNb9PG8oPUNrpuwuAHq0jlgm2149YN7Uu8UuMTxiF9PxBV/cBn3QtFANpKEYTn8WN873LVgVhczt1C7uXHz4huglrYR9UWmqlwfP6eDPwBEP3b3XfNEU84On7+kBS1QnZhxORvZtDQYwKOTpvj+X2wuK1mGMvTrPipvQl8KF9uSCnsk4vzzBKtww1HYJqFA0R4/IrQJ2nhY2JEgAfM5eNDJ/RhfourI~1",
-      "domain": ".santander.com.br",
-      "path": "/",
-      "expires": 1756057091.404676,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
-      "name": "bm_mi",
-      "value": "816DD6507BFA5A9480D755CC6D2EB0DE~YAAQuRBFdn6pJrGYAQAAXHfG3BzCXC09CM9y/wU/gFBj0g6ykL1e8POlfSoMeVzbhyF5FoyEMsLEULZUs7j1imzwo5c9aKOoJ7RvmVvHAvL9rhVOeGZp2UhXGCKjNOorZKW9v+/uZJ6zxAuRZjWTxBbEuNkvd3HWgV/YUmr6tHmQ86boiuc6fUpNGOJGnjYHD8oylqO5hVJcP3LESWFAo1WF4nXfYazvpkK1jh/Qnjokv96BgLm69si3MIXh7HpkKMurWLHoS7IEidqCuH443hDErQJn8a40JSpXQFzthAZHo5dSKDjTxVTJ3pClrfY=~1",
-      "domain": ".banco.bradesco",
-      "path": "/",
-      "expires": 1756055234.106648,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "Lax"
-    },
-    {
       "name": "dtPC",
       "value": "-972$450651577_84h1p-972$450653371_408h1vKAFHFICMKTOFBONMLFTHFKPTCQHCLSCG-0e0",
       "domain": ".banco.bradesco",
@@ -1636,16 +1546,6 @@
       "domain": ".banco.bradesco",
       "path": "/",
       "expires": -1,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "bm_sv",
-      "value": "FD362298C6D5BA4EE7C43629011BE422~YAAQuRBFdq6qJrGYAQAApLbG3Bye6rusCWVmtRG8BVlDd3n43voqm5tufFQevhQ32345AcXcjQP4jueBuJZ9HyAuNPfnqs9DoOebJ/hYlAujkFCkKyQdF9aRCn/JpJ6aDTYnNrma8Tu3iHIBIyeyKHZeqxph8CGYr8gwLETU5uxOfzOHc5FuGqeK7SCfERpOIfjGYX8+JGsFdUl3uo5lBMIOSplpJgU0DnMXLAlrxE0yNK8+QGkp07ZJnbMeZzrfotDTvA==~1",
-      "domain": ".banco.bradesco",
-      "path": "/",
-      "expires": 1756055234.344194,
       "httpOnly": false,
       "secure": true,
       "sameSite": "Lax"
@@ -2069,16 +1969,6 @@
       "httpOnly": true,
       "secure": true,
       "sameSite": "Lax"
-    },
-    {
-      "name": "abLdr",
-      "value": "4",
-      "domain": "cdn.taboola.com",
-      "path": "/",
-      "expires": 1756061800.665294,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
     },
     {
       "name": "_cb",
@@ -3411,16 +3301,6 @@
       "sameSite": "None"
     },
     {
-      "name": "instUid",
-      "value": "217ea988-f2c6-4806-a4a4-a1c2416cf3af",
-      "domain": ".ingage.tech",
-      "path": "/",
-      "expires": 1756058932.464966,
-      "httpOnly": true,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
       "name": "uid",
       "value": "2093b9c1-5a00-5b6b-8e78-b451b0c802f9",
       "domain": "sync.clearnview.com",
@@ -4471,26 +4351,6 @@
       "sameSite": "Lax"
     },
     {
-      "name": "AKA_A2",
-      "value": "A",
-      "domain": ".estadao.com.br",
-      "path": "/",
-      "expires": 1756055761.152333,
-      "httpOnly": true,
-      "secure": true,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "_lr_retry_request",
-      "value": "true",
-      "domain": "www.estadao.com.br",
-      "path": "/",
-      "expires": 1756055788,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
-    },
-    {
       "name": "_lr_env_src_ats",
       "value": "false",
       "domain": "www.estadao.com.br",
@@ -4621,16 +4481,6 @@
       "sameSite": "Lax"
     },
     {
-      "name": "x-rollout-next-13-buy",
-      "value": "version_next10",
-      "domain": ".madeiramadeira.com.br",
-      "path": "/",
-      "expires": 1756056183.653362,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "Lax"
-    },
-    {
       "name": "x-platserv-bundle",
       "value": "bundleselfsingle",
       "domain": ".madeiramadeira.com.br",
@@ -4651,46 +4501,6 @@
       "sameSite": "Lax"
     },
     {
-      "name": "x-rollout-next-13-navcon",
-      "value": "version_next10",
-      "domain": ".madeiramadeira.com.br",
-      "path": "/",
-      "expires": 1756059783.65343,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "x-rollout-next-13-search-min-flow",
-      "value": "version_next13",
-      "domain": ".madeiramadeira.com.br",
-      "path": "/",
-      "expires": 1756056183.653443,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "x-rollout-next-13-search-med-flow",
-      "value": "version_next10",
-      "domain": ".madeiramadeira.com.br",
-      "path": "/",
-      "expires": 1756056183.653455,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "x-rollout-next-13-search-high-flow",
-      "value": "version_next10",
-      "domain": ".madeiramadeira.com.br",
-      "path": "/",
-      "expires": 1756056183.653465,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "Lax"
-    },
-    {
       "name": "_ga_C2ES4F6PRM",
       "value": "GS2.1.s1756053026$o1$g0$t1756053026$j60$l0$h0",
       "domain": ".uol.com.br",
@@ -4699,9 +4509,175 @@
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
+    },
+    {
+      "name": "GCB-TRACKING",
+      "value": "24.249.199.4",
+      "domain": ".casasbahia.com.br",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ak_geo",
+      "value": "ATLANTA:30301-30322+30324-30334+30336-30346+30348-30350+30353-30364+30366+30368-30371+30374-30375+30377-30378+30380+30384-30385+30388+30392+30394+30396+30398+31106-31107+31119+31126+31131+31136+31139+31141+31145-31146+31150+31156+31192-31193+31195-31196+39901:33.7486:-84.3884:GA",
+      "domain": "www.casasbahia.com.br",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "bm_s",
+      "value": "YAAQE20+FyopLLOYAQAAVB453QPCaHe0qwCUfzoA5jZFBTWd7ZUqeyuSZmtmvd9Om9a8fxBq/nHGziCA5LE6x/2FL4FinOUc2IvckkpNI2Ef6sNcRoZ1nJN0YbjQ38vhW+ziCz0/IcRscx7WVTEwainFtmIKf130Yu0XNBEp6h9qXzNS/rbqEmLWmG1jnlrFVtko6/JsKaKzyAhnZD6H93apLedvgtEkAXegKux0AtbV5fS/Y1++owFyurMTS3VMAqHydPX6Xb25a9OhgWrwZG8aFG2+XgaQHDW9Zv24E6eJRZTIfRW4VU/4+Vr2cFDzC297XxSmnpxIIlBxs7+S5s2yfbM/k6cjJF4KZOiXMW9EiyT5qNXpV8E7ToQzAhkUb/McJRNcFGpgm8os9PuOl3B9RhUfmRqyh/0a8fEVsNG8iV8RRHIWZcPNOukenws6u8vQ73B4sz8JFMlCu07plU2Udd9vrZ4GkEm+g9wF/Lg3dYIcpCXN21aCnP2F0uQ2ZQVuwxQUngJHg5wHUJPfFt2fMp6Tf9X5iSidSk8ZD4z/8+VxFdJix35sUgM=",
+      "domain": ".casasbahia.com.br",
+      "path": "/",
+      "expires": 1758736565.397961,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "bm_so",
+      "value": "C8E9D103CF688400B88A43FBED441DD2737A4BD53FFB1FDE75F3AB481CE20138~YAAQE20+FyspLLOYAQAAVB453QSGxHrmergbVrutrMyHcU0AItLTrHfwC1ctFeKJet2B36HhFWSgLcJY/9abr3lOEc0173Z4tbbx2JFYyW7gE3eDeoT8MxESMgELXGHEVBC0CQ0vhSAt0oBHNrm6JJoN8DUxrAB2YH6mjLw06tuWLPPN00SjMdtcmxYVx9Pfuu4+VX/ifcyXVL71l2Q/cDHDPhjSyujBKxBn7DJO3/y0SDXGXMuSLFtgpf/xXkvuglV5X63932uCYBqgg5dFYtfjyvxGUYupJP9uXsqrQ6VIhFh5DUMO9xoIegXy57vPvV9JuS34V7MkDyvOmvH5bExB7NVId8z+e1OgpyXAuUW0i20KgdeBbYqlikoXu9JyCWKhhTeFU00DWcGCBtDuQIuG3bbpzLQxLjXWIFUFWF/MmXU2+1yFTNReDjXufi45Z0Mf9ZIDvKPmWmRp7SQ8+NHbut4=",
+      "domain": ".casasbahia.com.br",
+      "path": "/",
+      "expires": 1756144565.397982,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "bm_sz",
+      "value": "B6698D1EBC68D04087AF0094CFA60A81~YAAQE20+FywpLLOYAQAAVB453RwDj3nQfolbCjBHTRCtsk1Cn5Kt8jSYHbDeTlz6lxjYGGpR95yLcXVbgKZCtICyw2QcH5arBImNg5qc6U5AJqHxGkG2nrRaqDLeMiBP2CLS2jb8QrDFVl/Tg9RvcJ7vGfvfKbmK6h1IYa2GU4fS0NDm088oT8lrGCNlhYYVYl4zzjseXwGtPkBy2RWQ0vIegr503YQADiJtaK1/OzRwEYv6G+6SJs8/EK+nNrFIExbYyd2zD6sMUspUWHknvkw8cYtMw2SpjtO1xe/bYTqyqEK+4mg7DAsXsKwYIcpacBJnwldGcVraBrMMM1qK85F7AQhFJLeJwqmtQodoG9jC3Bqng/Mj2h6bDUxwbTmrI+5CmwY5N9hn~4470066~3748664",
+      "domain": ".casasbahia.com.br",
+      "path": "/",
+      "expires": 1756072565.398035,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "PIM-SESSION-ID",
+      "value": "ipyJS8gihIkUvBNA",
+      "domain": ".casasbahia.com.br",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_abck",
+      "value": "3D7F7F2DE77DFDF92F4FB3A59E351323~-1~YAAQE20+F3MzLLOYAQAAxrs53Q4Io9dwocpXmvk5EWAn8fwvZsyl/X2wdRrdd0o/91z9+qz/3r2C13pnjIaSTnVSbPomzd2mLisP42s3J6MBVXFOfzh8GCu5Riw3w4dQiqMolVsL8zRdEaEiQoTi8cA62N3LGyLb+oMVa+1MAyXOYi22cPxUR0JGMEyPgTgTPKX5ZWUTV318DIsiNIU3dXxjmpsYlzXhDaxv2FAamwGKMH1ViLU149D21Y2M7gx8cvsFL5N3bEIpaJDRzo2Fm+o5TlBAyXd0A+VHbnC05PUalmP+kZRsaR/GOn73LggrUhNXz/SAKpABwmPAAS9h2pjaXfNbF6HSYNZurWS6sVeoRtXs/TbyJNcG40sE7C6cOauefkhI+qJ6OSm/OvBhOaGn/c8voSNsYhzkD6odfD94AMhFnJWw77oSQlXgO+KnrWrnXKteD09doXgHEBkvhHbHNv6sAQrjF0fS0YsxfK0MdxgQPyJswUzyFL/DXyYiS9TGH2GFmHZbrQB81u6FJuTJlJZOD8EHV0zolvCHEN3trRU4q6eyAVPyqNaMLF6/jNYCX5Nv85Jh3nJE5CI16lTrnWtTurHlGL6uxJvQQ5eOwh+HhitiIs/4Mz0tvDSp/aivZg==~-1~-1~1756061788~~",
+      "domain": ".casasbahia.com.br",
+      "path": "/",
+      "expires": 1787594205.386481,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "sessionId",
+      "value": "3fc340b4-35bf-4c42-b4bb-0408e8be86c5",
+      "domain": ".casasbahia.com.br",
+      "path": "/",
+      "expires": 1787594242,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "IPI-CasasBahia",
+      "value": "UsuarioGUID=9ee7ef49-bc14-428b-a091-590e825c1a24",
+      "domain": ".casasbahia.com.br",
+      "path": "/",
+      "expires": 1790618242.235305,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "akavpau_wwwcasasbahia",
+      "value": "1756058551~id=358ca19985b29deeb8711b6600a36a76",
+      "domain": "www.casasbahia.com.br",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__Host-next-auth.csrf-token",
+      "value": "01e06ade4b785ecd6fe80e7b44fdff27d3cbb8ada89ead46633f1fa81289e929%7Cbd2090b731cbcb6f06e0f8c04acdc2b2a05b3d2cb90c3f3fcc0b273fbe626ca4",
+      "domain": "www.drconsulta.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__Secure-next-auth.callback-url",
+      "value": "https%3A%2F%2Fdrconsulta.com",
+      "domain": "www.drconsulta.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "insiderInversaoLoginFunilFeatureFlag",
+      "value": "S",
+      "domain": "www.drconsulta.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "insiderHomeRolloutAtivo",
+      "value": "S",
+      "domain": "www.drconsulta.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
     }
   ],
   "origins": [
+    {
+      "origin": "https://www.drconsulta.com",
+      "localStorage": [
+        {
+          "name": "nextauth.message",
+          "value": "{\"event\":\"session\",\"data\":{\"trigger\":\"getSession\"},\"timestamp\":1756066623}"
+        },
+        {
+          "name": "persist:funil",
+          "value": "{\"funil\":\"{\\\"city\\\":{},\\\"unit\\\":{},\\\"product\\\":{},\\\"slot\\\":{},\\\"professional\\\":{},\\\"specialty\\\":{},\\\"patient\\\":{},\\\"scheduled\\\":{},\\\"questionnaire\\\":{},\\\"healthregister\\\":{},\\\"modalBox\\\":{\\\"type\\\":\\\"info\\\",\\\"title\\\":\\\"\\\",\\\"description\\\":\\\"\\\",\\\"open\\\":false},\\\"selectedSlot\\\":null,\\\"selectedProduct\\\":null,\\\"selectedUnit\\\":null,\\\"selectedPatient\\\":null,\\\"selectedZipCode\\\":null,\\\"selectedMultiVacProducts\\\":[],\\\"multiProductOrder\\\":{},\\\"cupomSelecionado\\\":null,\\\"checkupSelecionado\\\":null}\",\"utils\":\"{\\\"anchorEl\\\":null,\\\"accountValidatedNow\\\":false,\\\"urlIsBeingCheckedNow\\\":false,\\\"backBtnPressedAgendamentoConsulta\\\":false}\",\"lpDrcCard\":\"{\\\"user\\\":{\\\"cpf\\\":null,\\\"name\\\":null,\\\"birthday\\\":null,\\\"phone\\\":null,\\\"email\\\":null,\\\"gender\\\":null,\\\"password\\\":null},\\\"address\\\":{\\\"address\\\":null,\\\"cep\\\":null,\\\"neighborhood\\\":null,\\\"number\\\":null,\\\"complement\\\":null,\\\"city\\\":null,\\\"state\\\":null},\\\"plan\\\":{\\\"name\\\":null,\\\"value\\\":null,\\\"numberOfInstallments\\\":null,\\\"planId\\\":null,\\\"planName\\\":null,\\\"orderId\\\":null,\\\"SKU\\\":null},\\\"pedido\\\":{\\\"idPagamento\\\":null}}\",\"eventoFunilAgendamento\":\"{\\\"pagamento\\\":{\\\"tipoPagamento\\\":null}}\",\"novoFunil\":\"{\\\"buscarPorUnidade\\\":{\\\"listaUnidades\\\":[],\\\"unidadeSelecionada\\\":null},\\\"quemSeraAtendido\\\":{\\\"listaTerceiros\\\":[],\\\"pacienteSelecionado\\\":null},\\\"areaAtuacaoSelecionada\\\":null,\\\"profissionalSelecionado\\\":null,\\\"localizacaoSelecionada\\\":null,\\\"modalidadeSelecionada\\\":{\\\"titulo\\\":\\\"Presencial\\\",\\\"id\\\":\\\"presencial\\\",\\\"podeSelecionarTerceiros\\\":true},\\\"parametrosBuscaAtual\\\":null,\\\"resultadoBusca\\\":null,\\\"agendamentoRealizado\\\":null,\\\"metodoPagamentoSelecionado\\\":null,\\\"statusPagamentoPix\\\":null,\\\"reagendar\\\":null,\\\"retorno\\\":false}\",\"cartaoDrcFunil\":\"{\\\"exibirOfertaCartaoDrc\\\":false,\\\"exibirOfertaCartaoBotao\\\":false,\\\"bannerCmsDados\\\":null,\\\"statusCompra\\\":null,\\\"modalOfertasStatus\\\":\\\"closed\\\",\\\"modalFormularioStatus\\\":\\\"closed\\\",\\\"pedidoCompraCartao\\\":null}\",\"_persist\":\"{\\\"version\\\":-1,\\\"rehydrated\\\":true}\"}"
+        }
+      ]
+    },
+    {
+      "origin": "https://www.casasbahia.com.br",
+      "localStorage": [
+        {
+          "name": "ak_a",
+          "value": "3D7F7F2DE77DFDF92F4FB3A59E351323"
+        },
+        {
+          "name": "ak_ax",
+          "value": "-1"
+        }
+      ]
+    },
     {
       "origin": "https://www.mercadolivre.com.br",
       "localStorage": [

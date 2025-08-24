@@ -18,6 +18,7 @@ class NavigatorFactory {
 
     this.contextInstance = await launched.newContext({
       storageState: this._loadState(),
+      userAgent: this.factoryProxyBrowser.getRandbomUserAgent().userAgent
     });
 
     return this.contextInstance;
@@ -53,6 +54,7 @@ class NavigatorFactory {
 
     this.contextInstance = await launched.newContext({
       storageState: this._loadState(),
+      userAgent: this.factoryProxyBrowser.getRandbomUserAgent().userAgent
     });
    
     return this.contextInstance;
