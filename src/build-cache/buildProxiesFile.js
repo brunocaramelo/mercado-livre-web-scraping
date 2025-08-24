@@ -28,63 +28,12 @@ async function getOneRandomByJsonThisPath(fileName){
 
     const randomIndex = Math.floor(Math.random() * products.length);
     const randomProduct = products[randomIndex];
-
+    
     return randomProduct;
   } catch (err) {
     console.error("Erro ao ler ou processar o arquivo:", err.message);
   }
 }
-
-async function testHttpTunnelPre(proxyUrl, pageTarget) {
-
-  chromium.use(stealth);
-
-  const navigatorFactory = new NavigatorFactory();
-  
-  const productUri = await getOneRandomProductMl().link;
-
-  try {
-    console.log((new Date()).toISOString()+
-      ` ⏳ Testando proxy por browser: ${proxyUrl} na rota: ${pageTarget}`
-    );
-
-    const context = await navigatorFactory.launchWithOptionsParamContext(chromium,{
-      proxy: {
-        server: proxyUrl,
-      },
-      timeout: 40000,
-      headless: false,
-      args: ['--no-sandbox', '--disable-setuid-sandbox']
-    });
-
-    const page = await context.newPage();
-   
-    // await page.goto(pageTarget, {
-    //           waitUntil: 'domcontentloaded',
-    //           timeout: 9000000
-    // });
-   
-    await page.goto(pageTarget, { timeout: 120000 });
-
-    console.log((new Date()).toISOString()+` ✅ PRE-FUNCIONOU: ${proxyUrl} em site ${pageTarget}`);
-  
-    const randomIntervalIteration = Math.floor(Math.random() * (10000 - 3000 + 1) + 3000);
-
-    console.log((new Date()).toISOString()+` (testHttpTunnelPre) Aguardar ${randomIntervalIteration} para proxima iteração`);
-  
-    await page.waitForTimeout(randomIntervalIteration);
-
-    return { success: true, status: 'success' };
-  } catch (err) {
-    console.log((new Date()).toISOString()+
-      ` ❌ PRE-FALHOU: ${proxyUrl}, causa: ${err.message}, conteudo: `
-    );
-    return { success: false, error: err.message};
-  } finally {
-    await navigatorFactory.close();
-  }
-}
-
 
 async function testProxy(typeParam ,ip, port, country) {
   let browser = null;
@@ -97,18 +46,10 @@ async function testProxy(typeParam ,ip, port, country) {
     
   const navigatorFactory = new NavigatorFactory();
   
-  const productUri = await getOneRandomProductMl().link;
+  const productChoiced = await getOneRandomProductMl();
 
   try {
-    
-    // const responseOfAxioTest = await testHttpTunnelPre(proxyUrl, 
-    //       await getOneRandomByJsonThisPath('/static/random-famous-sites.json')
-    // );
-
-    // if (responseOfAxioTest.success == false) {
-    //   throw new Error('Requisição inicial do proxy pelo browser falhou: '+responseOfAxioTest.error);
-    // }
-
+   
     const context = await navigatorFactory.launchWithOptionsParamContext(chromium,{
       proxy: {
         server: proxyUrl,
@@ -124,7 +65,7 @@ async function testProxy(typeParam ,ip, port, country) {
 
     const page = await context.newPage();
    
-    await page.goto(productUri, {
+    await page.goto(productChoiced.link, {
               waitUntil: 'domcontentloaded',
               timeout: 900000
     });
@@ -134,13 +75,13 @@ async function testProxy(typeParam ,ip, port, country) {
     const currentUrl = page.url();
 
     if (currentUrl.includes(targetFailedString)) {
-      throw new Error('Bloqueio de login: A página de verificação de conta foi detectada em :'+productUri+' , endereco do bloqueio : '+currentUrl);
+      throw new Error('Bloqueio de login: A página de verificação de conta foi detectada em :'+productChoiced.link+' , endereco do bloqueio : '+currentUrl);
     }
 
     console.log((new Date()).toISOString()+` ✅ ML-FUNCIONA: ${proxyUrl} em produto ${currentUrl}`);
     return {type, ip, port, success: true , country: country};
   } catch (err) {
-    console.log((new Date()).toISOString()+` ❌ ML-FALHOU: ${proxyUrl}, causa: `+err.message);
+    console.log((new Date()).toISOString()+` ❌ ML-FALHOU: ${proxyUrl}, causa: `+err.stack);
     return {type, ip, port, success: false , exception: err.message, country: country};
   } finally {
     await navigatorFactory.close();
