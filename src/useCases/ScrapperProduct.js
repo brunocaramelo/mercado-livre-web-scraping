@@ -143,13 +143,12 @@ module.exports = class ScrapperProduct {
       }
 
       async getBaseInfo(page) {
-        await page.waitForTimeout(this.numbersTools.randomIntFromInterval(900, 3500))
-        await this.mouseRandomMove(page);
+        await page.waitForTimeout(this.numbersTools.randomIntFromInterval(10, 40))
         return new ProductBaseInfo(page).handle();
       };
 
       async getFullDescription(page) {
-        await page.waitForTimeout(this.numbersTools.randomIntFromInterval(100, 1000))
+        await page.waitForTimeout(this.numbersTools.randomIntFromInterval(100, 400))
         await this.mouseRandomMove(page);
         return new ProductFullDescription(page).handle();
       };
@@ -167,25 +166,17 @@ module.exports = class ScrapperProduct {
       };
 
       async getVariationOptions(page) {    
-        await page.waitForTimeout(this.numbersTools.randomIntFromInterval(10, 100))
-        await this.mouseRandomMove(page);     
+        await page.waitForTimeout(this.numbersTools.randomIntFromInterval(30, 120))
         return new ProductGetVariationOptions(page).handle();
       };
 
       async extractAllVariations(page) {
-        await page.waitForTimeout(this.numbersTools.randomIntFromInterval(980, 4300))
+        await page.waitForTimeout(this.numbersTools.randomIntFromInterval(180, 630))
         await this.mouseRandomMove(page);
-        if((await this.getVariationOptions(page)).length == 0) return [];
-
-        return new ProductAsyncExtractAllVariations(
-          page,
-           {
-            baseImages: await this.getCurrentImages(page),
-            baseInfo: await this.getBaseInfo(page),
-            baseDescription: await this.getFullDescription(page),
-            baseSpecs: await this.getSpecifications(page),
-        }).handle();
-
+        const getVariationOptionsList = await this.getVariationOptions(page);
+        if(getVariationOptionsList.length == 0) return [];
+        
+        return new ProductAsyncExtractAllVariations(page, getVariationOptionsList).handle();
       };
   
       async mouseRandomMove(page){
