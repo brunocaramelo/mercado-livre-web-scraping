@@ -31,7 +31,10 @@ exports.productByUrlAsyncCallback = async (req, res) => {
 
               await fetch(callbackUrl, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 
+                  'Content-Type': 'application/json',
+                  'ngrok-skip-browser-warning' : 'yess',
+                 },
                 body: JSON.stringify({
                   external_id: externalId,
                   data: getProductData
