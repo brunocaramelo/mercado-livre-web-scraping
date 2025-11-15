@@ -4,6 +4,7 @@ const WaitingFor = require('../../tools/WaitingFor');
 const NumbersTools = require('../../tools/Numbers');
 const HumanNavigates = require('../../tools/HumanNavigates');
 const ProductFullDescription = require('./ProductFullDescription');
+const ProductSpecifications = require('./ProductSpecifications');
 
 module.exports = class ProductAsyncExtractAllVariations {
   constructor(page, combinationsInput) {
@@ -43,6 +44,7 @@ module.exports = class ProductAsyncExtractAllVariations {
       const currentInfo = await new ProductBaseInfo(this.page).handle();
       const currentImages = await new ProductCurrentImages(this.page).handle();
       const description = await  new ProductFullDescription(this.page).handle();
+      const specifications = await  new ProductSpecifications(this.page).handle();
 
 
       variations.push({
@@ -52,6 +54,7 @@ module.exports = class ProductAsyncExtractAllVariations {
         ]),
         combination: combination.combination,
         description,
+        specifications,
         title: currentInfo.title,
         price: {
           current: currentInfo.price,
