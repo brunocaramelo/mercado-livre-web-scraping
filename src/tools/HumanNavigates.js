@@ -38,7 +38,7 @@ module.exports = class HumanNavigates {
         await page.evaluate(() => window.scrollTo(0, 0));
     }
 
-    async emulateGoogleSearch(txt) {        
+    async emulateGoogleSearch(query) {        
        
        const encode = txt => encodeURIComponent(txt);
 
