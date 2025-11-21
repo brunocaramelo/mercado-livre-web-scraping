@@ -39,43 +39,41 @@ module.exports = class HumanNavigates {
     }
 
     async  extractRandomWords(url) {        
-        if (url.startsWith("https://www.mercadolivre.com.br")) {
-            const path = new URL(url).pathname.split("/")[1];
-
-            const words = path.split("-");
-            if (words.length === 0) return null;
-
-            const count = Math.floor(Math.random() * 3) + 1;
-
-            const selected = words.slice(-count);
+       
+        if (url.startsWith("www.mercadolivre.com.br") || url.startsWith("mercadolivre.com.br")) {
+            const path = new URL('https://'+url).pathname.split("/")[1];
 
             return {
-                slug: selected.join("-"),
-                notSlug: selected.join("")
+                slug: path,
+                notSlug: path
             };
         }
+        
+        if (url.startsWith("produto.mercadolivre.com.br")) {
+           const path = new URL('https://'+url).pathname;
 
-        if (!url.startsWith("https://produto.mercadolivre.com.br")) {
+           const start = path.indexOf("MLB");
+           if (start === -1) return null;
 
-            const path = new URL(url).pathname;
+            const firstDash = path.indexOf("-", start + 4); // pula "MLB"
+            if (firstDash === -1) return null;
 
-            const match = path.match(/MLB-\d+-(.+)/);
-            if (!match) return null;
+            const secondDash = path.indexOf("-", firstDash + 1);
+            if (secondDash === -1) return null;
 
-            let slug = match[1];
+            let slug = path.substring(secondDash + 1);
 
-            slug = slug.replace(/_.+$/, "");
-
-            const words = slug.split("-");
-            if (words.length === 0) return null;
-
-            const count = Math.floor(Math.random() * 3) + 1;
-
-            const selected = words.slice(-count);
+            if (slug.endsWith("-_JM")) {
+                slug = slug.slice(0, -4);
+            } else if (slug.endsWith("_JM")) {
+                slug = slug.slice(0, -3);
+            } else if (slug.endsWith("-JM")) {
+                slug = slug.slice(0, -3);
+            }
 
             return {
-                slug: selected.join("-"),
-                notSlug: selected.join("")
+                slug: slug,
+                notSlug: slug
             };
         }
         
