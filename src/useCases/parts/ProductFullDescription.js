@@ -7,21 +7,31 @@ module.exports = class ProductFullDescription {
 
     async handle() {
 
-        console.log((new Date()).toISOString()+' ('+this.constructor.name+') starting process');
+        console.log(new Date().toISOString()+' ('+this.constructor.name+') starting process');
 
         const descriptionComplementElement = this.page.locator('.ui-pdp-description__content');
         const descriptionSmallElement = this.page.locator('.ui-pdp-container__row--highlighted-features');
-        
-        console.log((new Date()).toISOString()+' ('+this.constructor.name+') ending process');
+
+        const hasComplement = await descriptionComplementElement.count() > 0;
+        const hasSmall = await descriptionSmallElement.count() > 0;
+
+        console.log(new Date().toISOString()+' ('+this.constructor.name+') ending process');
 
         return {
-            complement: {
-                text: await descriptionComplementElement?.innerText() ?? null,
-                html: await descriptionComplementElement?.innerHTML() ?? null
+            complement: hasComplement ? {
+                text: await descriptionComplementElement.innerText(),
+                html: await descriptionComplementElement.innerHTML()
+            } : {
+                text: null,
+                html: null
             },
-            small: {
-                text: await descriptionSmallElement?.innerText() ?? null,
-                html: await descriptionSmallElement?.innerHTML() ?? null
+
+            small: hasSmall ? {
+                text: await descriptionSmallElement.innerText(),
+                html: await descriptionSmallElement.innerHTML()
+            } : {
+                text: null,
+                html: null
             },
         };
     }

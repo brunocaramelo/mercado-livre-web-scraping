@@ -21,7 +21,7 @@ exports.productByUrlAsyncCallback = async (req, res) => {
 
           const getProductDataInstance = await new ScrapperProduct(targetUrl, productName);
 
-          for (let retryCount = 1; retryCount <= 4; retryCount++) {
+          for (let retryCount = 1; retryCount <= 2; retryCount++) {
             try {
               console.log(`[BG] Iniciando scraping para ${targetUrl}`);
 
