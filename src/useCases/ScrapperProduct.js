@@ -39,11 +39,11 @@ module.exports = class ScrapperProduct {
 
         const context = await this.navigatorFactory.launchAndContexthStrategy(chromium);
         
-        // const extractedProductWords = (await this.humanNavigates.extractRandomWords(this.productUri));
+        const extractedProductWords = (await this.humanNavigates.extractRandomWords(this.productUri));
 
-        // await context.setExtraHTTPHeaders({
-        //   'origin': 'https://lista.mercadolivre.com.br/'+extractedProductWords.slug+'#D[A:'+encodeURIComponent(extractedProductWords.notSlug)+']',
-        // });
+        await context.setExtraHTTPHeaders({
+          'origin': 'https://lista.mercadolivre.com.br/'+extractedProductWords.slug+'#D[A:'+encodeURIComponent(extractedProductWords.notSlug)+']',
+        });
         
         
         let page = await context.newPage();
