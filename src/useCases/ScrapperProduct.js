@@ -40,7 +40,7 @@ module.exports = class ScrapperProduct {
 
         const context = await this.navigatorFactory.launchAndContexthStrategy(chromium);
         
-        const emulateGoogleSearch = await this.humanNavigates.emulateGoogleSearch(this.this.productName);
+        const emulateGoogleSearch = await this.humanNavigates.emulateGoogleSearch(this.productName);
 
         await context.setExtraHTTPHeaders({
           'origin': emulateGoogleSearch,
