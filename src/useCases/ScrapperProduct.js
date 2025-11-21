@@ -78,8 +78,10 @@ module.exports = class ScrapperProduct {
 
           await this.mouseRandomMove(page);
 
-          this.doDelay.rangeMicroseconds(510, 1502);
-
+          await page.waitForTimeout(
+            this.numbersTools.randomIntFromInterval(900, 1990)
+          );
+          
           const baseInfo = await this.getBaseInfo(page);
           const description = await this.getFullDescription(page);
           const specifications = await this.getSpecifications(page);
@@ -92,6 +94,11 @@ module.exports = class ScrapperProduct {
             return { idProductPage, urlProductPage };
           });
 
+          await this.mouseRandomMove(page);
+          await page.waitForTimeout(
+            this.numbersTools.randomIntFromInterval(1200, 2610)
+          );
+          
           return {
             id: idProductPage,
             url: urlProductPage,
@@ -143,35 +150,35 @@ module.exports = class ScrapperProduct {
       }
 
       async getBaseInfo(page) {
-        await page.waitForTimeout(this.numbersTools.randomIntFromInterval(10, 40))
+        await page.waitForTimeout(this.numbersTools.randomIntFromInterval(60, 90))
         return new ProductBaseInfo(page).handle();
       };
 
       async getFullDescription(page) {
-        await page.waitForTimeout(this.numbersTools.randomIntFromInterval(100, 400))
+        await page.waitForTimeout(this.numbersTools.randomIntFromInterval(100, 442))
         await this.mouseRandomMove(page);
         return new ProductFullDescription(page).handle();
       };
 
       async getSpecifications(page) {
-        await page.waitForTimeout(this.numbersTools.randomIntFromInterval(200, 600))
+        await page.waitForTimeout(this.numbersTools.randomIntFromInterval(301, 710))
         await this.mouseRandomMove(page);
         return new ProductSpecifications(page).handle();
       };
 
       async getCurrentImages(page) {
-        await page.waitForTimeout(this.numbersTools.randomIntFromInterval(930, 3900))
+        await page.waitForTimeout(this.numbersTools.randomIntFromInterval(1130, 3900))
         await this.mouseRandomMove(page);
         return new ProductCurrentImages(page).handle();
       };
 
       async getVariationOptions(page) {    
-        await page.waitForTimeout(this.numbersTools.randomIntFromInterval(30, 120))
+        await page.waitForTimeout(this.numbersTools.randomIntFromInterval(62, 120))
         return new ProductGetVariationOptions(page).handle();
       };
 
       async extractAllVariations(page) {
-        await page.waitForTimeout(this.numbersTools.randomIntFromInterval(180, 630))
+        await page.waitForTimeout(this.numbersTools.randomIntFromInterval(190, 1299))
         await this.mouseRandomMove(page);
         const getVariationOptionsList = await this.getVariationOptions(page);
         if(getVariationOptionsList.length == 0) return [];

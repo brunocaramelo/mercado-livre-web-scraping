@@ -38,7 +38,7 @@ module.exports = class ProductAsyncExtractAllVariations {
       });
 
       await this.page.waitForTimeout(
-        this.numbersTools.randomIntFromInterval(900, 1500)
+        this.numbersTools.randomIntFromInterval(1200, 2300)
       );
 
       const currentInfo = await new ProductBaseInfo(this.page).handle();
