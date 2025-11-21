@@ -13,7 +13,7 @@ const fs = require('fs');
 
     console.log('Iniciando Extração de dados para a rota: '+productUriFinal);
     
-    const productData = await new ScrapperProduct(productUriFinal).handle();
+    const productData = await new ScrapperProduct(productUriFinal, "Mercado livre Busca Produto").handle();
 
     const outputFileRelativePath = path.join(__dirname, '/output/'+productData.id+'_product_complete_data.json'); 
 

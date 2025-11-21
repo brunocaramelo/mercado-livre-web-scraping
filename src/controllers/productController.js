@@ -8,7 +8,7 @@ exports.getProductByUrl = async (req, res) => {
   
      const buffer = Buffer.from(urlEncoded, 'base64').toString('utf-8');
 
-      const getProductData = await new ScrapperProduct(buffer.toString('base64')).handle();
+      const getProductData = await new ScrapperProduct(buffer.toString('base64'),"Mercado livre Busca Produto").handle();
      
       res.status(200).json(getProductData);
 

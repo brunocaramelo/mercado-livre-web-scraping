@@ -8,10 +8,10 @@ exports.productByUrlAsyncCallback = async (req, res) => {
     try {
       const doDelay = new WaitingFor();
 
-      const { targetUrl, callbackUrl, externalId } = req.body;
+      const { targetUrl, callbackUrl, externalId , productName } = req.body;
 
-      if (!targetUrl || !callbackUrl || !externalId) {
-        return res.status(400).json({ error: 'Parâmetros obrigatórios: targetUrl, callbackUrl, externalId' });
+      if (!targetUrl || !callbackUrl || !externalId || !productName) {
+        return res.status(400).json({ error: 'Parâmetros obrigatórios: targetUrl, callbackUrl, externalId, productName' });
       }
 
       res.status(200).json({ status: 'success', message: 'Processamento iniciado' });
@@ -19,7 +19,7 @@ exports.productByUrlAsyncCallback = async (req, res) => {
       setImmediate(async () => {
           const maxRety = 15;
 
-          const getProductDataInstance = await new ScrapperProduct(targetUrl);
+          const getProductDataInstance = await new ScrapperProduct(targetUrl, productName);
 
           for (let retryCount = 1; retryCount <= 4; retryCount++) {
             try {
@@ -58,7 +58,7 @@ exports.productByUrlAsyncCallback = async (req, res) => {
               }
               getProductDataInstance.closeSelf();
 
-              doDelay.rangeMicroseconds(2010, 3102);
+              doDelay.rangeMicroseconds(2010, 8102);
             }
           }
         });

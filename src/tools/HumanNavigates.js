@@ -38,44 +38,25 @@ module.exports = class HumanNavigates {
         await page.evaluate(() => window.scrollTo(0, 0));
     }
 
-    async  extractRandomWords(url) {        
+    async emulateGoogleSearch(txt) {        
        
-        if (url.startsWith("www.mercadolivre.com.br") || url.startsWith("mercadolivre.com.br")) {
-            const path = new URL('https://'+url).pathname.split("/")[1];
+       const encode = txt => encodeURIComponent(txt);
 
-            return {
-                slug: path,
-                notSlug: path
-            };
-        }
-        
-        if (url.startsWith("produto.mercadolivre.com.br")) {
-           const path = new URL('https://'+url).pathname;
+        const sca_esv = Math.random().toString(16).slice(2);
+        const sxsrf   = Math.random().toString(36).slice(2) + ":" + Date.now();
+        const ei      = Math.random().toString(36).slice(2, 15);
 
-           const start = path.indexOf("MLB");
-           if (start === -1) return null;
+        const params = new URLSearchParams({
+            q: query,
+            sca_esv: sca_esv,
+            hl: "pt_BR",
+            sxsrf: sxsrf,
+            ei: ei,
+            oq: query.substring(0, Math.max(5, query.length - 5)),
+            sclient: "gws-wiz-serp"
+        });
 
-            const firstDash = path.indexOf("-", start + 4); // pula "MLB"
-            if (firstDash === -1) return null;
-
-            const secondDash = path.indexOf("-", firstDash + 1);
-            if (secondDash === -1) return null;
-
-            let slug = path.substring(secondDash + 1);
-
-            if (slug.endsWith("-_JM")) {
-                slug = slug.slice(0, -4);
-            } else if (slug.endsWith("_JM")) {
-                slug = slug.slice(0, -3);
-            } else if (slug.endsWith("-JM")) {
-                slug = slug.slice(0, -3);
-            }
-
-            return {
-                slug: slug,
-                notSlug: slug
-            };
-        }
-        
+        return "https://www.google.com/search?" + params.toString();
+            
     }
 }

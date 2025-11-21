@@ -22,8 +22,9 @@ const NavigatorFactory = require('../tools/NavigatorFactory');
 
 module.exports = class ScrapperProduct {
 
-    constructor(productUri) {
+    constructor(productUri, productName) {
         this.productUri = productUri;
+        this.productName = productName;
         this.doDelay = new WaitingFor();
         this.numbersTools = new NumbersTools();
         this.humanNavigates = new HumanNavigates();
@@ -39,11 +40,11 @@ module.exports = class ScrapperProduct {
 
         const context = await this.navigatorFactory.launchAndContexthStrategy(chromium);
         
-        // const extractedProductWords = await this.humanNavigates.extractRandomWords(this.productUri);
+        const emulateGoogleSearch = await this.humanNavigates.emulateGoogleSearch(this.this.productName);
 
-        // await context.setExtraHTTPHeaders({
-        //   'origin': 'https://lista.mercadolivre.com.br/'+extractedProductWords.slug+'#D[A:'+encodeURIComponent(extractedProductWords.notSlug)+']',
-        // });
+        await context.setExtraHTTPHeaders({
+          'origin': emulateGoogleSearch,
+        });
         
         
         let page = await context.newPage();
