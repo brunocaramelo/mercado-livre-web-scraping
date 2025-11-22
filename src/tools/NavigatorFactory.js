@@ -29,15 +29,7 @@ class NavigatorFactory {
   async launchStrategy(navigator) {
 
     const useProxyConfig = process.env.USE_PROXY_TO_REQUESTS == 'true';
-    
-    if (useProxyConfig) {
-      const proxyIpPortGet = await this.factoryProxyBrowser.getInstance();
-      const proxyIpPort = proxyIpPortGet.type+'://'+proxyIpPortGet.ip+':'+proxyIpPortGet.port;
-      
-      console.log((new Date()).toISOString()+'(launchStrategy) aplicando proxy: '+proxyIpPort);
-    }
-
-    
+   
 
     let optionsLaunch = {
       headless: false,
@@ -48,7 +40,14 @@ class NavigatorFactory {
     };
 
     if (useProxyConfig) {
-      // optionsLaunch.proxy.server = ;
+
+      console.log((new Date()).toISOString()+'(launchStrategy) aplicando proxy: '+proxyIpPort);
+
+      optionsLaunch.proxy = {
+            server: process.env.CONFIG_PROXY_SERVER,
+            username: process.env.CONFIG_PROXY_USERNAME,
+            password: process.env.CONFIG_PROXY_PASSWORD
+        }
     }
 
     return await this.launchWithOptionsParam(navigator, optionsLaunch);

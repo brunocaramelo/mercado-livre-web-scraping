@@ -1,6 +1,7 @@
 const WaitingFor = require('../../tools/WaitingFor');
 const NumbersTools = require('../../tools/Numbers');
 const HumanNavigates = require('../../tools/HumanNavigates');
+const Logger = require('../../tools/Logger');
 
 module.exports = class ProductCurrentImages {
 
@@ -9,12 +10,12 @@ module.exports = class ProductCurrentImages {
         this.doDelay = new WaitingFor();
         this.numbersTools = new NumbersTools();
         this.humanNavigates = new HumanNavigates();
-
+        this.logger = new Logger();
     }
 
     async handle() {
       
-      console.log((new Date()).toISOString()+' ('+this.constructor.name+') starting process');
+      this.logger.info((new Date()).toISOString()+' ('+this.constructor.name+') starting process');
 
       let imageList = [];
 
@@ -53,7 +54,7 @@ module.exports = class ProductCurrentImages {
         });
       }
 
-      console.log((new Date()).toISOString()+' ('+this.constructor.name+') ending process');
+      this.logger.info((new Date()).toISOString()+' ('+this.constructor.name+') ending process');
 
       return imageList;
 

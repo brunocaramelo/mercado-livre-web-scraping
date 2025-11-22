@@ -1,4 +1,4 @@
-const { chromium , firefox, webkit } = require('playwright-extra');
+const { chromium } = require('playwright-extra');
 const path = require('path');
 require('dotenv').config();
 const stealth = require('puppeteer-extra-plugin-stealth')(
@@ -19,7 +19,7 @@ const NumbersTools = require('../tools/Numbers');
 const HumanNavigates = require('../tools/HumanNavigates');
 const HideBotTool = require('../tools/HideBotTool');
 const NavigatorFactory = require('../tools/NavigatorFactory');
-
+const Logger = require('../tools/Logger');
 module.exports = class ScrapperProduct {
 
     constructor(productUri, productName) {
@@ -30,6 +30,8 @@ module.exports = class ScrapperProduct {
         this.humanNavigates = new HumanNavigates();
         this.hideBotTool = new HideBotTool();
         this.navigatorFactory = new NavigatorFactory();
+        this.logger = new Logger();
+        
     }
     
     async handle() {
@@ -53,7 +55,7 @@ module.exports = class ScrapperProduct {
 
         const returnProduct =  await this.processProductPage(page);
        
-        console.log((new Date()).toISOString()+' ('+this.constructor.name+') ending process');
+        this.logger.info((new Date()).toISOString()+' ('+this.constructor.name+') ending process');
 
         await this.closeSelf();
 
@@ -122,7 +124,8 @@ module.exports = class ScrapperProduct {
 
       async closeCepPopUp(page) {        
         try {
-          console.log((new Date()).toISOString()+'(closeCepPopUp) started');
+          this.logger.info((new Date()).toISOString()+'(closeCepPopUp) started');
+          
           const selector = 'button.onboarding-cp-button.andes-button.andes-button--transparent.andes-button--small[data-js="onboarding-cp-close"][data-origin="header"]';
           
           await page.waitForSelector(selector, { timeout: 5000 });
@@ -131,10 +134,10 @@ module.exports = class ScrapperProduct {
         
           if (await closeButton.isVisible()) {
             await closeButton.click();
-            console.log((new Date()).toISOString()+'(closeCepPopUp) ended');
+            this.logger.info((new Date()).toISOString()+'(closeCepPopUp) ended');
           }
         } catch (e) {
-          console.log((new Date()).toISOString()+'(closeCepPopUp) not found');
+          this.logger.info((new Date()).toISOString()+'(closeCepPopUp) not found');
         } 
       }
 

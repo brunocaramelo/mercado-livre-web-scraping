@@ -1,13 +1,15 @@
+const Logger = require('../../tools/Logger');
 
 module.exports = class ProductSpecifications {
 
     constructor(page) {        
         this.page = page;
+        this.logger = new Logger();
     }
 
     async handle() {
       
-      console.log((new Date()).toISOString()+' ('+this.constructor.name+') starting process');
+      this.logger.info((new Date()).toISOString()+' ('+this.constructor.name+') starting process');
 
       const specSections = await this.page.$$eval(
         'div.ui-vpp-highlighted-specs__striped-specs div.ui-vpp-striped-specs__table',
@@ -30,7 +32,7 @@ module.exports = class ProductSpecifications {
         })
       );
       
-      console.log((new Date()).toISOString()+' ('+this.constructor.name+') ending process');
+      this.logger.info((new Date()).toISOString()+' ('+this.constructor.name+') ending process');
 
       return specSections;
     }

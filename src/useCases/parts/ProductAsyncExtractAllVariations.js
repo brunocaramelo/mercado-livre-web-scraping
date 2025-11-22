@@ -5,6 +5,7 @@ const NumbersTools = require('../../tools/Numbers');
 const HumanNavigates = require('../../tools/HumanNavigates');
 const ProductFullDescription = require('./ProductFullDescription');
 const ProductSpecifications = require('./ProductSpecifications');
+const Logger = require('../../tools/Logger');
 
 module.exports = class ProductAsyncExtractAllVariations {
   constructor(page, combinationsInput) {
@@ -13,10 +14,11 @@ module.exports = class ProductAsyncExtractAllVariations {
     this.doDelay = new WaitingFor();
     this.numbersTools = new NumbersTools();
     this.humanNavigates = new HumanNavigates();
+    this.logger = new Logger();
   }
 
   async handle() {
-    console.log(`(${this.constructor.name}) starting process`);
+    this.logger.info(`(${this.constructor.name}) starting process`);
 
     if (!this.combinationsInput || this.combinationsInput.length === 0) {
       return [];
@@ -25,10 +27,11 @@ module.exports = class ProductAsyncExtractAllVariations {
     const variations = [];
 
     for (const combination of this.combinationsInput.filter(c => c.available)) {
-      console.log(
+      this.logger.info(
         (new Date()).toISOString() +
           ` (ProductAsyncExtractAllVariations) visitando: ${combination.url}`
       );
+      
 
       await this.humanNavigates.mouseRandomMoveAllScreen(this.page, [1, 4], [2, 8]);
 
@@ -66,7 +69,7 @@ module.exports = class ProductAsyncExtractAllVariations {
       });
     }
 
-    console.log(`(${this.constructor.name}) ending process`);
+    this.logger.info(`(${this.constructor.name}) ending process`);
     return variations;
   }
 };

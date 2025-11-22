@@ -1,20 +1,23 @@
 const NumbersTools = require('../../tools/Numbers');
+const Logger = require('../../tools/Logger');
+
 module.exports = class ProductGetVariationOptions {
 
   constructor(page) {
     this.page = page;
     this.numbersTools = new NumbersTools();
+    this.logger = new Logger();
   }
 
   async handle() {
-    console.log((new Date()).toISOString() + ` (${this.constructor.name}) starting process`);
+    this.logger.info((new Date()).toISOString() + ` (${this.constructor.name}) starting process`);
 
     const results = [];
     const groups = await this.getVariationGroups();
 
     await this.processVariationsIterative(groups, [], results);
 
-    console.log((new Date()).toISOString() + ` (${this.constructor.name}) ending process`);
+    this.logger.info((new Date()).toISOString() + ` (${this.constructor.name}) ending process`);
     
     return results;
   }
@@ -56,9 +59,9 @@ module.exports = class ProductGetVariationOptions {
         try {
           const optionSelector = `.ui-pdp-variations__picker:nth-child(${groupIndex + 1}) a[aria-label*="${option.text}"]`;
           await this.page.click(optionSelector);
-         console.log(`Clicado na opção: ${option.text}`);
+          this.logger.info(`Clicado na opção: ${option.text}`);
         } catch (error) {
-            console.error(`Erro ao clicar na opção "${option.text}":`, error);
+            this.logger.error(`Erro ao clicar na opção "${option.text}":`, error);
         }
         
         await this.page.waitForTimeout(this.numbersTools.randomIntFromInterval(800, 1200));
@@ -76,7 +79,7 @@ module.exports = class ProductGetVariationOptions {
         }
         
       } catch (error) {
-        console.error(`Erro ao processar ${group.label}: ${option.text}`, error.message);
+        this.logger.error(`Erro ao processar ${group.label}: ${option.text}`, error.message);
         continue;
       }
     }
