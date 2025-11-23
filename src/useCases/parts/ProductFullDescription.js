@@ -13,7 +13,7 @@ module.exports = class ProductFullDescription {
         console.log(new Date().toISOString()+' ('+this.constructor.name+') starting process');
 
         const descriptionComplementElement = this.page.locator('.ui-pdp-description__content');
-        const descriptionSmallElement = tthehis.page.locator('.ui-pdp-container__row--highlighted-features');
+        const descriptionSmallElement = this.page.locator('.ui-pdp-container__row--highlighted-features');
 
         const hasComplement = await descriptionComplementElement.count() > 0;
         const hasSmall = await descriptionSmallElement.count() > 0;

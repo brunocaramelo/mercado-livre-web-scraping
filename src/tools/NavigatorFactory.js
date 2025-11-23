@@ -30,7 +30,6 @@ class NavigatorFactory {
 
     const useProxyConfig = process.env.USE_PROXY_TO_REQUESTS == 'true';
    
-
     let optionsLaunch = {
       headless: false,
       args: ['--no-sandbox',
@@ -41,13 +40,14 @@ class NavigatorFactory {
 
     if (useProxyConfig) {
 
-      console.log((new Date()).toISOString()+'(launchStrategy) aplicando proxy: '+proxyIpPort);
-
+      
       optionsLaunch.proxy = {
-            server: process.env.CONFIG_PROXY_SERVER,
-            username: process.env.CONFIG_PROXY_USERNAME,
-            password: process.env.CONFIG_PROXY_PASSWORD
-        }
+        server: process.env.CONFIG_PROXY_SERVER,
+        username: process.env.CONFIG_PROXY_USERNAME,
+        password: process.env.CONFIG_PROXY_PASSWORD
+      }
+
+      console.log((new Date()).toISOString()+'(launchStrategy) aplicando proxy : '+optionsLaunch.proxy.server);
     }
 
     return await this.launchWithOptionsParam(navigator, optionsLaunch);
