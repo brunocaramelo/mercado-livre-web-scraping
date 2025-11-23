@@ -69,19 +69,12 @@ module.exports = class ProductGetVariationOptions {
 
         const count = await optionLocator.count();
         if (count === 0) {
-          this.logger.warn(`Opção não encontrada no DOM: ${group.label} -> ${option.text}`);
+          this.logger.info(`Opção não encontrada no DOM: ${group.label} -> ${option.text}`);
           continue;
         }
 
         let clicked = false;
-        try {
-          await optionLocator.click({ timeout: 1500 });
-          clicked = true;
-          this.logger.info(`Clicado (normal) na opção: ${option.text}`);
-        } catch (errClick) {
-          this.logger.warn(`click padrão falhou para "${option.text}", tentando alternativas...`);
-        }
-
+        
         if (!clicked) {
           try {
             const href = await optionLocator.getAttribute('href');

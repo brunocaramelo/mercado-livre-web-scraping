@@ -12,8 +12,12 @@ const ProductBaseInfo = require('./parts/ProductBaseInfo');
 const ProductFullDescription = require('./parts/ProductFullDescription');
 const ProductSpecifications = require('./parts/ProductSpecifications');
 const ProductCurrentImages = require('./parts/ProductCurrentImages');
+
 const ProductGetVariationOptions = require('./parts/ProductGetVariationOptions');
 const ProductAsyncExtractAllVariations = require('./parts/ProductAsyncExtractAllVariations');
+
+const ProductProcesVariationOptions = require('./parts/ProductProcesVariationOptions')
+
 const WaitingFor = require('../tools/WaitingFor');
 const NumbersTools = require('../tools/Numbers');
 const HumanNavigates = require('../tools/HumanNavigates');
@@ -182,6 +186,13 @@ module.exports = class ScrapperProduct {
       };
 
       async extractAllVariations(page) {
+        await page.waitForTimeout(this.numbersTools.randomIntFromInterval(190, 1299))
+        await this.mouseRandomMove(page);
+        
+        return new ProductProcesVariationOptions(page).handle();
+      };
+
+      async extractAllVariationsOld(page) {
         await page.waitForTimeout(this.numbersTools.randomIntFromInterval(190, 1299))
         await this.mouseRandomMove(page);
         const getVariationOptionsList = await this.getVariationOptions(page);

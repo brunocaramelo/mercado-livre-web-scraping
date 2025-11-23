@@ -44,8 +44,8 @@ module.exports = class Logger {
         this.write(`WARN: ${msg}`);
     }
 
-    error(msg) {
-        console.error(msg)
+    error(msg, err) {
+        console.error(msg, err)
         this.write(`ERROR: ${msg}`);
     }
 }
