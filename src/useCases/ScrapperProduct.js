@@ -82,7 +82,7 @@ module.exports = class ScrapperProduct {
           await this.mouseRandomMove(page);
 
           await page.waitForTimeout(
-            this.numbersTools.randomIntFromInterval(900, 1990)
+            this.numbersTools.randomIntFromInterval(400, 990)
           );
           
           const baseInfo = await this.getBaseInfo(page);
@@ -99,7 +99,7 @@ module.exports = class ScrapperProduct {
 
           await this.mouseRandomMove(page);
           await page.waitForTimeout(
-            this.numbersTools.randomIntFromInterval(1200, 2610)
+            this.numbersTools.randomIntFromInterval(900, 1610)
           );
           
           return {
