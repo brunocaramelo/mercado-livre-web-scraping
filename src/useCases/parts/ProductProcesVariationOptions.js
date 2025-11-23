@@ -23,7 +23,7 @@ module.exports = class ProductProcesVariationOptions {
 
     const groups = await this.getVariationGroups();
 
-    this.logger.info(groups);
+    this.logger.info(JSON.stringify(groups));
 
     await this.processVariationsIterativeExtract();
 
@@ -37,14 +37,18 @@ module.exports = class ProductProcesVariationOptions {
               const labelElem = group.querySelector('.ui-pdp-variations__label');
               const container = group.querySelector('.ui-pdp-variations__picker-default-container');
               
-              const label = labelElem ? labelElem.innerText.replace(':','').trim() : '';
+              const rawLabel = labelElem?.innerText || "";
+              const label = rawLabel.split(':')[0].trim();              
+
               const options = [];
 
               container?.querySelectorAll('a')?.forEach(a => {
                   const text = a.querySelector('.ui-pdp-thumbnail__label')?.innerText.trim()
                               || a.innerText.trim();
                   const href = a.getAttribute('href');
-                  if (text && href) options.push({ text, href });
+                  const choiced = (a.className.includes('--SELECTED') == true ? 'yes': 'no');
+
+                  if (text && href && choiced) options.push({ text, href , choiced});
               });
 
               return { label, options };
@@ -53,65 +57,112 @@ module.exports = class ProductProcesVariationOptions {
   }
 
   async processVariationsIterativeExtract() {
+
+    let fistUrlVariation = null;
+
     const results = [];
 
-    let groups = await this.getVariationGroups();
-    const totalGroups = groups.length;
+    const initialGroups = await this.getVariationGroups();
 
-    const indexes = Array(totalGroups).fill(0);
+    const combinations = this.generateCombinations(initialGroups);
 
-    while (true) {
-        let valid = true;
+    this.logger.info("Total combinations: " + combinations.length);
 
-        for (let i = 0; i < totalGroups; i++) {
-            const group = groups[i];
-            const option = group.options[indexes[i]];
+    let counterItem = 0;
+    let breakVariationsNavigationFinished = false; 
 
-            if (!option) { valid = false; break; }
+    for (const combo of combinations) {
 
-            const targetUrl = new URL(option.href, this.page.url()).toString();
-            await this.page.goto(targetUrl, { timeout: 8000 });
-
-            groups = await this.getVariationGroups();
+        this.logger.info("[Combo] " + JSON.stringify(combo));
+        
+        if (breakVariationsNavigationFinished) {
+          this.logger.info("Primeiro item encontrado novamente encerrando laco");
+          break;
         }
 
-        if (!valid) break;
+        for (const item of combo) {
 
-        const extracted = await new ProductVariationExtractDataCurrentPage(this.page).handle();
+          if (counterItem == 0) {
+            fistUrlVariation = item.href
+          }
+          
+          if(fistUrlVariation == item.href){
+            this.logger.info("Primeiro item igual ao atual : "+JSON.stringify({
+              fistUrl: fistUrlVariation,
+              currentUrl: item.href,
+            }));
+            break;
+          }
 
-        this.logger.info('(processVariationsIterativeExtract) item');
-        
-        this.logger.info(JSON.stringify({combination: groups.map((g, idx) => ({
-                group: g.label,
-                option: g.options[indexes[idx]].text
-            })),
-            data: extracted,
-            url: this.page.url()}));
+          await this.page.goto(await this.getCurrentBaseUrl()+item.href, {
+                timeout: 35000,
+                waitUntil: "domcontentloaded"
+          });
+
+          counterItem++;
+        }
+
+        const finalGroups = await this.getVariationGroups();
+
+        const choiced = finalGroups.flatMap(g =>
+            g.options
+                .filter(o => o.choiced === "yes")
+                .map(o => ({
+                    label: g.label,
+                    value: o.text
+                }))
+        );
+
+        const extracted = await new ProductVariationExtractDataCurrentPage(
+            this.page,
+            choiced
+        ).handle();
 
         results.push({
-            combination: groups.map((g, idx) => ({
-                group: g.label,
-                option: g.options[indexes[idx]].text
-            })),
-            data: extracted,
-            url: this.page.url()
+            combination: choiced,
+            url: this.page.url(),
+            data: extracted
         });
-
-        let carry = true;
-        for (let i = totalGroups - 1; i >= 0 && carry; i--) {
-            indexes[i]++;
-            if (indexes[i] >= groups[i].options.length) {
-                indexes[i] = 0;
-            } else {
-                carry = false;
-            }
-        }
-
-        if (carry) break;
     }
 
+    this.logger.info("(processVariationsIterativeExtract) Expondo dados obtidos");
+    this.logger.info(JSON.stringify(results));
+
     return results;
-    
   }
+
+  generateCombinations(groups) {
+    const normalized = groups.map(g => ({
+        label: g.label,
+        options: g.options.map(o => ({
+            label: g.label,
+            text: o.text,
+            href: o.href
+        }))
+    }));
+
+    const result = [];
+
+    const backtrack = (depth, current) => {
+        if (depth === normalized.length) {
+            result.push([...current]);
+            return;
+        }
+
+        const group = normalized[depth];
+
+        for (const option of group.options) {
+            current.push(option);
+            backtrack(depth + 1, current);
+            current.pop();
+        }
+    };
+
+    backtrack(0, []);
+
+    return result;
+  }
+
+
 
 };

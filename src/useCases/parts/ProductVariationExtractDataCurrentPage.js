@@ -21,7 +21,7 @@ module.exports = class ProductVariationExtractDataCurrentPage {
 
     this.logger.info(
       (new Date()).toISOString() +
-        ' (ProductExtractDataCurrentPage) extraindo dados da pagina : '+await page.url()
+        ' (ProductExtractDataCurrentPage) extraindo dados da pagina : '+await this.page.url()
     );
     
 
@@ -39,7 +39,7 @@ module.exports = class ProductVariationExtractDataCurrentPage {
     this.logger.info(`(${this.constructor.name}) ending process`);
 
     return {
-        attributes: this.combination.combination.map(opt => [
+        attributes: this.combination.map(opt => [
             { label: opt.label },
             { value: opt.value }
         ]),

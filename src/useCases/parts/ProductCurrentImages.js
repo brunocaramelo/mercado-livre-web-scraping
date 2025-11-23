@@ -31,7 +31,12 @@ module.exports = class ProductCurrentImages {
         const wrapper = wrappers[i];
 
         const thumbBtn = await wrapper.$('button.ui-pdp-thumbnail__picture');
+        if (!thumbBtn) continue;
+
         const thumbImg = await thumbBtn.$('img');
+
+        if (!thumbImg) continue;
+
         const thumbSrc = await thumbImg.getAttribute('src');
                
         // await thumbBtn.click(); 
