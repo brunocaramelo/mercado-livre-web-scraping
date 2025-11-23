@@ -80,12 +80,13 @@ module.exports = class ProductProcesVariationOptions {
         const extracted = await new ProductVariationExtractDataCurrentPage(this.page).handle();
 
         this.logger.info('(processVariationsIterativeExtract) item');
-        this.logger.info({combination: groups.map((g, idx) => ({
+        
+        this.logger.info(JSON.stringify({combination: groups.map((g, idx) => ({
                 group: g.label,
                 option: g.options[indexes[idx]].text
             })),
             data: extracted,
-            url: this.page.url()});
+            url: this.page.url()}));
 
         results.push({
             combination: groups.map((g, idx) => ({
