@@ -56,7 +56,7 @@ module.exports = class ScrapperProduct {
                 
         let page = await context.newPage();
         
-        page = await this.ofuscateBotBrowser(page);
+        await this.ofuscateBotBrowser(page);
       
         const returnProduct =  await this.processProductPage(page);
        
