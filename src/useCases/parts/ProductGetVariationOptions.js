@@ -82,18 +82,18 @@ module.exports = class ProductGetVariationOptions {
           this.logger.warn(`click padrão falhou para "${option.text}", tentando alternativas...`);
         }
 
-        if (!clicked) {
-            try {
-                const elHandle = await optionLocator.elementHandle();
-                if (elHandle) {
-                    await elHandle.evaluate(el => el.click());
-                    clicked = true;
-                    this.logger.info(`Clicado (evaluate) na opção: ${option.text}`);
-                }
-            } catch (errEval) {
-                this.logger.warn(`evaluate click falhou para "${option.text}"`);
-            }
-        }
+        // if (!clicked) {
+        //     try {
+        //         const elHandle = await optionLocator.elementHandle();
+        //         if (elHandle) {
+        //             await elHandle.evaluate(el => el.click());
+        //             clicked = true;
+        //             this.logger.info(`Clicado (evaluate) na opção: ${option.text}`);
+        //         }
+        //     } catch (errEval) {
+        //         this.logger.warn(`evaluate click falhou para "${option.text}"`);
+        //     }
+        // }
 
         if (!clicked) {
           try {
