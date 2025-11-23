@@ -50,13 +50,14 @@ module.exports = class ScrapperProduct {
 
         await context.setExtraHTTPHeaders({
           'origin': emulatedGoogleSearch,
+          "accept-language": "pt-BR,pt;q=0.9",
+          "dnt": "1",
         });
-        
-        
+                
         let page = await context.newPage();
         
         page = await this.ofuscateBotBrowser(page);
-
+      
         const returnProduct =  await this.processProductPage(page);
        
         this.logger.info((new Date()).toISOString()+' ('+this.constructor.name+') ending process');

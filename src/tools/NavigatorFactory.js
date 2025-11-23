@@ -2,11 +2,14 @@ const fs = require('fs');
 const path = require('path');
 const randbomProxy = require('./FactoryProxyBrowser');
 const FactoryProxyBrowser = require('./FactoryProxyBrowser');
+const HideBotTool = require('./HideBotTool');
+
 class NavigatorFactory {
   constructor() {
     this.browserInstance = null;
     this.contextInstance = null;
     this.factoryProxyBrowser = new FactoryProxyBrowser();
+    this.hideBotTool = new HideBotTool();
 
     this.statePath = path.resolve(process.env.PLAYWRIGHT_STATE_PATH || 'ml_state.json');
   }
@@ -18,8 +21,12 @@ class NavigatorFactory {
 
     const userAgentChoiced = this.factoryProxyBrowser.getRandbomUserAgent();
 
+    const honeyDevice = this.hideBotTool.randomDeviceProfile();
+
     this.contextInstance = await launched.newContext({
-      storageState: this._loadState(),
+      userAgent: honeyDevice.userAgent,
+      viewport: honeyDevice.viewport,
+      timezoneId: honeyDevice.timezoneId,  
       userAgent: userAgentChoiced.userAgent
     });
 
@@ -62,11 +69,15 @@ class NavigatorFactory {
     
     this.browserInstance = launched;
 
+    const honeyDevice = this.hideBotTool.randomDeviceProfile();
+
     const userAgentChoiced = this.factoryProxyBrowser.getRandbomUserAgent();
 
     this.contextInstance = await launched.newContext({
-      storageState: this._loadState(),
-      userAgent: userAgentChoiced.userAgent
+        userAgent: honeyDevice.userAgent,
+        viewport: honeyDevice.viewport,
+        timezoneId: honeyDevice.timezoneId,      
+        userAgent: userAgentChoiced.userAgent
     });
    
     return this.contextInstance;
