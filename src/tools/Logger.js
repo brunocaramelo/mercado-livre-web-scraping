@@ -14,12 +14,18 @@ module.exports = class Logger {
 
     write(message) {
 
-        if(process.env.LOG_IN_FILE == 'true'){
+        if(process.env.LOG_IN_FILE !== 'true'){
             return false;
         }
 
-        const timestamp = new Date().toISOString();
-        const line = `[${timestamp}] ${message}\n`;
+        if (!fs.existsSync(this.logFile)) {
+            fs.writeFileSync(this.logFile, '');
+        }
+
+        const line = `${message}\n`;
+
+        // const timestamp = new Date().toISOString();
+        // const line = `[${timestamp}] ${message}\n`;
 
         fs.appendFile(this.logFile, line, (err) => {
             if (err) {

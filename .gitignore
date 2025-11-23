@@ -4,3 +4,4 @@ valid-proxies.json
 src/build-cache/static/valid-proxies.json
 src/build-cache/static/products-list.json
 logProxy.log
+log/app.log
