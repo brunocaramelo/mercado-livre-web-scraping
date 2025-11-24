@@ -22,8 +22,16 @@ module.exports = class ProductProcesVariationOptions {
     this.logger.info((new Date()).toISOString() + ` (${this.constructor.name}) starting process`);
 
     let results = [];
-
+ 
     const groups = await this.getVariationGroups();
+
+    const hasNotVariationsInProduct = (!Array.isArray(groups) || groups.length === 0)
+
+    this.logger.info("Checando existencia de variações: "+(hasNotVariationsInProduct ? 'NAO': 'SIM'));
+
+    if (hasNotVariationsInProduct) {
+      return results;
+    }
 
     this.logger.info(JSON.stringify(groups));
 
@@ -59,85 +67,8 @@ module.exports = class ProductProcesVariationOptions {
       );
   }
 
-  // async processVariationsIterativeExtract() {
-
-  //   const visited = this.visited;
-
-  //   let fistUrlVariation = null;
-
-  //   let results = [];
-
-  //   const initialGroups = await this.getVariationGroups();
-
-  //   const initialCombinations = this.generateCombinations(initialGroups);
-
-  //   this.logger.info("Total combinatitem.hrefions: " + initialGroups.length);
-
-  //   let counterItem = 0;
-  //   let breakVariationsNavigationFinished = false; 
-
-  //   for (const combo of initialCombinations) {
-
-  //       this.logger.info("[Combo] " + JSON.stringify(combo));
-        
-  //       if (breakVariationsNavigationFinished) {
-  //         this.logger.info("Primeiro item encontrado novamente encerrando laco");
-  //         break;
-  //       }
-
-  //       for (const item of combo) {
-
-  //         if (counterItem === 0) {
-  //           fistUrlVariation = item.href
-  //         }
-          
-  //         if(fistUrlVariation == item.href && counterItem > 0){
-  //           this.logger.info("Primeiro item igual ao atual : "+JSON.stringify({
-  //             fistUrl: fistUrlVariation,
-  //             currentUrl: item.href,
-  //           }));
-  //           break;
-  //         }
-          
-  //         await this.page.goto(await this.getCurrentBaseUrl()+item.href, {
-  //               timeout: 35000,
-  //               waitUntil: "domcontentloaded"
-  //         });
-
-  //         await this.page.waitForTimeout(this.numbersTools.randomIntFromInterval(410, 1500));
-
-  //         const currentCombinations = await this.getVariationGroups();
-
-  //         const choicedOptions = currentCombinations.flatMap(g =>  g.options
-  //                 .filter(o => o.choiced === "yes")
-  //                 .map(o => ({
-  //                     label: g.label,
-  //                     value: o.text
-  //                 }))
-  //         );
-
-  //         const extractedData = await new ProductVariationExtractDataCurrentPage(
-  //             this.page,
-  //             choicedOptions
-  //         ).handle();
-
-  //         results.push(extractedData);
-          
-  //         this.logger.info("Visitando Combinacao : "+JSON.stringify({
-  //             attributes: choicedOptions,
-  //             link: item.href
-  //         }));
-
-  //         counterItem++;
-  //       }
-
-  //   }
-
-    
-  //   return results;
-  // }
-
-    async processVariationsIterativeExtract() {
+  
+  async processVariationsIterativeExtract() {
       this.logger.info("Iniciando varredura dinâmica de variações...");
 
       const results = [];
