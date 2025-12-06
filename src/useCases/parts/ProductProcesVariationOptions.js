@@ -212,7 +212,9 @@ module.exports = class ProductProcesVariationOptions {
     const domainApp = urlObj.hostname;
 
     if(domainApp == 'www.mercadolivre.com.br' 
-      || domainApp == 'mercadolivre.com.br' ){
+      || domainApp == 'mercadolivre.com.br' 
+      || domainApp === 'produto.mercadolivre.com.br'
+    ){
         return urlObj.origin + urlObj.pathname;
     }
 
