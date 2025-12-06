@@ -54,12 +54,24 @@ module.exports = class ProductProcesVariationOptions {
               const options = [];
 
               container?.querySelectorAll('a')?.forEach(a => {
-                  const text = a.querySelector('.ui-pdp-thumbnail__label')?.innerText.trim()
-                              || a.innerText.trim();
-                  const href = a.getAttribute('href');
-                  const choiced = (a.className.includes('--SELECTED') == true ? 'yes': 'no');
+                 
+                let text =
+                a.querySelector('.ui-pdp-thumbnail__label')?.innerText?.trim() ||
+                a.innerText?.trim() ||
+                "";
 
-                  if (text && href && choiced) options.push({ text, href , choiced});
+                if (!text || text.length < 1) {
+                    const imgAlt = a.querySelector('img')?.getAttribute('alt');
+                    if (imgAlt) text = imgAlt.trim();
+                }
+
+                const href = a.getAttribute('href');
+                const choiced = a.className.includes('--SELECTED') ? 'yes' : 'no';
+
+
+                if (text && href && choiced) options.push({ text, href , choiced});
+
+
               });
 
               return { label, options };
