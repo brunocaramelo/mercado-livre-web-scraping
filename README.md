@@ -47,7 +47,7 @@ This application has the following specifications:
         - CONFIG_PROXY_USERNAME
         - CONFIG_PROXY_PASSWORD
     
-2 - Command to Generate Json File Output:
+2 - Testing using command to Generate Json File Output:
 
     - node product/by-uri/generate-file/index.js [[ML_URI]]
 
