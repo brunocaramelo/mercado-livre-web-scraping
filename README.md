@@ -517,6 +517,6 @@ called :
     {
      "targetUrl" : "https://www.mercadolivre.com.br/alimento-premier-super-premium-racas-especificas-shih-tzu-para-co-adulto-de-raza-pequena-sabor-frango-de-75-kg/p/MLB12017777",
      "productName" : "PRODUCT_NAME",
-     "callbackUrl" : "http://your-callback.com/ml-callback", // Your API callback (POST)
+     "callbackUrl" : "http://your-callback.com/ml-callback", // Your API route callback (POST)
      "externalId" : 'INTERNAL_REFERENCE',
     }
