@@ -508,7 +508,7 @@ called :
 
  ### API Use - Async With Webhook
 
-    Sending : POST
+    POST
 
      - http://localhost:3003/products/scrapping-async
 
