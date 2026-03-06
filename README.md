@@ -37,10 +37,15 @@ This application has the following specifications:
 
 ## Post Installation
 
-1 - For correct use and security, we should use a rotating residential proxy, where the IP is rotated while scraping:
+1 - For correct use , we should use a rotating residential proxy, where the IP is rotated while scraping:
     - Service suggestion
    ### - https://app.proxy-cheap.com/
     - Product: Rotating Residential
+
+    1.1 configure in .env
+        - CONFIG_PROXY_SERVER
+        - CONFIG_PROXY_USERNAME
+        - CONFIG_PROXY_PASSWORD
     
 2 - Command to Generate Json File Output:
 
