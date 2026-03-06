@@ -35,58 +35,13 @@ This application has the following specifications:
         we must run commands below:
     - npx playwright install-deps
 
-<!-- - cp .env.docker-compose.example .env
-- cp docker/docker-compose-env/application.env.example docker/docker-compose-env/application.env
-- cp docker/docker-compose-env/ws-application.env.example docker/docker-compose-env/ws-application.env
-- cp docker/docker-compose-env/database.env.example docker/docker-compose-env/database.env -->
-
-<!-- 2 - Check that the ports:
-
-    - 80 (nginx) 
-    
-    - 6380 (redis) 
-    
-    - 9000(php-fpm)
-
-    - 5432(postgres) 
-    
-    - 8182(websocket) 
-
-     are busy.
-
-
-3 - Enter the application's home directory and run the following commands:
-    
-    1 - docker compose up (to see the logs on stdout);
-
-    ### Description of steps (in case of problems)
-
-    1 - for the images to be stored and executed and upload the instances
-        
-        (NOTE) - due to composer's delay in bringing up the dependencies, there are 3 alternatives,
-        
-            1 - RUN sudo docker compose up; without being a daemon the first time, so that you can check the progress of the installation of dependencies.
-            
-            2 - Wait 20 minutes or so for the command to be executed, to avoid autoloading for example.
-            
-            
-    2 - for the framework to generate and apply the mapping for the database (SQL), which can be PostGres or SQLITE.
-    
-    3 - for the framework to apply changes to the database data, in the case of inserting a first user.
-    
-    4 - generation of a hash key for use by the system as a validation key.
-    
-    5 - for the framework to run the test suite.
-        - Feature tests  
-        - Unit tests
-      -->
-
 ## Post Installation
 
-1 - By Default we use a free proxy list to, get updated list (recommended daily) , run command, and wait....(slow):
+1 - For correct use and security, we should use a rotating residential proxy, where the IP is rotated while scraping:
+    - Service suggestion
+   ### - https://app.proxy-cheap.com/
+    - Product: Rotating Residential
     
-    - node src/build-cache/buildProxiesFile.js
-
 2 - Command to Generate Json File Output:
 
     - node product/by-uri/generate-file/index.js [[ML_URI]]
@@ -546,18 +501,17 @@ called :
 
 
 
-<!-- #### Extra
+ ### API Use - Async With Webhook
 
-    If you want to run the project locally, just run 
+    Sending : POST
 
-    1 - cp .env.local.example .env
-    2 - If you don't have Postgre Running on local or remote : change on .env to DB_HOST=database and run (2.1). Or else, run (2.2) and change DB_* credentials
-        2.1 - docker compose up -d cache database
-        2.2 - docker compose up -d cache
-    3 - composer install
-    4 - php artisan reverb:start --debug
-    5 - php artisan serve
-    6 - npm run dev OR npm run build
-    7 - php artisan migrate && php artisan db:seed
-    8 - and check out http://localhost:8000
-    9 - php artisan test -->
+     - http://localhost:3003/products/scrapping-async
+
+    Body:
+
+    {
+     "targetUrl" : "https://www.mercadolivre.com.br/alimento-premier-super-premium-racas-especificas-shih-tzu-para-co-adulto-de-raza-pequena-sabor-frango-de-75-kg/p/MLB12017777",
+     "productName" : "PRODUCT_NAME",
+     "callbackUrl" : "http://your-callback.com/ml-callback", // Your API callback (POST)
+     "externalId" : 'INTERNAL_REFERENCE',
+    }
